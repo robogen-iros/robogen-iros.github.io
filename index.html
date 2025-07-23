@@ -6,7 +6,7 @@
     <meta http-equiv="x-ua-compatible" content="ie=edge">
     <title>RoboGen: 3D World Generation for Robot Learning and Autonomous Systems</title>
     <link rel="icon" type="image/x-icon" href="images/logos/robogen-icon.ico">
-    <meta name="description" content="">
+    <meta name="description" content="RoboGen: 3D World Generation for Robot Learning and Autonomous Systems - IROS 2025 Workshop on 3D World Understanding and Generation for Robotics. October 24th, 2025, Hangzhou, China.">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
     <!-- ========================= CSS here ========================= -->
@@ -15,6 +15,193 @@
     <link rel="stylesheet" href="css/css-animate.css">
     <link rel="stylesheet" href="css/css-tiny-slider.css">
     <link rel="stylesheet" href="css/css-main.css">
+
+    <style>
+        .hero-content h1 {
+            font-size: 3rem;
+            color: white;
+            margin-bottom: 1.5rem;
+            font-weight: 700;
+            line-height: 1.2;
+        }
+
+        .hero-content h3 {
+            font-size: 1.4rem;
+            color: white;
+            margin-bottom: 1.5rem;
+            font-weight: 500;
+        }
+
+        .hero-content h4 {
+            color: #F20487;
+            font-size: 1.2rem;
+            margin-bottom: 1rem;
+            font-weight: 600;
+        }
+
+        .hero-content h4 a {
+            color: #F20487;
+            text-decoration: none;
+        }
+
+        .hero-content h4 a:hover {
+            color: #FF4081;
+        }
+
+        .text-overlay {
+            background: rgba(0, 0, 0, 0.3);
+            backdrop-filter: blur(10px);
+            padding: 40px;
+            border-radius: 20px;
+            margin-top: 100px;
+        }
+
+        /* Logo Layout Styles */
+        .companies-organizations {
+            background: #f8f9fa;
+            padding: 80px 0;
+        }
+
+        .logo-category {
+            margin-bottom: 60px;
+        }
+
+        .category-title {
+            text-align: center;
+            font-size: 1.8rem;
+            color: #333;
+            margin-bottom: 40px;
+            font-weight: 600;
+            position: relative;
+        }
+
+        .category-title::after {
+            content: '';
+            display: block;
+            width: 80px;
+            height: 3px;
+            background: linear-gradient(45deg, #F20487, #d20a78);
+            margin: 10px auto;
+            border-radius: 2px;
+        }
+
+        .logos-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+            gap: 30px;
+            padding: 0 20px;
+            justify-items: center;
+        }
+
+        .logo-item {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .logo-container {
+            background: white;
+            padding: 20px;
+            border-radius: 15px;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
+            transition: all 0.3s ease;
+            width: 160px;
+            height: 120px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 1px solid #eee;
+        }
+
+        .logo-container:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+            border-color: #F20487;
+        }
+
+        .logo-container img {
+            max-width: 100%;
+            max-height: 100%;
+            object-fit: contain;
+            transition: all 0.3s ease;
+        }
+
+        .logo-container:hover img {
+            transform: scale(1.05);
+        }
+
+        @media (max-width: 1200px) {
+            .logos-grid {
+                grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+                gap: 25px;
+            }
+            
+            .logo-container {
+                width: 140px;
+                height: 100px;
+                padding: 15px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .hero-content h1 {
+                font-size: 2.2rem;
+            }
+            
+            .hero-content h3 {
+                font-size: 1.2rem;
+            }
+            
+            .hero-content h4 {
+                font-size: 1.1rem;
+            }
+            
+            .text-overlay {
+                padding: 20px;
+                border-radius: 15px;
+                margin-top: 40px;
+            }
+
+            .companies-organizations {
+                padding: 60px 0;
+            }
+            
+            .logos-grid {
+                grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+                gap: 20px;
+                padding: 0 10px;
+            }
+            
+            .logo-container {
+                width: 120px;
+                height: 90px;
+                padding: 12px;
+            }
+            
+            .category-title {
+                font-size: 1.5rem;
+                margin-bottom: 30px;
+            }
+            
+            .logo-category {
+                margin-bottom: 40px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .logos-grid {
+                grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+                gap: 15px;
+            }
+            
+            .logo-container {
+                width: 100px;
+                height: 75px;
+                padding: 10px;
+            }
+        }
+    </style>
 </head>
 
 
@@ -115,14 +302,28 @@
         <div class="main__circle4"></div>
         <div class="container">
             <div class="row align-items-center">
-                <div class="col-lg-6 offset-lg-3 col-md-12 col-12">
-                    <div class="hero-content">
-                        <h5 style="color:#F20487;" class="wow zoomIn" data-wow-delay=".2s"><i class="lni lni-map-marker"></i> IROS 2025 -
-                            Hangzhou, China, Venue TBD, Date TBD </h5>
-                        <h2 class="wow fadeInUp" data-wow-delay=".4s">RoboGen: 3D World Generation for Robot Learning and Autonomous Systems</h2>
-                        <p class="wow fadeInUp" data-wow-delay=".6s"><b>Workshop on Neural Fields, Gaussian Splatting and Generative Models in Robotics 
-						<br>Hosted at <a href="http://www.iros25.org/">#IROS2025</a> </br></b></p>
-                   
+                <div class="col-lg-10 offset-lg-1 col-md-12 col-12">
+                    <div class="hero-content text-center text-overlay">
+                        <!-- Title (2 rows) -->
+                        <h1 class="wow fadeInUp" data-wow-delay=".2s">
+                            RoboGen: 3D World Generation<br>
+                            for Robot Learning and Autonomous Systems
+                        </h1>
+                        
+                        <!-- Keywords -->
+                        <h3 class="wow fadeInUp" data-wow-delay=".4s">
+                            Workshop on 3D World Understanding and Generation for Robotics
+                        </h3>
+                        
+                        <!-- Location -->
+                        <h4 class="wow fadeInUp" data-wow-delay=".6s">
+                            <i class="lni lni-map-marker"></i> Hangzhou, China, Hangzhou International Expo Center
+                        </h4>
+                        
+                        <!-- Date -->
+                        <h4 class="wow fadeInUp" data-wow-delay=".8s">
+                            October 24th, 2025 • Hosted at <a href="http://www.iros25.org/">#IROS2025</a>
+                        </h4>
                     </div>
                 </div>
             </div>
@@ -284,17 +485,22 @@
             <div class="section-text-content">
                 <h4> Welcome to the
                 <a href="http://www.iros25.org/" class="badge" style="background-color:#d20a78;">IROS 2025</a>
-                Workshop on 3D World Generation for Robot Learning and Autonmous Sytems! </h4>
+                Workshop on 3D World Generation for Robot Learning and Autonomous Systems! </h4>
                 <br>
-                The RoboGen workshop aims to advance 3D world generation for robotics with three key objectives: 
-				<br>(1) explore state-of-the-art neural fields and generative models for robot learning generalization, 
-				<br>(2) address challenges in physical 3D world representation, and 
-				<br>(3) democratize access to high-quality synthetic data for robust robotics systems. 
-				<br>While previous workshops have made valuable contributions to neural rendering for robotics, 
-				RoboGen specifically explores how cutting-edge 3D world generation technologies can create scalable, 
-				high-fidelity data engines for robotics deployment.
-				<br><br>
-			</div>
+                Recent advances in 3D Vision (NeRF, Gaussian Splatting) and multimodal foundation models (LLM, VLM, diffusion model) are transforming robotics by enabling the creation of photorealistic synthetic environments for training, testing, and validation. Despite impressive capabilities of learning-based robotics in embodied AI, autonomous driving, unmanned aerial navigation, and manipulation, progress in generalizable robot learning systems remains constrained by the fundamental challenge of data acquisition and scaling.
+                <br><br>
+                RoboGen brings together researchers and industry experts to develop innovative approaches that leverage recent advances in 3D data generation and understanding methods to address this data bottleneck. Our workshop emphasizes practical applications and solutions to long-tail data problems in challenging robotics scenarios, with the goal of empowering 3D deep learning systems for real-world deployment.
+                <br><br>
+                The RoboGen workshop aims to advance 3D world generation for robotics with four key objectives:
+                <ol style="margin-left: 20px; margin-top: 10px; margin-bottom: 10px;">
+                    <li>(1) explore state-of-the-art neural fields and generative models for robot learning generalization,</li>
+                    <li>(2) address challenges in physical 3D world representation,</li>
+                    <li>(3) democratize access to high-quality synthetic data for robust robotics systems.</li>
+                    <li>(4) advance 3D scene understanding through vision-language models for enhanced robot perception and reasoning.</li>
+                </ol>
+                RoboGen specifically explores how cutting-edge 3D world understanding and generation technologies can create scalable, high-fidelity data engines for robotics deployment.
+                <br><br>
+            </div>
 			<div class="section-text-content">
 				<h4>Workshop Features</h4>
             	<br>
@@ -304,8 +510,8 @@
                     <li><h6 style= "color:#d20a78">Oral Presentations</h6> Selected paper presentations highlighting impactful approaches to data generation, artifact mitigation, and domain-specific applications of neural rendering and generative models for robotics.</li>
                     <li><h6 style= "color:#d20a78">Interactive Poster & Demo Session</h6> A dedicated session where student researchers can demonstrate their methods and techniques, fostering discussions and collaborations. This will provide an opportunity for junior researchers to directly interact with senior researchers.</li>
                     <li><h6 style= "color:#d20a78">Expert Panel Discussion</h6> A focused discussion on bridging the gap between theoretical advancements in neural rendering and practical robotics applications.</li>
+                    <li><h6 style= "color:#d20a78">Award Ceremony</h6> Awards will be presented in multiple categories including Best Oral Presentation, Runner-up Oral Presentation, Best Poster Presentation, Most Impactful Open-Source Project, and Most Engaging Speaker to encourage participation and recognize outstanding contributions.</li>
                     <li><h6 style= "color:#d20a78">Mentor 1:1 Session</h6> Beyond formal talks and breaks, we're facilitating personalized 15-30 minute one-on-one sessions between junior researchers and keynote speakers or organizing committee members during IROS. Prior to the conference, RoboGen workshop participants will receive a signup form to indicate their interests. This creates valuable mentorship opportunities, connecting junior researchers with senior experts for both technical guidance and career development.</li>
-                    <li><h6 style= "color:#d20a78">Award Ceremony</h6> Different awards for best oral, most Impactful open-source project, and most engaging speaker are designed to encourage more participation.</li>
 				</ul>
                 <br><br>
 				
@@ -327,11 +533,12 @@
             <div class="section-text-content">
                 <h4>&#128218; Topics</h4>
                 <br><br>
-                The RoboGen workshop will accept papers in relation to the application of Neural Fields and 3D Gaussian Splatting to robotics areas.
-
                 Topics of this workshop include but are not limited to:
                 <br><br>
                 <ul class="list-group list-group-flush">
+                <li class="list-group-item"> 3D Vision-Language dataset generation for robotic action learning and task execution</li>
+                <li class="list-group-item"> Language-guided 3D scene generation for robot learning</li>
+                <li class="list-group-item"> Spatial-Temporal 3D scene understanding using vision-language models</li>
 				<li class="list-group-item"> Real-time 3D Gaussian Splatting for embodied robot learning and navigation</li>
 				<li class="list-group-item"> Sim-to-real transfer using 3D world generation for robotic policy learning</li>
 				<li class="list-group-item"> Deploying autonomous robotic system with data-driven closed-loop simulation evaluation</li>
@@ -340,8 +547,7 @@
 				<li class="list-group-item"> Robot Simultaneous Localization And Mapping (SLAM) with neural or Gaussian scene representation</li>
 				<li class="list-group-item"> Simultaneous sensor and traffic simulation for novel environment adaptation in robotics</li>
 				<li class="list-group-item"> Dynamic scene composition for robot manipulation and interaction with deformable objects</li>
-				<li class="list-group-item"> 3D Vision-Language dataset generation for robotic action learning and task execution</li>
-				<li class="list-group-item"> Language-guided 3D scene generation for robot learning</li>
+				
 				<li class="list-group-item"> Language/Feature-embedded neural or gaussian scene representation for robot manipulation</li>
 				<li class="list-group-item"> Efficient on-robot neural scene representation for real-time decision-making</li>
 				<li class="list-group-item"> General-purpose robot learning trained with a large corpus of synthetic data</li>
@@ -350,14 +556,10 @@
                 <br>
                 <h4>&#128232; Submission</h4>
                 <br>
-                Authors may submit either extended abstracts (2-4 pages, including references) to present preliminary findings or observations, 
-				or full papers (6-8 pages, including references) for detailed research contributions, including complete methodology and analysis. 
-				<br>
-                Submissions should follow IROS/IEEE conference format.
+                Authors may submit either extended abstracts (2-4 pages, including references) to present preliminary findings or observations, or full papers (6-8 pages, including references) for detailed research contributions, including complete methodology and analysis. Submissions should follow IROS/IEEE conference format.
                 The submitted papers and abstracts will be peer-reviewed, and those accepted will be made public through this website.
                 <br><br>
                 Paper submissions will be handled with OpenReview through the following link:
-                <br>
                 <a href="">RoboGen @ OpenReview (Link TBA!)</a>
                 <br>
                 <br>
@@ -1076,24 +1278,24 @@
                                 </thead>
                                 <tbody>
                                     <tr>
-                                        <th scope="row">Call for Papers</th>
-                                        <td>May 31, 2025</td>
+                                        <th scope="row">Submission open</th>
+                                        <td>June 1st, 2025, 11:59 PM AOE</td>
                                     </tr>
                                     <tr>
-                                        <th scope="row">Submission </th>
-                                        <td>Jul 31, 2025 23:59 CST</td>
+                                        <th scope="row">Submission due </th>
+                                        <td>September 20th, 2025, 11:59 PM AOE</td>
                                     </tr>
                                     <tr>
-                                        <th scope="row">Notification</th>
-                                        <td>Sep 15, 2025 <br /></td>
+                                        <th scope="row">Notification to authors</th>
+                                        <td>September 27th, 2025, 11:59 PM AOE<br /></td>
                                     </tr>
                                     <tr>
                                         <th scope="row">Camera Ready</th>
-                                        <td>Oct 1, 2025</td>
+                                        <td>October 11th, 2025, 11:59 PM AOE</td>
                                     </tr>
                                     <tr>
-                                        <th scope="row">Workshop</th>
-                                        <td><b>Oct 24, 2025</b></td>
+                                        <th scope="row">Workshop Date</th>
+                                        <td><b>Oct 24th, 2025</b></td>
                                     </tr>
                                 </tbody>
                             </table>
@@ -1184,7 +1386,7 @@
                                                 </div>
                                                 <div class="info">
                                                     <h4>
-                                                        <a>Keynote 1 Title</a>
+                                                        <a>Keynote 1</a>
                                                     </h4>
                                                     <ul>
                                                         <li><i class="lni lni-user"></i>
@@ -1222,7 +1424,7 @@
                                                 </div>
                                                 <div class="info">
                                                     <h4>
-                                                        <a>Keynote 2 Title</a>
+                                                        <a>Keynote 2</a>
                                                     </h4>
                                                     <ul>
                                                         <li><i class="lni lni-user"></i>
@@ -1249,7 +1451,7 @@
                                         <div class="col-lg-3 col-md-3 col-12">
                                             <div class="date">
                                                 <h3>10:00</h3>
-                                                <p>Presentation<span>10:00 - 10:30</span></p>
+                                                <p>Presentation<span>10:00 - 10:45</span></p>
                                             </div>
                                         </div>
                                         <div class="col-lg-62 col-md-7 col-12">
@@ -1329,7 +1531,7 @@
                                                 </div>
                                                 <div class="info">
                                                     <h4>
-                                                        <a>Keynote 3 Title</a>
+                                                        <a>Keynote 3</a>
                                                     </h4>
                                                     <ul>
                                                         <li><i class="lni lni-user"></i>
@@ -1367,12 +1569,12 @@
                                                 </div>
                                                 <div class="info">
                                                     <h4>
-                                                        <a>Keynote 4 Title</a>
+                                                        <a>Keynote 4</a>
                                                     </h4>
                                                     <ul>
                                                         <li><i class="lni lni-user"></i>
                                                             <a href=""
-                                                                class="btn">Wei Zhan, Applied Intuition/ Berkley DeepDrive</a>
+                                                                class="btn">Wei Zhan, Applied Intuition/ Berkeley DeepDrive</a>
                                                         </li>
                                                     </ul>
                                                 </div>
@@ -1430,7 +1632,7 @@
                                         <div class="col-lg-3 col-md-3 col-12">
                                             <div class="date">
                                                 <h3>13:00</h3>
-                                                <p>Industry Demmo<span>13:00 - 13:30</span></p>
+                                                <p>Industry Demo<span>13:00 - 13:30</span></p>
                                             </div>
                                         </div>
                                         <div class="col-lg-62 col-md-7 col-12">
@@ -1445,7 +1647,7 @@
                                                     </h4>
                                                     <ul>
                                                         <li><i class="lni lni-user"></i>
-                                                            <a href="" class="btn">Limx Dynamics</a>
+                                                            <a href="" class="btn">TBD</a>
                                                         </li>
                                                     </ul>
                                                 </div>
@@ -1476,7 +1678,7 @@
                                                 </div>
                                                 <div class="info">
                                                     <h4>
-                                                        <a>Keynote 5 Title</a>
+                                                        <a>Keynote 5</a>
                                                     </h4>
                                                     <ul>
                                                         <li><i class="lni lni-user"></i>
@@ -1513,7 +1715,7 @@
                                                 </div>
                                                 <div class="info">
                                                     <h4>
-                                                        <a>Keynote 6 Title</a>
+                                                        <a>Keynote 6</a>
                                                     </h4>
                                                     <ul>
                                                         <li><i class="lni lni-user"></i>
@@ -1581,7 +1783,7 @@
                                                 </div>
                                                 <div class="info">
                                                     <h4>
-                                                        <a>Keynote 7 Title</a>
+                                                        <a>Keynote 7</a>
                                                     </h4>
                                                     <ul>
                                                         <li><i class="lni lni-user"></i>
@@ -1618,7 +1820,7 @@
                                                 </div>
                                                 <div class="info">
                                                     <h4>
-                                                        <a>Keynote 8 Title</a>
+                                                        <a>Keynote 8</a>
                                                     </h4>
                                                     <ul>
                                                         <li><i class="lni lni-user"></i>
@@ -1692,11 +1894,11 @@
                                                 </div>
                                                 <div class="info">
                                                     <h4>
-                                                        <a href="javascript:void(0)">Award Ceremony</a>
+                                                        <a href="javascript:void(0)">Award Ceremony and Social</a>
                                                     </h4>
                                                     <ul>
                                                         <li><i class="lni lni-user"></i>
-                                                            <a href="" class="btn"></a>
+                                                            <a href="" class="btn">Best Oral, Best Poster, Most Impactful Open-Source Project, Most Engaging Speaker</a>
                                                         </li>
                                                     </ul>
                                                 </div>
@@ -1721,7 +1923,7 @@
 	
 	
 	<!-- Start Companies and Organizations Area -->
-    <section class="speakers organizers section" id="organizers-section">
+    <section class="companies-organizations section" id="companies-section">
         <div class="container">
             <div class="row">
                 <div class="col-12">
@@ -1733,241 +1935,116 @@
                     </div>
                 </div>
             </div>
-            <div class="all-speakers">
-                <div class="row text-center justify-content-center">
-                    
-					<div class="col-lg-2 col-md-3 col-sm-4 col-6 wow fadeInUp" data-wow-delay=".2s"
-                        style="visibility: visible; animation-delay: 0.2s; animation-name: fadeInUp;">
-
-                        <div class="single-speaker">
-                            <div class="top-content">
-                                <div class="image">
-                                    <img alt="#" src="images/companies/umich.jpg"
-                                        onerror="this.onerror=null;pagespeed.lazyLoadImages.loadIfVisibleAndMaybeBeacon(this);">
-                                </div>
-                            </div>
+            
+            <!-- Academic Institutions -->
+            <div class="logo-category">
+                <h4 class="category-title">Academic Institutions</h4>
+                <div class="logos-grid">
+                    <div class="logo-item wow fadeInUp" data-wow-delay=".2s">
+                        <div class="logo-container">
+                            <img alt="University of Michigan" src="images/companies/umich.jpg">
                         </div>
                     </div>
-					<div class="col-lg-2 col-md-3 col-sm-4 col-6 wow fadeInUp" data-wow-delay=".2s"
-                        style="visibility: visible; animation-delay: 0.2s; animation-name: fadeInUp;">
-
-                        <div class="single-speaker">
-                            <div class="top-content">
-                                <div class="image">
-                                    <img alt="#" src="images/companies/tamu.jpg"
-                                        onerror="this.onerror=null;pagespeed.lazyLoadImages.loadIfVisibleAndMaybeBeacon(this);">
-                                </div>
-                            </div>
+                    <div class="logo-item wow fadeInUp" data-wow-delay=".2s">
+                        <div class="logo-container">
+                            <img alt="Texas A&M University" src="images/companies/tamu.jpg">
                         </div>
                     </div>
-					<div class="col-lg-4 col-md-6 col-sm-8 col-12 wow fadeInUp" data-wow-delay=".2s"
-                        style="visibility: visible; animation-delay: 0.2s; animation-name: fadeInUp;">
-
-                        <div class="single-speaker">
-                            <div class="top-content">
-                                <div class="image">
-                                    <img alt="#" src="images/companies/upenn.jpg"
-                                        onerror="this.onerror=null;pagespeed.lazyLoadImages.loadIfVisibleAndMaybeBeacon(this);">
-                                </div>
-                            </div>
+                    <div class="logo-item wow fadeInUp" data-wow-delay=".2s">
+                        <div class="logo-container">
+                            <img alt="University of Pennsylvania" src="images/companies/upenn.jpg">
                         </div>
                     </div>
-					<div class="col-lg-2 col-md-3 col-sm-4 col-6 wow fadeInUp" data-wow-delay=".2s"
-                        style="visibility: visible; animation-delay: 0.2s; animation-name: fadeInUp;">
-
-                        <div class="single-speaker">
-                            <div class="top-content">
-                                <div class="image">
-                                    <img alt="#" src="images/companies/tum.jpg"
-                                        onerror="this.onerror=null;pagespeed.lazyLoadImages.loadIfVisibleAndMaybeBeacon(this);">
-                                </div>
-                            </div>
+                    <div class="logo-item wow fadeInUp" data-wow-delay=".2s">
+                        <div class="logo-container">
+                            <img alt="Technical University of Munich" src="images/companies/tum.jpg">
                         </div>
                     </div>
-					<div class="col-lg-2 col-md-3 col-sm-4 col-6 wow fadeInUp" data-wow-delay=".2s"
-                        style="visibility: visible; animation-delay: 0.2s; animation-name: fadeInUp;">
-
-                        <div class="single-speaker">
-                            <div class="top-content">
-                                <div class="image">
-                                    <img alt="#" src="images/companies/princeton.jpg"
-                                        onerror="this.onerror=null;pagespeed.lazyLoadImages.loadIfVisibleAndMaybeBeacon(this);">
-                                </div>
-                            </div>
+                    <div class="logo-item wow fadeInUp" data-wow-delay=".2s">
+                        <div class="logo-container">
+                            <img alt="Princeton University" src="images/companies/princeton.jpg">
                         </div>
                     </div>
-					<div class="col-lg-4 col-md-6 col-sm-8 col-12 wow fadeInUp" data-wow-delay=".2s"
-                        style="visibility: visible; animation-delay: 0.2s; animation-name: fadeInUp;">
-
-                        <div class="single-speaker">
-                            <div class="top-content">
-                                <div class="image">
-                                    <img alt="#" src="images/companies/usc.jpg"
-                                        onerror="this.onerror=null;pagespeed.lazyLoadImages.loadIfVisibleAndMaybeBeacon(this);">
-                                </div>
-                            </div>
+                    <div class="logo-item wow fadeInUp" data-wow-delay=".2s">
+                        <div class="logo-container">
+                            <img alt="University of Southern California" src="images/companies/usc.jpg">
                         </div>
                     </div>
-					<div class="col-lg-4 col-md-6 col-sm-8 col-12 wow fadeInUp" data-wow-delay=".2s"
-                        style="visibility: visible; animation-delay: 0.2s; animation-name: fadeInUp;">
-
-                        <div class="single-speaker">
-                            <div class="top-content">
-                                <div class="image">
-                                    <img alt="#" src="images/companies/uiuc.jpg"
-                                        onerror="this.onerror=null;pagespeed.lazyLoadImages.loadIfVisibleAndMaybeBeacon(this);">
-                                </div>
-                            </div>
+                    <div class="logo-item wow fadeInUp" data-wow-delay=".2s">
+                        <div class="logo-container">
+                            <img alt="University of Illinois Urbana-Champaign" src="images/companies/uiuc.jpg">
                         </div>
                     </div>
-					<div class="col-lg-4 col-md-6 col-sm-8 col-12 wow fadeInUp" data-wow-delay=".2s"
-                        style="visibility: visible; animation-delay: 0.2s; animation-name: fadeInUp;">
-
-                        <div class="single-speaker">
-                            <div class="top-content">
-                                <div class="image">
-                                    <img alt="#" src="images/companies/stanford.jpg"
-                                        onerror="this.onerror=null;pagespeed.lazyLoadImages.loadIfVisibleAndMaybeBeacon(this);">
-                                </div>
-                            </div>
+                    <div class="logo-item wow fadeInUp" data-wow-delay=".2s">
+                        <div class="logo-container">
+                            <img alt="Stanford University" src="images/companies/stanford.jpg">
                         </div>
                     </div>
-					<div class="col-lg-2 col-md-3 col-sm-4 col-6 wow fadeInUp" data-wow-delay=".2s"
-                        style="visibility: visible; animation-delay: 0.2s; animation-name: fadeInUp;">
-
-                        <div class="single-speaker">
-                            <div class="top-content">
-                                <div class="image">
-                                    <img alt="#" src="images/companies/ucsd.jpg"
-                                        onerror="this.onerror=null;pagespeed.lazyLoadImages.loadIfVisibleAndMaybeBeacon(this);">
-                                </div>
-                            </div>
+                    <div class="logo-item wow fadeInUp" data-wow-delay=".2s">
+                        <div class="logo-container">
+                            <img alt="UC San Diego" src="images/companies/ucsd.jpg">
                         </div>
                     </div>
-					<div class="col-lg-2 col-md-3 col-sm-4 col-6 wow fadeInUp" data-wow-delay=".2s"
-                        style="visibility: visible; animation-delay: 0.2s; animation-name: fadeInUp;">
-
-                        <div class="single-speaker">
-                            <div class="top-content">
-                                <div class="image">
-                                    <img alt="#" src="images/companies/ucb.jpg"
-                                        onerror="this.onerror=null;pagespeed.lazyLoadImages.loadIfVisibleAndMaybeBeacon(this);">
-                                </div>
-                            </div>
+                    <div class="logo-item wow fadeInUp" data-wow-delay=".2s">
+                        <div class="logo-container">
+                            <img alt="UC Berkeley" src="images/companies/ucb.jpg">
                         </div>
                     </div>
-					<div class="col-lg-2 col-md-3 col-sm-4 col-6 wow fadeInUp" data-wow-delay=".2s"
-                        style="visibility: visible; animation-delay: 0.2s; animation-name: fadeInUp;">
-
-                        <div class="single-speaker">
-                            <div class="top-content">
-                                <div class="image">
-                                    <img alt="#" src="images/companies/ford.jpg"
-                                        onerror="this.onerror=null;pagespeed.lazyLoadImages.loadIfVisibleAndMaybeBeacon(this);">
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-					<div class="col-lg-2 col-md-3 col-sm-4 col-6 wow fadeInUp" data-wow-delay=".2s"
-                        style="visibility: visible; animation-delay: 0.2s; animation-name: fadeInUp;">
-
-                        <div class="single-speaker">
-                            <div class="top-content">
-                                <div class="image">
-                                    <img alt="#" src="images/companies/latitude.jpg"
-                                        onerror="this.onerror=null;pagespeed.lazyLoadImages.loadIfVisibleAndMaybeBeacon(this);">
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-					<div class="col-lg-2 col-md-3 col-sm-4 col-6 wow fadeInUp" data-wow-delay=".2s"
-                        style="visibility: visible; animation-delay: 0.2s; animation-name: fadeInUp;">
-
-                        <div class="single-speaker">
-                            <div class="top-content">
-                                <div class="image">
-                                    <img alt="#" src="images/companies/kodiak.jpg"
-                                        onerror="this.onerror=null;pagespeed.lazyLoadImages.loadIfVisibleAndMaybeBeacon(this);">
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-					<div class="col-lg-2 col-md-3 col-sm-4 col-6 wow fadeInUp" data-wow-delay=".2s"
-                        style="visibility: visible; animation-delay: 0.2s; animation-name: fadeInUp;">
-
-                        <div class="single-speaker">
-                            <div class="top-content">
-                                <div class="image">
-                                    <img alt="#" src="images/companies/torc.jpg"
-                                        onerror="this.onerror=null;pagespeed.lazyLoadImages.loadIfVisibleAndMaybeBeacon(this);">
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-					<div class="col-lg-4 col-md-6 col-sm-8 col-12 wow fadeInUp" data-wow-delay=".2s"
-                        style="visibility: visible; animation-delay: 0.2s; animation-name: fadeInUp;">
-
-                        <div class="single-speaker">
-                            <div class="top-content">
-                                <div class="image">
-                                    <img alt="#" src="images/companies/alibaba.jpg"
-                                        onerror="this.onerror=null;pagespeed.lazyLoadImages.loadIfVisibleAndMaybeBeacon(this);">
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-					<div class="col-lg-2 col-md-3 col-sm-4 col-6 wow fadeInUp" data-wow-delay=".2s"
-                        style="visibility: visible; animation-delay: 0.2s; animation-name: fadeInUp;">
-
-                        <div class="single-speaker">
-                            <div class="top-content">
-                                <div class="image">
-                                    <img alt="#" src="images/companies/nvidia.jpg"
-                                        onerror="this.onerror=null;pagespeed.lazyLoadImages.loadIfVisibleAndMaybeBeacon(this);">
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-					<div class="col-lg-2 col-md-3 col-sm-4 col-6 wow fadeInUp" data-wow-delay=".2s"
-                        style="visibility: visible; animation-delay: 0.2s; animation-name: fadeInUp;">
-
-                        <div class="single-speaker">
-                            <div class="top-content">
-                                <div class="image">
-                                    <img alt="#" src="images/companies/bigai.jpg"
-                                        onerror="this.onerror=null;pagespeed.lazyLoadImages.loadIfVisibleAndMaybeBeacon(this);">
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-					<div class="col-lg-4 col-md-6 col-sm-8 col-12 wow fadeInUp" data-wow-delay=".2s"
-                        style="visibility: visible; animation-delay: 0.2s; animation-name: fadeInUp;">
-
-                        <div class="single-speaker">
-                            <div class="top-content">
-                                <div class="image">
-                                    <img alt="#" src="images/companies/voxel.jpg"
-                                        onerror="this.onerror=null;pagespeed.lazyLoadImages.loadIfVisibleAndMaybeBeacon(this);">
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-					<div class="col-lg-2 col-md-3 col-sm-4 col-6 wow fadeInUp" data-wow-delay=".2s"
-                        style="visibility: visible; animation-delay: 0.2s; animation-name: fadeInUp;">
-
-                        <div class="single-speaker">
-                            <div class="top-content">
-                                <div class="image">
-                                    <img alt="#" src="images/companies/applied.jpg"
-                                        onerror="this.onerror=null;pagespeed.lazyLoadImages.loadIfVisibleAndMaybeBeacon(this);">
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-					
-						
                 </div>
             </div>
+            
+            <!-- Industry Partners -->
+            <div class="logo-category">
+                <h4 class="category-title">Industry Companies</h4>
+                <div class="logos-grid">
+                    <div class="logo-item wow fadeInUp" data-wow-delay=".2s">
+                        <div class="logo-container">
+                            <img alt="Ford Motor Company" src="images/companies/ford.jpg">
+                        </div>
+                    </div>
+                    <div class="logo-item wow fadeInUp" data-wow-delay=".2s">
+                        <div class="logo-container">
+                            <img alt="Latitude AI" src="images/companies/latitude.jpg">
+                        </div>
+                    </div>
+                    <div class="logo-item wow fadeInUp" data-wow-delay=".2s">
+                        <div class="logo-container">
+                            <img alt="Kodiak Robotics" src="images/companies/kodiak.jpg">
+                        </div>
+                    </div>
+                    <div class="logo-item wow fadeInUp" data-wow-delay=".2s">
+                        <div class="logo-container">
+                            <img alt="Torc Robotics" src="images/companies/torc.jpg">
+                        </div>
+                    </div>
+                    <div class="logo-item wow fadeInUp" data-wow-delay=".2s">
+                        <div class="logo-container">
+                            <img alt="NVIDIA" src="images/companies/nvidia.jpg">
+                        </div>
+                    </div>
+                    <div class="logo-item wow fadeInUp" data-wow-delay=".2s">
+                        <div class="logo-container">
+                            <img alt="Applied Intuition" src="images/companies/applied.jpg">
+                        </div>
+                    </div>
+                    <div class="logo-item wow fadeInUp" data-wow-delay=".2s">
+                        <div class="logo-container">
+                            <img alt="Alibaba Group" src="images/companies/alibaba.jpg">
+                        </div>
+                    </div>
+                    <div class="logo-item wow fadeInUp" data-wow-delay=".2s">
+                        <div class="logo-container">
+                            <img alt="BIGAI" src="images/companies/bigai.jpg">
+                        </div>
+                    </div>
+                    <div class="logo-item wow fadeInUp" data-wow-delay=".2s">
+                        <div class="logo-container">
+                            <img alt="Voxel51" src="images/companies/voxel.jpg">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
         </div>
     </section>
 	<!-- End Companies and Organizations Area -->
