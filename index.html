@@ -258,7 +258,7 @@
                                     <li class="nav-item">
                                         <a id="submission-nav" href="#submission-section"
                                             onclick="switch_nav(MainNav.Submission)"
-                                            aria-label="Toggle navigation">Paper submission</a>
+                                            aria-label="Toggle navigation">Submission</a>
                                     </li>
                                     <li class="nav-item">
                                         <a id="speakers-nav" href="#speakers-section"
@@ -285,6 +285,12 @@
                                             aria-label="Toggle navigation">Contact</a>
                                     </li>
                                 </ul>
+                                <!-- Sponsor Badge -->
+                                <div class="sponsor-badge-nav" style="margin-left: 20px;">
+                                    <a href="https://voxel51.com/" style="display: inline-block; background: rgba(255,255,255,0.9); padding: 6px 12px; border-radius: 15px; border: 1px solid rgba(255,255,255,0.7); text-decoration: none; color: #333; font-size: 0.75rem; font-weight: 600; transition: all 0.3s; white-space: nowrap; box-shadow: 0 2px 4px rgba(0,0,0,0.1);" onmouseover="this.style.background='rgba(255,255,255,1)'; this.style.boxShadow='0 2px 8px rgba(0,0,0,0.15)'" onmouseout="this.style.background='rgba(255,255,255,0.9)'; this.style.boxShadow='0 2px 4px rgba(0,0,0,0.1)'">
+                                        Sponsored by Voxel51
+                                    </a>
+                                </div>
                             </div>
                         </nav>
                     </div>
@@ -556,12 +562,27 @@
                 <br>
                 <h4>&#128232; Submission</h4>
                 <br>
-                Authors may submit either extended abstracts (2-4 pages, including references) to present preliminary findings or observations, or full papers (6-8 pages, including references) for detailed research contributions, including complete methodology and analysis. Submissions should follow IROS/IEEE conference format.
-                The submitted papers and abstracts will be peer-reviewed, and those accepted will be made public through this website.
+                Authors may submit either <strong>extended abstracts (2-4 pages)</strong> to present preliminary findings or observations, or <strong>full papers (6-8 pages)</strong> for detailed research contributions, including complete methodology and analysis. 
                 <br><br>
-                Paper submissions will be handled with OpenReview through the following link:
-                <a href="">RoboGen @ OpenReview (Link TBA!)</a>
+                <strong>Formatting Requirements:</strong>
                 <br>
+                All submissions must follow the IROS/IEEE double column format with page limits that include references, appendices, and any additional material. Papers should be submitted as a single PDF file (up to 6MB). Official formatting templates are available <a href="https://ras.papercept.net/conferences/support/support.php">here</a>.
+                <br><br>
+                <strong>Submission Portal:</strong>
+                <br>
+                <a href="https://openreview.net/group?id=IEEE.org/IROS/2025/Workshop/RoboGen">RoboGen @ OpenReview</a>
+                <br><br>
+                <strong>Additional Information:</strong>
+                <br>
+                &nbsp;&nbsp;&nbsp;&nbsp;• All submissions will be peer-reviewed
+                <br>
+                &nbsp;&nbsp;&nbsp;&nbsp;• Optional supplementary materials (videos, images, code) may be submitted as a separate ZIP file
+                <br>
+                &nbsp;&nbsp;&nbsp;&nbsp;• Accepted papers and abstracts will be made publicly available on this website
+                <br>
+                &nbsp;&nbsp;&nbsp;&nbsp;• Authors will present their work in either oral or poster sessions
+                <br>
+                &nbsp;&nbsp;&nbsp;&nbsp;• In-person attendance and presentation by at least one author is mandatory
                 <br>
                 
             </div>
@@ -1283,15 +1304,15 @@
                                     </tr>
                                     <tr>
                                         <th scope="row">Submission due </th>
-                                        <td>September 20th, 2025, 11:59 PM AOE</td>
+                                        <td>August 15th, 2025, 11:59 PM AOE</td>
                                     </tr>
                                     <tr>
                                         <th scope="row">Notification to authors</th>
-                                        <td>September 27th, 2025, 11:59 PM AOE<br /></td>
+                                        <td>August 30th, 2025, 11:59 PM AOE<br /></td>
                                     </tr>
                                     <tr>
                                         <th scope="row">Camera Ready</th>
-                                        <td>October 11th, 2025, 11:59 PM AOE</td>
+                                        <td>September 15th, 2025, 11:59 PM AOE</td>
                                     </tr>
                                     <tr>
                                         <th scope="row">Workshop Date</th>
@@ -1928,17 +1949,16 @@
             <div class="row">
                 <div class="col-12">
                     <div class="section-title">
-                        <h3 class="wow zoomIn" data-wow-delay=".2s"
-                            style="visibility: visible; animation-delay: 0.2s; animation-name: zoomIn;">Sponsors and Organizers</h3>
+                        <!-- <h3 class="wow zoomIn" data-wow-delay=".2s"
+                            style="visibility: visible; animation-delay: 0.2s; animation-name: zoomIn;">Sponsors and Organizers</h3> -->
                         <h2 class="wow fadeInUp" data-wow-delay=".4s"
-                            style="visibility: visible; animation-delay: 0.4s; animation-name: fadeInUp;">Companies and Organizations</h2>
+                            style="visibility: visible; animation-delay: 0.4s; animation-name: fadeInUp;">Affiliations</h2>
                     </div>
                 </div>
             </div>
             
-            <!-- Academic Institutions -->
+            <!-- Combined Organizations -->
             <div class="logo-category">
-                <h4 class="category-title">Academic Institutions</h4>
                 <div class="logos-grid">
                     <div class="logo-item wow fadeInUp" data-wow-delay=".2s">
                         <div class="logo-container">
@@ -1990,13 +2010,6 @@
                             <img alt="UC Berkeley" src="images/companies/ucb.jpg">
                         </div>
                     </div>
-                </div>
-            </div>
-            
-            <!-- Industry Partners -->
-            <div class="logo-category">
-                <h4 class="category-title">Industry Companies</h4>
-                <div class="logos-grid">
                     <div class="logo-item wow fadeInUp" data-wow-delay=".2s">
                         <div class="logo-container">
                             <img alt="Ford Motor Company" src="images/companies/ford.jpg">
@@ -2037,21 +2050,14 @@
                             <img alt="BIGAI" src="images/companies/bigai.jpg">
                         </div>
                     </div>
-                    <div class="logo-item wow fadeInUp" data-wow-delay=".2s">
-                        <div class="logo-container">
-                            <img alt="Voxel51" src="images/companies/voxel.jpg">
-                        </div>
-                    </div>
                 </div>
             </div>
             
         </div>
     </section>
 	<!-- End Companies and Organizations Area -->
-    
-
 	
-	<div class="row" id="contact-section">
+    <div class="row" id="contact-section">
         <div class="col-12">
             <div class="section-title">
                 <br><br>
