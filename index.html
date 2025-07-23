@@ -234,8 +234,8 @@
                     <div class="nav-inner">
                         <!-- Start Navbar -->
                         <nav class="navbar navbar-expand-lg">
-                            <a class="navbar-brand" href="index.html">
-                                <img src="images/logos/robogen-logo.png" alt="Logo">
+                            <a class="navbar-brand" href="#" id="brand-logo" style="position: relative; display: inline-block; cursor: pointer;">
+                                <img id="robogen-logo" src="images/logos/robogen-logo.png" alt="RoboGen Logo" style="transition: transform 0.2s ease;">
                             </a>
                             <button class="navbar-toggler mobile-menu-btn" type="button" data-bs-toggle="collapse"
                                 data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
@@ -295,6 +295,7 @@
                                 
                                 <script>
                                 document.addEventListener('DOMContentLoaded', function() {
+                                    // Sponsor badge animation
                                     const badge = document.getElementById('sponsor-badge');
                                     const text = document.getElementById('sponsor-text');
                                     const logo = document.getElementById('sponsor-logo');
@@ -311,6 +312,37 @@
                                         logo.style.opacity = '0';
                                         badge.style.background = 'rgba(255,255,255,0.9)';
                                         badge.style.boxShadow = '0 2px 4px rgba(0,0,0,0.1)';
+                                    });
+                                    
+                                    // Background toggle functionality
+                                    const brandLogo = document.getElementById('brand-logo');
+                                    const robogenLogo = document.getElementById('robogen-logo');
+                                    let hasCustomBg = false;
+                                    
+                                    brandLogo.addEventListener('click', function(e) {
+                                        e.preventDefault();
+                                        
+                                        // Add click animation
+                                        robogenLogo.style.transform = 'scale(0.9)';
+                                        setTimeout(() => {
+                                            robogenLogo.style.transform = 'scale(1)';
+                                        }, 150);
+                                        
+                                        // Toggle hero background
+                                        hasCustomBg = !hasCustomBg;
+                                        
+                                        const heroSection = document.querySelector('.hero-area');
+                                        if (heroSection) {
+                                            if (hasCustomBg) {
+                                                heroSection.style.backgroundImage = 'url("images/logos/bg_3.png")';
+                                                heroSection.style.backgroundSize = 'cover';
+                                                heroSection.style.backgroundPosition = 'center';
+                                                heroSection.style.backgroundRepeat = 'no-repeat';
+                                            } else {
+                                                heroSection.style.backgroundImage = 'none';
+                                            }
+                                            heroSection.style.transition = 'all 0.3s ease';
+                                        }
                                     });
                                 });
                                 </script>
