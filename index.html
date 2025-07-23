@@ -287,10 +287,33 @@
                                 </ul>
                                 <!-- Sponsor Badge -->
                                 <div class="sponsor-badge-nav" style="margin-left: 20px;">
-                                    <a href="https://voxel51.com/" style="display: inline-block; background: rgba(255,255,255,0.9); padding: 6px 12px; border-radius: 15px; border: 1px solid rgba(255,255,255,0.7); text-decoration: none; color: #333; font-size: 0.75rem; font-weight: 600; transition: all 0.3s; white-space: nowrap; box-shadow: 0 2px 4px rgba(0,0,0,0.1);" onmouseover="this.style.background='rgba(255,255,255,1)'; this.style.boxShadow='0 2px 8px rgba(0,0,0,0.15)'" onmouseout="this.style.background='rgba(255,255,255,0.9)'; this.style.boxShadow='0 2px 4px rgba(0,0,0,0.1)'">
-                                        Sponsored by Voxel51
+                                    <a href="https://voxel51.com/" id="sponsor-badge" style="display: inline-block; background: rgba(255,255,255,0.9); padding: 6px 12px; border-radius: 15px; border: 1px solid rgba(255,255,255,0.7); text-decoration: none; color: #333; font-size: 0.75rem; font-weight: 600; transition: all 0.3s; white-space: nowrap; box-shadow: 0 2px 4px rgba(0,0,0,0.1); position: relative; overflow: hidden;">
+                                        <span id="sponsor-text" style="transition: opacity 0.3s ease;">Sponsored by Voxel51</span>
+                                        <img id="sponsor-logo" src="images/companies/voxel.jpg" alt="Voxel51" style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); height: 20px; opacity: 0; transition: opacity 0.3s ease;">
                                     </a>
                                 </div>
+                                
+                                <script>
+                                document.addEventListener('DOMContentLoaded', function() {
+                                    const badge = document.getElementById('sponsor-badge');
+                                    const text = document.getElementById('sponsor-text');
+                                    const logo = document.getElementById('sponsor-logo');
+                                    
+                                    badge.addEventListener('mouseenter', function() {
+                                        text.style.opacity = '0';
+                                        logo.style.opacity = '1';
+                                        badge.style.background = 'rgba(255,255,255,1)';
+                                        badge.style.boxShadow = '0 2px 8px rgba(0,0,0,0.15)';
+                                    });
+                                    
+                                    badge.addEventListener('mouseleave', function() {
+                                        text.style.opacity = '1';
+                                        logo.style.opacity = '0';
+                                        badge.style.background = 'rgba(255,255,255,0.9)';
+                                        badge.style.boxShadow = '0 2px 4px rgba(0,0,0,0.1)';
+                                    });
+                                });
+                                </script>
                             </div>
                         </nav>
                     </div>
