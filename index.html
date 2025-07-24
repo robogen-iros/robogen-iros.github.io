@@ -203,37 +203,22 @@
         }
 
         /* Language Toggle Styling */
-        
-        /* Custom language toggle button */
-        .custom-lang-toggle {
-            display: inline-block;
-            background: rgba(255,255,255,0.9);
-            padding: 6px 12px;
-            border-radius: 15px;
-            border: 1px solid rgba(255,255,255,0.7);
-            font-size: 0.75rem;
-            font-weight: 600;
-            color: #333;
-            cursor: pointer;
-            transition: all 0.3s;
-            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-            text-decoration: none;
-        }
-        
-        .custom-lang-toggle:hover {
-            background: rgba(255,255,255,1);
-            box-shadow: 0 2px 8px rgba(0,0,0,0.15);
-            color: #333;
-            text-decoration: none;
+        #lang-toggle:hover {
+            background: rgba(255,255,255,1) !important;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.15) !important;
+            color: #333 !important;
+            text-decoration: none !important;
         }
         
         @media (max-width: 768px) {
-            .language-toggle-nav {
+            /* Navigation right side container */
+            .navbar-collapse > div[style*="display: flex"] {
+                gap: 10px !important;
                 margin-left: 10px !important;
-                margin-right: 5px !important;
             }
             
-            .custom-lang-toggle {
+            #lang-toggle,
+            #sponsor-badge {
                 font-size: 0.7rem !important;
                 padding: 5px 10px !important;
             }
@@ -282,7 +267,7 @@
                                 <span class="toggler-icon"></span>
                             </button>
                             <div class="collapse navbar-collapse sub-menu-bar" id="navbarSupportedContent">
-                                <ul id="nav" class="navbar-nav ms-auto">
+                                <ul id="nav" class="navbar-nav ms-auto" style="display: flex; align-items: center;">
                                     <li class="nav-item">
                                         <a id="home-nav" href="#home-section" class="active"
                                             onclick="switch_nav(MainNav.Home)" aria-label="Toggle navigation">Home</a>
@@ -318,19 +303,22 @@
                                             aria-label="Toggle navigation">Contact</a>
                                     </li>
                                 </ul>
-                                <!-- Language Toggle -->
-                                <div class="language-toggle-nav" style="margin-left: 15px; margin-right: 5px;">
-                                    <button id="lang-toggle" class="custom-lang-toggle" onclick="toggleLanguage()">
-                                        <span id="current-lang">EN</span> / <span id="other-lang" style="opacity: 0.6;">CN</span>
-                                    </button>
-                                </div>
-                                
-                                <!-- Sponsor Badge -->
-                                <div class="sponsor-badge-nav" style="margin-left: 15px;">
-                                    <a href="https://voxel51.com/" id="sponsor-badge" style="display: inline-block; background: rgba(255,255,255,0.9); padding: 6px 12px; border-radius: 15px; border: 1px solid rgba(255,255,255,0.7); text-decoration: none; color: #333; font-size: 0.75rem; font-weight: 600; transition: all 0.3s; white-space: nowrap; box-shadow: 0 2px 4px rgba(0,0,0,0.1); position: relative; overflow: hidden;">
-                                        <span id="sponsor-text" style="transition: opacity 0.3s ease;">Sponsored by Voxel51</span>
-                                        <img id="sponsor-logo" src="images/companies/voxel.jpg" alt="Voxel51" style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); height: 20px; opacity: 0; transition: opacity 0.3s ease;">
-                                    </a>
+                                <!-- Navigation Right Side Elements -->
+                                <div style="display: flex; align-items: center; gap: 15px; margin-left: 20px;">
+                                    <!-- Sponsor Badge (First) -->
+                                    <div class="sponsor-badge-nav">
+                                        <a href="https://voxel51.com/" id="sponsor-badge" style="display: inline-block; background: rgba(255,255,255,0.9); padding: 6px 12px; border-radius: 15px; border: 1px solid rgba(255,255,255,0.7); text-decoration: none; color: #333; font-size: 0.75rem; font-weight: 600; transition: all 0.3s; white-space: nowrap; box-shadow: 0 2px 4px rgba(0,0,0,0.1); position: relative; overflow: hidden;">
+                                            <span id="sponsor-text" style="transition: opacity 0.3s ease;">Sponsored by Voxel51</span>
+                                            <img id="sponsor-logo" src="images/companies/voxel.jpg" alt="Voxel51" style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); height: 20px; opacity: 0; transition: opacity 0.3s ease;">
+                                        </a>
+                                    </div>
+                                    
+                                    <!-- Language Toggle (Second) -->
+                                    <div class="language-toggle-nav">
+                                        <a href="#" id="lang-toggle" onclick="toggleLanguage(); return false;" style="display: inline-block; background: rgba(255,255,255,0.9); padding: 6px 12px; border-radius: 15px; border: 1px solid rgba(255,255,255,0.7); text-decoration: none; color: #333; font-size: 0.75rem; font-weight: 600; transition: all 0.3s; white-space: nowrap; box-shadow: 0 2px 4px rgba(0,0,0,0.1); position: relative; overflow: hidden; cursor: pointer;">
+                                            <span id="current-lang">EN</span> / <span id="other-lang" style="opacity: 0.6;">CN</span>
+                                        </a>
+                                    </div>
                                 </div>
                                 
                                 <script>
@@ -2308,8 +2296,8 @@
                 contact: "联系我们",
                 
                 // Hero section
-                title: "RoboGen: 机器人学习与自主系统的<br>3D世界生成",
-                subtitle: "全天研讨会 - 机器人3D世界理解与生成",
+                title: "RoboGen: 3D世界生成<br>机器人学习与无人系统",
+                subtitle: "全天研讨会 - 3D世界理解与生成",
                 location: "中国杭州，杭州国际博览中心",
                 date: "2025年10月24日",
                 
@@ -2344,6 +2332,22 @@
             
             const heroSubtitle = document.querySelector('.hero-content h3');
             if (heroSubtitle) heroSubtitle.textContent = translations[lang].subtitle;
+            
+            // Update location
+            const heroLocation = document.querySelector('.hero-content h4:nth-of-type(1)');
+            if (heroLocation) {
+                heroLocation.innerHTML = `<i class="lni lni-map-marker"></i> ${translations[lang].location}`;
+            }
+            
+            // Update date  
+            const heroDate = document.querySelector('.hero-content h4:nth-of-type(2)');
+            if (heroDate) {
+                if (lang === 'en') {
+                    heroDate.innerHTML = `${translations[lang].date} <a href="http://www.iros25.org/">#IROS2025</a>`;
+                } else {
+                    heroDate.innerHTML = `${translations[lang].date} • 举办于 <a href="http://www.iros25.org/">#IROS2025</a>`;
+                }
+            }
             
             // Update section titles
             const overviewSection = document.querySelector('#overview-section .section-title h2');
