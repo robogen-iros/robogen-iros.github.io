@@ -201,6 +201,28 @@
                 padding: 10px;
             }
         }
+
+        /* Language Toggle Styling */
+        #lang-toggle:hover {
+            background: rgba(255,255,255,1) !important;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.15) !important;
+            color: #333 !important;
+            text-decoration: none !important;
+        }
+        
+        @media (max-width: 768px) {
+            /* Navigation right side container */
+            .navbar-collapse > div[style*="display: flex"] {
+                gap: 10px !important;
+                margin-left: 10px !important;
+            }
+            
+            #lang-toggle,
+            #sponsor-badge {
+                font-size: 0.7rem !important;
+                padding: 5px 10px !important;
+            }
+        }
     </style>
 </head>
 
@@ -234,8 +256,8 @@
                     <div class="nav-inner">
                         <!-- Start Navbar -->
                         <nav class="navbar navbar-expand-lg">
-                            <a class="navbar-brand" href="index.html">
-                                <img src="images/logos/robogen-logo.png" alt="Logo">
+                            <a class="navbar-brand" href="#" id="brand-logo" style="position: relative; display: inline-block; cursor: pointer;">
+                                <img id="robogen-logo" src="images/logos/robogen-logo.png" alt="RoboGen Logo" style="transition: transform 0.2s ease;">
                             </a>
                             <button class="navbar-toggler mobile-menu-btn" type="button" data-bs-toggle="collapse"
                                 data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
@@ -245,7 +267,7 @@
                                 <span class="toggler-icon"></span>
                             </button>
                             <div class="collapse navbar-collapse sub-menu-bar" id="navbarSupportedContent">
-                                <ul id="nav" class="navbar-nav ms-auto">
+                                <ul id="nav" class="navbar-nav ms-auto" style="display: flex; align-items: center;">
                                     <li class="nav-item">
                                         <a id="home-nav" href="#home-section" class="active"
                                             onclick="switch_nav(MainNav.Home)" aria-label="Toggle navigation">Home</a>
@@ -258,7 +280,7 @@
                                     <li class="nav-item">
                                         <a id="submission-nav" href="#submission-section"
                                             onclick="switch_nav(MainNav.Submission)"
-                                            aria-label="Toggle navigation">Paper submission</a>
+                                            aria-label="Toggle navigation">Submission</a>
                                     </li>
                                     <li class="nav-item">
                                         <a id="speakers-nav" href="#speakers-section"
@@ -266,18 +288,14 @@
                                             aria-label="Toggle navigation">Speakers</a>
                                     </li>
                                     <li class="nav-item">
-                                        <a id="organizers-nav" href="#organizers-section"
-                                            onclick="switch_nav(MainNav.Organizers)"
-                                            aria-label="Toggle navigation">Organizers</a>
-                                    </li>
-                                    <li class="nav-item">
-                                        <a id="dates-nav" href="#dates-section" onclick="switch_nav(MainNav.Dates)"
-                                            aria-label="Toggle navigation">Dates</a>
-                                    </li>
-                                    <li class="nav-item">
                                         <a id="schedule-nav" href="#schedule-section"
                                             onclick="switch_nav(MainNav.Schedule)"
                                             aria-label="Toggle navigation">Program</a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a id="organizers-nav" href="#organizers-section"
+                                            onclick="switch_nav(MainNav.Organizers)"
+                                            aria-label="Toggle navigation">Organizers</a>
                                     </li>
                                     <li class="nav-item">
                                         <a id="contact-nav" href="#contact-section"
@@ -285,6 +303,96 @@
                                             aria-label="Toggle navigation">Contact</a>
                                     </li>
                                 </ul>
+                                <!-- Navigation Right Side Elements -->
+                                <div style="display: flex; align-items: center; gap: 15px; margin-left: 20px;">
+                                    <!-- Sponsor Badge (First) -->
+                                    <div class="sponsor-badge-nav">
+                                        <a href="https://voxel51.com/" id="sponsor-badge" style="display: inline-block; background: rgba(255,255,255,0.9); padding: 6px 12px; border-radius: 15px; border: 1px solid rgba(255,255,255,0.7); text-decoration: none; color: #333; font-size: 0.75rem; font-weight: 600; transition: all 0.3s; white-space: nowrap; box-shadow: 0 2px 4px rgba(0,0,0,0.1); position: relative; overflow: hidden;">
+                                            <span id="sponsor-text" style="transition: opacity 0.3s ease;">Sponsored by Voxel51</span>
+                                            <img id="sponsor-logo" src="images/companies/voxel.jpg" alt="Voxel51" style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); height: 20px; opacity: 0; transition: opacity 0.3s ease;">
+                                        </a>
+                                    </div>
+                                    
+                                    <!-- Language Toggle (Second) -->
+                                    <div class="language-toggle-nav">
+                                        <a href="#" id="lang-toggle" onclick="toggleLanguage(); return false;" style="display: inline-block; background: rgba(255,255,255,0.9); padding: 6px 12px; border-radius: 15px; border: 1px solid rgba(255,255,255,0.7); text-decoration: none; color: #333; font-size: 0.75rem; font-weight: 600; transition: all 0.3s; white-space: nowrap; box-shadow: 0 2px 4px rgba(0,0,0,0.1); position: relative; overflow: hidden; cursor: pointer;">
+                                            <span id="current-lang">EN</span> / <span id="other-lang" style="opacity: 0.6;">CN</span>
+                                        </a>
+                                    </div>
+                                </div>
+                                
+                                <script>
+                                document.addEventListener('DOMContentLoaded', function() {
+                                    // Sponsor badge animation
+                                    const badge = document.getElementById('sponsor-badge');
+                                    const text = document.getElementById('sponsor-text');
+                                    const logo = document.getElementById('sponsor-logo');
+                                    
+                                    badge.addEventListener('mouseenter', function() {
+                                        text.style.opacity = '0';
+                                        logo.style.opacity = '1';
+                                        badge.style.background = 'rgba(255,255,255,1)';
+                                        badge.style.boxShadow = '0 2px 8px rgba(0,0,0,0.15)';
+                                    });
+                                    
+                                    badge.addEventListener('mouseleave', function() {
+                                        text.style.opacity = '1';
+                                        logo.style.opacity = '0';
+                                        badge.style.background = 'rgba(255,255,255,0.9)';
+                                        badge.style.boxShadow = '0 2px 4px rgba(0,0,0,0.1)';
+                                    });
+                                    
+                                    // Background toggle functionality
+                                    const brandLogo = document.getElementById('brand-logo');
+                                    const robogenLogo = document.getElementById('robogen-logo');
+                                    let hasCustomBg = false;
+                                    
+                                    // Set initial background to bg.png
+                                    const heroSection = document.querySelector('.hero-area');
+                                    if (heroSection) {
+                                        heroSection.style.backgroundImage = 'url("images/logos/bg.png")';
+                                        heroSection.style.backgroundSize = 'cover';
+                                        heroSection.style.backgroundPosition = 'center';
+                                        heroSection.style.backgroundRepeat = 'no-repeat';
+                                    }
+                                    
+                                    brandLogo.addEventListener('click', function(e) {
+                                        e.preventDefault();
+                                        
+                                        // Add click animation
+                                        robogenLogo.style.transform = 'scale(0.9)';
+                                        setTimeout(() => {
+                                            robogenLogo.style.transform = 'scale(1)';
+                                        }, 150);
+                                        
+                                        // Toggle hero background
+                                        hasCustomBg = !hasCustomBg;
+                                        
+                                        const heroSection = document.querySelector('.hero-area');
+                                        if (heroSection) {
+                                            // Remove transition temporarily for instant background change
+                                            heroSection.style.transition = 'none';
+                                            
+                                            if (hasCustomBg) {
+                                                heroSection.style.backgroundImage = 'url("images/logos/bg_2.png")';
+                                                heroSection.style.backgroundSize = 'cover';
+                                                heroSection.style.backgroundPosition = 'center';
+                                                heroSection.style.backgroundRepeat = 'no-repeat';
+                                            } else {
+                                                heroSection.style.backgroundImage = 'url("images/logos/bg.png")';
+                                                heroSection.style.backgroundSize = 'cover';
+                                                heroSection.style.backgroundPosition = 'center';
+                                                heroSection.style.backgroundRepeat = 'no-repeat';
+                                            }
+                                            
+                                            // Restore transition for other effects after a brief delay
+                                            setTimeout(() => {
+                                                heroSection.style.transition = '';
+                                            }, 50);
+                                        }
+                                    });
+                                });
+                                </script>
                             </div>
                         </nav>
                     </div>
@@ -312,7 +420,7 @@
                         
                         <!-- Keywords -->
                         <h3 class="wow fadeInUp" data-wow-delay=".4s">
-                            Workshop on 3D World Understanding and Generation for Robotics
+                            Full-day Workshop on 3D World Understanding and Generation for Robotics
                         </h3>
                         
                         <!-- Location -->
@@ -552,17 +660,7 @@
 				<li class="list-group-item"> Efficient on-robot neural scene representation for real-time decision-making</li>
 				<li class="list-group-item"> General-purpose robot learning trained with a large corpus of synthetic data</li>
                 </ul>
-                <!-- <br> -->
-                <br>
-                <h4>&#128232; Submission</h4>
-                <br>
-                Authors may submit either extended abstracts (2-4 pages, including references) to present preliminary findings or observations, or full papers (6-8 pages, including references) for detailed research contributions, including complete methodology and analysis. Submissions should follow IROS/IEEE conference format.
-                The submitted papers and abstracts will be peer-reviewed, and those accepted will be made public through this website.
-                <br><br>
-                Paper submissions will be handled with OpenReview through the following link:
-                <a href="">RoboGen @ OpenReview (Link TBA!)</a>
-                <br>
-                <br>
+
                 
             </div>
         </div>
@@ -621,693 +719,406 @@
         </div>
     </section> -->
 
-    <!-- Start Speakers Area -->
-    <section class="speakers section" id="speakers-section">
+    <!-- Start Dates & Submission Area -->
+	<section class="events dates section" id="submission-section" style="padding: 40px 0;">
         <div class="container">
             <div class="row">
                 <div class="col-12">
-                    <div class="section-title">
+                    <div class="section-title" style="margin-bottom: 30px;">
                         <h3 class="wow zoomIn" data-wow-delay=".2s"
-                            style="visibility: visible; animation-delay: 0.2s; animation-name: zoomIn;">Speakers</h3>
+                            style="visibility: hidden; animation-delay: 0.2s; animation-name: none;">Submission</h3>
                         <h2 class="wow fadeInUp" data-wow-delay=".4s"
-                            style="visibility: visible; animation-delay: 0.4s; animation-name: fadeInUp;">Invited
-                            Speakers</h2>
+                            style="visibility: hidden; animation-delay: 0.4s; animation-name: none; margin-bottom: 20px;">Submission Guidelines</h2>
                     </div>
-                </div>
-            </div>
-            <div class="all-speakers">
-                <div class="row text-center justify-content-center">
-				
                     
-					<div class="col-lg-3 col-md-4 col-12 wow fadeInUp" data-wow-delay=".2s"
-                        style="visibility: visible; animation-delay: 0.2s; animation-name: fadeInUp;">
-
-                        <div class="single-speaker">
-                            <div class="top-content">
-                                <div class="image">
-                                    <img alt="#" src="images/speakers/zhijian.jpg"
-                                        onerror="this.onerror=null;pagespeed.lazyLoadImages.loadIfVisibleAndMaybeBeacon(this);">
-                                </div>
-                                <ul class="social">
-									<li class="home">
-                                        <a href="https://zhijianliu.com/">
-                                            <i class="lni lni-home">
-                                            </i>
-                                        </a>
-                                    </li>
-                                    <li class="linkedin">
-                                        <a href="https://www.linkedin.com/in/zhijianliu/">
-                                            <i class="lni lni-linkedin-original">
-                                            </i>
-                                        </a>
-                                    </li>
-                                    <li class="scholar">
-                                        <a href="https://scholar.google.com/citations?user=mwzYYPgAAAAJ&hl=en">
-                                            <i class="lni lni-google"></i>
-                                        </a>
-                                    </li>
-                                </ul>
-                            </div>
-                            <div class="name">
-                                <h3><a href="https://zhijianliu.com/">Zhijian Liu</a></h3>
-                                <span>Assistant Professor, UCSD</span>
-                                <span>Research Scientist, NVIDIA</span>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="col-lg-3 col-md-4 col-12 wow fadeInUp" data-wow-delay=".2s"
-                        style="visibility: visible; animation-delay: 0.2s; animation-name: fadeInUp;">
-
-                        <div class="single-speaker">
-                            <div class="top-content">
-                                <div class="image">
-                                    <img alt="#" src="images/speakers/felix.jpg"
-                                        onerror="this.onerror=null;pagespeed.lazyLoadImages.loadIfVisibleAndMaybeBeacon(this);">
-                                </div>
-                                <ul class="social">
-									<li class="home">
-                                        <a href="https://www.cs.princeton.edu/~fheide/">
-                                            <i class="lni lni-home">
-                                            </i>
-                                        </a>
-                                    </li>
-                                    <li class="linkedin">
-                                        <a href="https://www.linkedin.com/in/felix-heide-7b7bb889/">
-                                            <i class="lni lni-linkedin-original">
-                                            </i>
-                                        </a>
-                                    </li>
-                                    <li class="scholar">
-                                        <a href="https://scholar.google.com/citations?user=gRqzSHsAAAAJ&hl=en">
-                                            <i class="lni lni-google"></i>
-                                        </a>
-                                    </li>
-                                </ul>
-                            </div>
-                            <div class="name">
-                                <h3><a href="https://www.cs.princeton.edu/~fheide/">Felix Heide</a></h3>
-                                <span>Professor, Princeton</span>
-                                <span>Head of AI, Torc Robotics</span>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-3 col-md-4 col-12 wow fadeInUp" data-wow-delay=".2s"
-                        style="visibility: visible; animation-delay: 0.2s; animation-name: fadeInUp;">
-
-                        <div class="single-speaker">
-                            <div class="top-content">
-                                <div class="image">
-                                    <img alt="#" src="images/speakers/angela.jpg"
-                                        onerror="this.onerror=null;pagespeed.lazyLoadImages.loadIfVisibleAndMaybeBeacon(this);">
-                                </div>
-                                <ul class="social">
-									<li class="home">
-                                        <a href="">
-                                            <i class="lni lni-home">
-                                            </i>
-                                        </a>
-                                    </li>
-                                    <li class="linkedin">
-                                        <a href="https://www.linkedin.com/in/angela-dai-5526ba48/">
-                                            <i class="lni lni-linkedin-original">
-                                            </i>
-                                        </a>
-                                    </li>
-                                    <li class="scholar">
-                                        <a href="https://scholar.google.com/citations?user=g-tGztMAAAAJ&hl=en">
-                                            <i class="lni lni-google"></i>
-                                        </a>
-                                    </li>
-                                </ul>
-                            </div>
-                            <div class="name">
-                                <h3><a href="">Angela Dai</a></h3>
-                                <span>Assistant Professor, TUM</span>
-                            </div>
-                        </div>
-                    </div>
-
-					<div class="col-lg-3 col-md-4 col-12 wow fadeInUp" data-wow-delay=".2s"
-                        style="visibility: visible; animation-delay: 0.2s; animation-name: fadeInUp;">
-
-                        <div class="single-speaker">
-                            <div class="top-content">
-                                <div class="image">
-                                    <img alt="#" src="images/speakers/shenlong.jpg"
-                                        onerror="this.onerror=null;pagespeed.lazyLoadImages.loadIfVisibleAndMaybeBeacon(this);">
-                                </div>
-                                <ul class="social">
-									<li class="home">
-                                        <a href="https://shenlong.web.illinois.edu/">
-                                            <i class="lni lni-home">
-                                            </i>
-                                        </a>
-                                    </li>
-                                    <li class="linkedin">
-                                        <a href="https://www.linkedin.com/in/shenlong-wang-3496023b/">
-                                            <i class="lni lni-linkedin-original">
-                                            </i>
-                                        </a>
-                                    </li>
-                                    <li class="scholar">
-                                        <a href="https://scholar.google.com/citations?user=QFpswmcAAAAJ&hl=en">
-                                            <i class="lni lni-google"></i>
-                                        </a>
-                                    </li>
-                                </ul>
-                            </div>
-                            <div class="name">
-                                <h3><a href="https://shenlong.web.illinois.edu/">Shenlong Wang</a></h3>
-                                <span>Assistant Professor, UIUC</span>
-                            </div>
-                        </div>
-                    </div>
-
-					<div class="col-lg-3 col-md-4 col-12 wow fadeInUp" data-wow-delay=".2s"
-                        style="visibility: visible; animation-delay: 0.2s; animation-name: fadeInUp;">
-
-                        <div class="single-speaker">
-                            <div class="top-content">
-                                <div class="image">
-                                    <img alt="#" src="images/speakers/wei.jpg"
-                                        onerror="this.onerror=null;pagespeed.lazyLoadImages.loadIfVisibleAndMaybeBeacon(this);">
-                                </div>
-                                <ul class="social">
-									<li class="home">
-                                        <a href="https://zhanwei.site/">
-                                            <i class="lni lni-home">
-                                            </i>
-                                        </a>
-                                    </li>
-                                    <li class="linkedin">
-                                        <a href="https://www.linkedin.com/in/zhan-wei/">
-                                            <i class="lni lni-linkedin-original">
-                                            </i>
-                                        </a>
-                                    </li>
-                                    <li class="scholar">
-                                        <a href="https://scholar.google.com/citations?user=xVN3UxYAAAAJ&hl=en">
-                                            <i class="lni lni-google"></i>
-                                        </a>
-                                    </li>
-                                </ul>
-                            </div>
-                            <div class="name">
-                                <h3><a href="https://zhanwei.site/">Wei Zhan</a></h3>
-                                <span>Chief Scientist, Applied Intuition</span>
-                                <span>Director, Berkeley DeepDrive</span>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="col-lg-3 col-md-4 col-12 wow fadeInUp" data-wow-delay=".2s"
-                        style="visibility: visible; animation-delay: 0.2s; animation-name: fadeInUp;">
-
-                        <div class="single-speaker">
-                            <div class="top-content">
-                                <div class="image">
-                                    <img alt="#" src="images/speakers/shubham.jpg"
-                                        onerror="this.onerror=null;pagespeed.lazyLoadImages.loadIfVisibleAndMaybeBeacon(this);">
-                                </div>
-                                <ul class="social">
-									<li class="home">
-                                        <a href="https://www.towardsautonomy.com/">
-                                            <i class="lni lni-home">
-                                            </i>
-                                        </a>
-                                    </li>
-                                    <li class="linkedin">
-                                        <a href="https://www.linkedin.com/in/shubshrivastava/">
-                                            <i class="lni lni-linkedin-original">
-                                            </i>
-                                        </a>
-                                    </li>
-                                    <li class="scholar">
-                                        <a href="https://scholar.google.com/citations?user=iQL5CDcAAAAJ&hl=en">
-                                            <i class="lni lni-google"></i>
-                                        </a>
-                                    </li>
-                                </ul>
-                            </div>
-                            <div class="name">
-                                <h3><a href="https://www.towardsautonomy.com/">Shubham Srivastava</a></h3>
-                                <span>Head of ML, Kodiak Robotics</span>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="col-lg-3 col-md-4 col-12 wow fadeInUp" data-wow-delay=".2s"
-                        style="visibility: visible; animation-delay: 0.2s; animation-name: fadeInUp;">
-
-                        <div class="single-speaker">
-                            <div class="top-content">
-                                <div class="image">
-                                    <img alt="#" src="images/speakers/yue.jpg"
-                                        onerror="this.onerror=null;pagespeed.lazyLoadImages.loadIfVisibleAndMaybeBeacon(this);">
-                                </div>
-                                <ul class="social">
-									<li class="home">
-                                        <a href="https://yuewang.xyz/">
-                                            <i class="lni lni-home">
-                                            </i>
-                                        </a>
-                                    </li>
-                                    <li class="linkedin">
-                                        <a href="https://www.linkedin.com/in/ywang93/">
-                                            <i class="lni lni-linkedin-original">
-                                            </i>
-                                        </a>
-                                    </li>
-                                    <li class="scholar">
-                                        <a href="https://scholar.google.com/citations?user=v-AEFIEAAAAJ&hl=en">
-                                            <i class="lni lni-google"></i>
-                                        </a>
-                                    </li>
-                                </ul>
-                            </div>
-                            <div class="name">
-                                <h3><a href="https://yuewang.xyz/">Yue Wang</a></h3>
-                                <span>Assistant Professor, USC</span>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="col-lg-3 col-md-4 col-12 wow fadeInUp" data-wow-delay=".2s"
-                        style="visibility: visible; animation-delay: 0.2s; animation-name: fadeInUp;">
-
-                        <div class="single-speaker">
-                            <div class="top-content">
-                                <div class="image">
-                                    <img alt="#" src="images/speakers/siyuan.jpg"
-                                        onerror="this.onerror=null;pagespeed.lazyLoadImages.loadIfVisibleAndMaybeBeacon(this);">
-                                </div>
-                                <ul class="social">
-									<li class="home">
-                                        <a href="https://siyuanhuang.com/">
-                                            <i class="lni lni-home">
-                                            </i>
-                                        </a>
-                                    </li>
-                                    <li class="linkedin">
-                                        <a href="https://siyuanhuang.com/">
-                                            <i class="lni lni-linkedin-original">
-                                            </i>
-                                        </a>
-                                    </li>
-                                    <li class="scholar">
-                                        <a href="https://scholar.google.com/citations?user=1NN7Ee8AAAAJ&hl=en">
-                                            <i class="lni lni-google"></i>
-                                        </a>
-                                    </li>
-                                </ul>
-                            </div>
-                            <div class="name">
-                                <h3><a href="https://siyuanhuang.com/">Siyuan Huang</a></h3>
-                                <span>Research Scientist, Beijing Institute for General Artificial Intelligence (BIGAI)</span>
-                            </div>
-                        </div>
-                    </div>
-
-                </div>
-            </div>
-        </div>
-    </section>
-    <!-- End Speaker Area -->
-
-    <!-- Start Workshop Organizers Area -->
-    <section class="speakers organizers section" id="organizers-section">
-        <div class="container">
-            <div class="row">
-                <div class="col-12">
-                    <div class="section-title">
-                        <h3 class="wow zoomIn" data-wow-delay=".2s"
-                            style="visibility: visible; animation-delay: 0.2s; animation-name: zoomIn;">Organizers</h3>
-                        <h2 class="wow fadeInUp" data-wow-delay=".4s"
-                            style="visibility: visible; animation-delay: 0.4s; animation-name: fadeInUp;">Workshop
-                            Organizers</h2>
-                    </div>
-                </div>
-            </div>
-            <div class="all-speakers">
-                <div class="row text-center justify-content-center">
-                    
-					<div class="col-lg-3 col-md-4 col-12 wow fadeInUp" data-wow-delay=".2s"
-                        style="visibility: visible; animation-delay: 0.2s; animation-name: fadeInUp;">
-
-                        <div class="single-speaker">
-                            <div class="top-content">
-                                <div class="image">
-                                    <img alt="#" src="images/organizers/lily.jpg"
-                                        onerror="this.onerror=null;pagespeed.lazyLoadImages.loadIfVisibleAndMaybeBeacon(this);">
-                                </div>
-                                <ul class="social">
-                                    <li class="home">
-                                        <a href="https://lilyzhng.github.io/">
-                                            <i class="lni lni-home">
-                                            </i>
-                                        </a>
-                                    </li>
-                                    <li class="linkedin">
-                                        <a href="https://www.linkedin.com/in/lilyzen/">
-                                            <i class="lni lni-linkedin-original">
-                                            </i>
-                                        </a>
-                                    </li>
-                                    <li class="scholar">
-                                        <a href="">
-                                            <i class="lni lni-google"></i>
-                                        </a>
-                                    </li>
-                                </ul>
-                            </div>
-                            <div class="name">
-                                <h3><a href="https://lilyzhng.github.io/">Xianling (Lily) Zhang</a></h3>
-                                <span>Technical Lead</span>
-                                <span>Ford Motor Company / Latitude AI</span>
-                            </div>
-                        </div>
-                    </div>
-
-					<div class="col-lg-3 col-md-4 col-12 wow fadeInUp" data-wow-delay=".2s"
-                        style="visibility: visible; animation-delay: 0.2s; animation-name: fadeInUp;">
-
-                        <div class="single-speaker">
-                            <div class="top-content">
-                                <div class="image">
-                                    <img alt="#" src="images/organizers/gaurav.jpg"
-                                        onerror="this.onerror=null;pagespeed.lazyLoadImages.loadIfVisibleAndMaybeBeacon(this);">
-                                </div>
-                                <ul class="social">
-                                    <li class="home">
-                                        <a href="https://engineering.tamu.edu/etid/profiles/pandey-gaurav.html">
-                                            <i class="lni lni-home">
-                                            </i>
-                                        </a>
-                                    </li>
-                                    <li class="linkedin">
-                                        <a href="https://www.linkedin.com/in/gaurav-pandey-86334aa/">
-                                            <i class="lni lni-linkedin-original">
-                                            </i>
-                                        </a>
-                                    </li>
-                                    <li class="scholar">
-                                        <a href="">
-                                            <i class="lni lni-google"></i>
-                                        </a>
-                                    </li>
-                                </ul>
-                            </div>
-                            <div class="name">
-                                <h3><a href="https://engineering.tamu.edu/etid/profiles/pandey-gaurav.html">Gaurav Pandey</a></h3>
-                                <span>Associate Professor</span>
-                                <span>Texas A&M University</span>
-                            </div>
-                        </div>
-                    </div>
-
-					<div class="col-lg-3 col-md-4 col-12 wow fadeInUp" data-wow-delay=".2s"
-                        style="visibility: visible; animation-delay: 0.2s; animation-name: fadeInUp;">
-
-                        <div class="single-speaker">
-                            <div class="top-content">
-                                <div class="image">
-                                    <img alt="#" src="images/organizers/katie.jpg"
-                                        onerror="this.onerror=null;pagespeed.lazyLoadImages.loadIfVisibleAndMaybeBeacon(this);">
-                                </div>
-                                <ul class="social">
-                                    <li class="home">
-                                        <a href="https://fieldrobotics.engin.umich.edu/">
-                                            <i class="lni lni-home">
-                                            </i>
-                                        </a>
-                                    </li>
-                                    <li class="linkedin">
-                                        <a href="https://www.linkedin.com/in/katherine-a-skinner-073ab779/">
-                                            <i class="lni lni-linkedin-original">
-                                            </i>
-                                        </a>
-                                    </li>
-                                    <li class="scholar">
-                                        <a href="">
-                                            <i class="lni lni-google"></i>
-                                        </a>
-                                    </li>
-                                </ul>
-                            </div>
-                            <div class="name">
-                                <h3><a href="https://fieldrobotics.engin.umich.edu/">Katherine A. (Katie) Skinner</a></h3>
-                                <span>Assistant Professor</span>
-                                <span>University of Michigan</span>
-                            </div>
-                        </div>
-                    </div>
-
-					<div class="col-lg-3 col-md-4 col-12 wow fadeInUp" data-wow-delay=".2s"
-                        style="visibility: visible; animation-delay: 0.2s; animation-name: fadeInUp;">
-
-                        <div class="single-speaker">
-                            <div class="top-content">
-                                <div class="image">
-                                    <img alt="#" src="images/organizers/shubh.jpg"
-                                        onerror="this.onerror=null;pagespeed.lazyLoadImages.loadIfVisibleAndMaybeBeacon(this);">
-                                </div>
-                                <ul class="social">
-                                    <li class="home">
-                                        <a href="https://shubhg1996.github.io/">
-                                            <i class="lni lni-home">
-                                            </i>
-                                        </a>
-                                    </li>
-                                    <li class="linkedin">
-                                        <a href="https://www.linkedin.com/in/shubhgupta1996/">
-                                            <i class="lni lni-linkedin-original">
-                                            </i>
-                                        </a>
-                                    </li>
-                                    <li class="scholar">
-                                        <a href="">
-                                            <i class="lni lni-google"></i>
-                                        </a>
-                                    </li>
-                                </ul>
-                            </div>
-                            <div class="name">
-                                <h3><a href="https://shubhg1996.github.io/">Shubh Gupta</a></h3>
-                                <span>Post-Doc Researcher</span>
-                                <span>Stanford University</span>
-                            </div>
-                        </div>
-                    </div>
-
-					<div class="col-lg-3 col-md-4 col-12 wow fadeInUp" data-wow-delay=".2s"
-                        style="visibility: visible; animation-delay: 0.2s; animation-name: fadeInUp;">
-
-                        <div class="single-speaker">
-                            <div class="top-content">
-                                <div class="image">
-                                    <img alt="#" src="images/organizers/frank.jpg"
-                                        onerror="this.onerror=null;pagespeed.lazyLoadImages.loadIfVisibleAndMaybeBeacon(this);">
-                                </div>
-                                <ul class="social">
-                                    <li class="home">
-                                        <a href="https://kungfrank.github.io/">
-                                            <i class="lni lni-home">
-                                            </i>
-                                        </a>
-                                    </li>
-                                    <li class="linkedin">
-                                        <a href="https://www.linkedin.com/in/pou-chun-kung/">
-                                            <i class="lni lni-linkedin-original">
-                                            </i>
-                                        </a>
-                                    </li>
-                                    <li class="scholar">
-                                        <a href="">
-                                            <i class="lni lni-google"></i>
-                                        </a>
-                                    </li>
-                                </ul>
-                            </div>
-                            <div class="name">
-                                <h3><a href="https://kungfrank.github.io/">Pou-Chun (Frank) Kung</a></h3>
-                                <span>PhD Candidate</span>
-                                <span>University of Michigan</span>
-                            </div>
-                        </div>
-                    </div>
-
-					<div class="col-lg-3 col-md-4 col-12 wow fadeInUp" data-wow-delay=".2s"
-                        style="visibility: visible; animation-delay: 0.2s; animation-name: fadeInUp;">
-
-                        <div class="single-speaker">
-                            <div class="top-content">
-                                <div class="image">
-                                    <img alt="#" src="images/organizers/nalin.jpg"
-                                        onerror="this.onerror=null;pagespeed.lazyLoadImages.loadIfVisibleAndMaybeBeacon(this);">
-                                </div>
-                                <ul class="social">
-                                    <li class="home">
-                                        <a href="https://www.linkedin.com/in/nalin-bendapudi/">
-                                            <i class="lni lni-home">
-                                            </i>
-                                        </a>
-                                    </li>
-                                    <li class="linkedin">
-                                        <a href="https://www.linkedin.com/in/nalin-bendapudi/">
-                                            <i class="lni lni-linkedin-original">
-                                            </i>
-                                        </a>
-                                    </li>
-                                    <li class="scholar">
-                                        <a href="">
-                                            <i class="lni lni-google"></i>
-                                        </a>
-                                    </li>
-                                </ul>
-                            </div>
-                            <div class="name">
-                                <h3><a href="https://www.linkedin.com/in/nalin-bendapudi/">Nalin Bendapudi</a></h3>
-                                <span>PhD Student</span>
-                                <span>Texas A&M University</span>
-                            </div>
-
-                        </div>
-                    </div>
-
-					<div class="col-lg-3 col-md-4 col-12 wow fadeInUp" data-wow-delay=".2s"
-                        style="visibility: visible; animation-delay: 0.2s; animation-name: fadeInUp;">
-
-                        <div class="single-speaker">
-                            <div class="top-content">
-                                <div class="image">
-                                    <img alt="#" src="images/organizers/simon.jpg"
-                                        onerror="this.onerror=null;pagespeed.lazyLoadImages.loadIfVisibleAndMaybeBeacon(this);">
-                                </div>
-                                <ul class="social">
-                                    <li class="home">
-                                        <a href="https://www.grasp.upenn.edu/people/yifei-shao/">
-                                            <i class="lni lni-home">
-                                            </i>
-                                        </a>
-                                    </li>
-                                    <li class="linkedin">
-                                        <a href="https://www.linkedin.com/in/yifei-simon-shao/">
-                                            <i class="lni lni-linkedin-original">
-                                            </i>
-                                        </a>
-                                    </li>
-                                    <li class="scholar">
-                                        <a href="">
-                                            <i class="lni lni-google"></i>
-                                        </a>
-                                    </li>
-                                </ul>
-                            </div>
-                            <div class="name">
-                                <h3><a href="https://www.grasp.upenn.edu/people/yifei-shao/">Yifei (Simon) Shao</a></h3>
-                                <span>PhD Student</span>
-                                <span>University of Pennsylvania</span>
-                            </div>
-
-                        </div>
-                    </div>
-					
-					<div class="col-lg-3 col-md-4 col-12 wow fadeInUp" data-wow-delay=".2s"
-                        style="visibility: visible; animation-delay: 0.2s; animation-name: fadeInUp;">
-
-                        <div class="single-speaker">
-                            <div class="top-content">
-                                <div class="image">
-                                    <img alt="#" src="images/organizers/xuezhang.jpg"
-                                        onerror="this.onerror=null;pagespeed.lazyLoadImages.loadIfVisibleAndMaybeBeacon(this);">
-                                </div>
-                                <ul class="social">
-                                    <li class="home">
-                                        <a href="https://www.linkedin.com/in/xuezhang-wu-a313a01a/">
-                                            <i class="lni lni-home">
-                                            </i>
-                                        </a>
-                                    </li>
-                                    <li class="linkedin">
-                                        <a href="https://www.linkedin.com/in/xuezhang-wu-a313a01a/">
-                                            <i class="lni lni-linkedin-original">
-                                            </i>
-                                        </a>
-                                    </li>
-                                    <li class="scholar">
-                                        <a href="">
-                                            <i class="lni lni-google"></i>
-                                        </a>
-                                    </li>
-                                </ul>
-                            </div>
-                            <div class="name">
-                                <h3><a href="https://www.linkedin.com/in/xuezhang-wu-a313a01a/">Xuezhang Wu</a></h3>
-                                <span>Supply-Chain Manager</span>
-                                <span>Alibaba Group, Hangzhou</span>
-                            </div>
-                        </div>
-                    </div>
-					
-                </div>
-            </div>
-        </div>
-    </section>
-    <!-- End Speaker Area -->
-	
-    <!-- Start Dates Area -->
-	<section class="events dates section" id="dates-section">
-        <div class="container">
-            <div class="row">
-                <div class="col-12">
-                    <div class="section-title">
-                        <h3 class="wow zoomIn" data-wow-delay=".2s"
-                            style="visibility: hidden; animation-delay: 0.2s; animation-name: none;">Dates</h3>
-                        <h2 class="wow fadeInUp" data-wow-delay=".4s"
-                            style="visibility: hidden; animation-delay: 0.4s; animation-name: none;">Important Dates (Tentative) </h2>
-
-                        <div class="tab-pane fade show active" id="date-wshop" role="tabpanel"
-                            aria-labelledby="wshop-tab">
-                            <table class="table">
+                    <!-- Important Dates -->
+                    <div class="row justify-content-center" style="margin-bottom: 40px;">
+                        <div class="col-lg-8 col-md-10">
+                            <h4 style="text-align: center; margin-bottom: 20px; color: #333;">📅 Important Dates </h4>
+                            <table class="table table-striped" style="margin-bottom: 0;">
                                 <thead>
                                     <tr>
-                                        <th class="event">Event</th>
-                                        <th class="date">Date</th>
+                                        <th class="event" style="padding: 12px 15px;">Event</th>
+                                        <th class="date" style="padding: 12px 15px;">Date</th>
                                     </tr>
                                 </thead>
                                 <tbody>
                                     <tr>
-                                        <th scope="row">Submission open</th>
-                                        <td>June 1st, 2025, 11:59 PM AOE</td>
+                                        <td style="padding: 10px 15px;">Submission open</td>
+                                        <td style="padding: 10px 15px;">June 1st, 2025, 11:59 PM AOE</td>
                                     </tr>
                                     <tr>
-                                        <th scope="row">Submission due </th>
-                                        <td>September 20th, 2025, 11:59 PM AOE</td>
+                                        <td style="padding: 10px 15px;">Submission due</td>
+                                        <td style="padding: 10px 15px;">August 15th, 2025, 11:59 PM AOE</td>
                                     </tr>
                                     <tr>
-                                        <th scope="row">Notification to authors</th>
-                                        <td>September 27th, 2025, 11:59 PM AOE<br /></td>
+                                        <td style="padding: 10px 15px;">Notification to authors</td>
+                                        <td style="padding: 10px 15px;">August 30th, 2025, 11:59 PM AOE</td>
                                     </tr>
                                     <tr>
-                                        <th scope="row">Camera Ready</th>
-                                        <td>October 11th, 2025, 11:59 PM AOE</td>
+                                        <td style="padding: 10px 15px;">Camera Ready</td>
+                                        <td style="padding: 10px 15px;">September 15th, 2025, 11:59 PM AOE</td>
                                     </tr>
                                     <tr>
-                                        <th scope="row">Workshop Date</th>
-                                        <td><b>Oct 24th, 2025</b></td>
+                                        <td style="padding: 10px 15px; font-weight: bold;">Workshop Date</td>
+                                        <td style="padding: 10px 15px;"><b>Oct 24th, 2025</b></td>
                                     </tr>
                                 </tbody>
                             </table>
                         </div>
                     </div>
+
+                    <!-- Submission Guidelines -->
+                    <div class="row justify-content-center">
+                        <div class="col-lg-10 col-md-12">
+                            <div class="section-text-content">
+                                <h4 style="text-align: center; margin-bottom: 20px; color: #333;">📝 Submission Format</h4>
+                                <br>
+                                Authors may submit either <strong>extended abstracts (2-4 pages)</strong> to present preliminary findings or observations, or <strong>full papers (6-8 pages)</strong> for detailed research contributions, including complete methodology and analysis. 
+                                <br><br>
+                                <strong>Formatting Requirements:</strong>
+                                <br>
+                                All submissions must follow the IROS/IEEE double column format with page limits that include references, appendices, and any additional material. Papers should be submitted as a single PDF file (up to 6MB). Official formatting templates are available <a href="https://ras.papercept.net/conferences/support/support.php">here</a>.
+                                <br><br>
+                                <strong>Submission Portal:</strong>
+                                <br>
+                                <a href="https://openreview.net/group?id=IEEE.org/IROS/2025/Workshop/RoboGen">RoboGen @ OpenReview</a>
+                                <br><br>
+                                <strong>Additional Information:</strong>
+                                <br>
+                                &nbsp;&nbsp;&nbsp;&nbsp;• All submissions will be peer-reviewed
+                                <br>
+                                &nbsp;&nbsp;&nbsp;&nbsp;• Optional supplementary materials (videos, images, code) may be submitted as a separate ZIP file
+                                <br>
+                                &nbsp;&nbsp;&nbsp;&nbsp;• Accepted papers and abstracts will be made publicly available on this website
+                                <br>
+                                &nbsp;&nbsp;&nbsp;&nbsp;• Authors will present their work in either oral or poster sessions
+                                <br>
+                                &nbsp;&nbsp;&nbsp;&nbsp;• In-person attendance and presentation by at least one author is mandatory
+                                <br>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
-        </div>
     </section>
-    <!-- End Dates Area -->
+    <!-- End Dates & Submission Area -->
 
+            <!-- Start Dates Area -->
+            <section class="speakers section" id="speakers-section">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-12">
+                            <div class="section-title">
+                                <h3 class="wow zoomIn" data-wow-delay=".2s"
+                                    style="visibility: visible; animation-delay: 0.2s; animation-name: zoomIn;">Speakers</h3>
+                                <h2 class="wow fadeInUp" data-wow-delay=".4s"
+                                    style="visibility: visible; animation-delay: 0.4s; animation-name: fadeInUp;">Invited
+                                    Speakers</h2>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="all-speakers">
+                        <div class="row text-center justify-content-center">
+                        
+                            
+                            <div class="col-lg-3 col-md-4 col-12 wow fadeInUp" data-wow-delay=".2s"
+                                style="visibility: visible; animation-delay: 0.2s; animation-name: fadeInUp;">
+        
+                                <div class="single-speaker">
+                                    <div class="top-content">
+                                        <div class="image">
+                                            <img alt="#" src="images/speakers/zhijian.jpg"
+                                                onerror="this.onerror=null;pagespeed.lazyLoadImages.loadIfVisibleAndMaybeBeacon(this);">
+                                        </div>
+                                        <ul class="social">
+                                            <li class="home">
+                                                <a href="https://zhijianliu.com/">
+                                                    <i class="lni lni-home">
+                                                    </i>
+                                                </a>
+                                            </li>
+                                            <li class="linkedin">
+                                                <a href="https://www.linkedin.com/in/zhijianliu/">
+                                                    <i class="lni lni-linkedin-original">
+                                                    </i>
+                                                </a>
+                                            </li>
+                                            <li class="scholar">
+                                                <a href="https://scholar.google.com/citations?user=mwzYYPgAAAAJ&hl=en">
+                                                    <i class="lni lni-google"></i>
+                                                </a>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                    <div class="name">
+                                        <h3><a href="https://zhijianliu.com/">Zhijian Liu</a></h3>
+                                        <span>Assistant Professor, UCSD</span>
+                                        <span>Research Scientist, NVIDIA</span>
+                                    </div>
+                                </div>
+                            </div>
+        
+                            <div class="col-lg-3 col-md-4 col-12 wow fadeInUp" data-wow-delay=".2s"
+                                style="visibility: visible; animation-delay: 0.2s; animation-name: fadeInUp;">
+        
+                                <div class="single-speaker">
+                                    <div class="top-content">
+                                        <div class="image">
+                                            <img alt="#" src="images/speakers/felix.jpg"
+                                                onerror="this.onerror=null;pagespeed.lazyLoadImages.loadIfVisibleAndMaybeBeacon(this);">
+                                        </div>
+                                        <ul class="social">
+                                            <li class="home">
+                                                <a href="https://www.cs.princeton.edu/~fheide/">
+                                                    <i class="lni lni-home">
+                                                    </i>
+                                                </a>
+                                            </li>
+                                            <li class="linkedin">
+                                                <a href="https://www.linkedin.com/in/felix-heide-7b7bb889/">
+                                                    <i class="lni lni-linkedin-original">
+                                                    </i>
+                                                </a>
+                                            </li>
+                                            <li class="scholar">
+                                                <a href="https://scholar.google.com/citations?user=gRqzSHsAAAAJ&hl=en">
+                                                    <i class="lni lni-google"></i>
+                                                </a>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                    <div class="name">
+                                        <h3><a href="https://www.cs.princeton.edu/~fheide/">Felix Heide</a></h3>
+                                        <span>Professor, Princeton</span>
+                                        <span>Head of AI, Torc Robotics</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-3 col-md-4 col-12 wow fadeInUp" data-wow-delay=".2s"
+                                style="visibility: visible; animation-delay: 0.2s; animation-name: fadeInUp;">
+        
+                                <div class="single-speaker">
+                                    <div class="top-content">
+                                        <div class="image">
+                                            <img alt="#" src="images/speakers/angela.jpg"
+                                                onerror="this.onerror=null;pagespeed.lazyLoadImages.loadIfVisibleAndMaybeBeacon(this);">
+                                        </div>
+                                        <ul class="social">
+                                            <li class="home">
+                                                <a href="">
+                                                    <i class="lni lni-home">
+                                                    </i>
+                                                </a>
+                                            </li>
+                                            <li class="linkedin">
+                                                <a href="https://www.linkedin.com/in/angela-dai-5526ba48/">
+                                                    <i class="lni lni-linkedin-original">
+                                                    </i>
+                                                </a>
+                                            </li>
+                                            <li class="scholar">
+                                                <a href="https://scholar.google.com/citations?user=g-tGztMAAAAJ&hl=en">
+                                                    <i class="lni lni-google"></i>
+                                                </a>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                    <div class="name">
+                                        <h3><a href="">Angela Dai</a></h3>
+                                        <span>Assistant Professor, TUM</span>
+                                    </div>
+                                </div>
+                            </div>
+        
+                            <div class="col-lg-3 col-md-4 col-12 wow fadeInUp" data-wow-delay=".2s"
+                                style="visibility: visible; animation-delay: 0.2s; animation-name: fadeInUp;">
+        
+                                <div class="single-speaker">
+                                    <div class="top-content">
+                                        <div class="image">
+                                            <img alt="#" src="images/speakers/shenlong.jpg"
+                                                onerror="this.onerror=null;pagespeed.lazyLoadImages.loadIfVisibleAndMaybeBeacon(this);">
+                                        </div>
+                                        <ul class="social">
+                                            <li class="home">
+                                                <a href="https://shenlong.web.illinois.edu/">
+                                                    <i class="lni lni-home">
+                                                    </i>
+                                                </a>
+                                            </li>
+                                            <li class="linkedin">
+                                                <a href="https://www.linkedin.com/in/shenlong-wang-3496023b/">
+                                                    <i class="lni lni-linkedin-original">
+                                                    </i>
+                                                </a>
+                                            </li>
+                                            <li class="scholar">
+                                                <a href="https://scholar.google.com/citations?user=QFpswmcAAAAJ&hl=en">
+                                                    <i class="lni lni-google"></i>
+                                                </a>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                    <div class="name">
+                                        <h3><a href="https://shenlong.web.illinois.edu/">Shenlong Wang</a></h3>
+                                        <span>Assistant Professor, UIUC</span>
+                                    </div>
+                                </div>
+                            </div>
+        
+                            <div class="col-lg-3 col-md-4 col-12 wow fadeInUp" data-wow-delay=".2s"
+                                style="visibility: visible; animation-delay: 0.2s; animation-name: fadeInUp;">
+        
+                                <div class="single-speaker">
+                                    <div class="top-content">
+                                        <div class="image">
+                                            <img alt="#" src="images/speakers/wei.jpg"
+                                                onerror="this.onerror=null;pagespeed.lazyLoadImages.loadIfVisibleAndMaybeBeacon(this);">
+                                        </div>
+                                        <ul class="social">
+                                            <li class="home">
+                                                <a href="https://zhanwei.site/">
+                                                    <i class="lni lni-home">
+                                                    </i>
+                                                </a>
+                                            </li>
+                                            <li class="linkedin">
+                                                <a href="https://www.linkedin.com/in/zhan-wei/">
+                                                    <i class="lni lni-linkedin-original">
+                                                    </i>
+                                                </a>
+                                            </li>
+                                            <li class="scholar">
+                                                <a href="https://scholar.google.com/citations?user=xVN3UxYAAAAJ&hl=en">
+                                                    <i class="lni lni-google"></i>
+                                                </a>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                    <div class="name">
+                                        <h3><a href="https://zhanwei.site/">Wei Zhan</a></h3>
+                                        <span>Chief Scientist, Applied Intuition</span>
+                                        <span>Director, Berkeley DeepDrive</span>
+                                    </div>
+                                </div>
+                            </div>
+        
+                            <div class="col-lg-3 col-md-4 col-12 wow fadeInUp" data-wow-delay=".2s"
+                                style="visibility: visible; animation-delay: 0.2s; animation-name: fadeInUp;">
+        
+                                <div class="single-speaker">
+                                    <div class="top-content">
+                                        <div class="image">
+                                            <img alt="#" src="images/speakers/shubham.jpg"
+                                                onerror="this.onerror=null;pagespeed.lazyLoadImages.loadIfVisibleAndMaybeBeacon(this);">
+                                        </div>
+                                        <ul class="social">
+                                            <li class="home">
+                                                <a href="https://www.towardsautonomy.com/">
+                                                    <i class="lni lni-home">
+                                                    </i>
+                                                </a>
+                                            </li>
+                                            <li class="linkedin">
+                                                <a href="https://www.linkedin.com/in/shubshrivastava/">
+                                                    <i class="lni lni-linkedin-original">
+                                                    </i>
+                                                </a>
+                                            </li>
+                                            <li class="scholar">
+                                                <a href="https://scholar.google.com/citations?user=iQL5CDcAAAAJ&hl=en">
+                                                    <i class="lni lni-google"></i>
+                                                </a>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                    <div class="name">
+                                        <h3><a href="https://www.towardsautonomy.com/">Shubham Srivastava</a></h3>
+                                        <span>Head of ML, Kodiak Robotics</span>
+                                    </div>
+                                </div>
+                            </div>
+        
+                            <div class="col-lg-3 col-md-4 col-12 wow fadeInUp" data-wow-delay=".2s"
+                                style="visibility: visible; animation-delay: 0.2s; animation-name: fadeInUp;">
+        
+                                <div class="single-speaker">
+                                    <div class="top-content">
+                                        <div class="image">
+                                            <img alt="#" src="images/speakers/yue.jpg"
+                                                onerror="this.onerror=null;pagespeed.lazyLoadImages.loadIfVisibleAndMaybeBeacon(this);">
+                                        </div>
+                                        <ul class="social">
+                                            <li class="home">
+                                                <a href="https://yuewang.xyz/">
+                                                    <i class="lni lni-home">
+                                                    </i>
+                                                </a>
+                                            </li>
+                                            <li class="linkedin">
+                                                <a href="https://www.linkedin.com/in/ywang93/">
+                                                    <i class="lni lni-linkedin-original">
+                                                    </i>
+                                                </a>
+                                            </li>
+                                            <li class="scholar">
+                                                <a href="https://scholar.google.com/citations?user=v-AEFIEAAAAJ&hl=en">
+                                                    <i class="lni lni-google"></i>
+                                                </a>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                    <div class="name">
+                                        <h3><a href="https://yuewang.xyz/">Yue Wang</a></h3>
+                                        <span>Assistant Professor, USC</span>
+                                    </div>
+                                </div>
+                            </div>
+        
+                            <div class="col-lg-3 col-md-4 col-12 wow fadeInUp" data-wow-delay=".2s"
+                                style="visibility: visible; animation-delay: 0.2s; animation-name: fadeInUp;">
+        
+                                <div class="single-speaker">
+                                    <div class="top-content">
+                                        <div class="image">
+                                            <img alt="#" src="images/speakers/siyuan.jpg"
+                                                onerror="this.onerror=null;pagespeed.lazyLoadImages.loadIfVisibleAndMaybeBeacon(this);">
+                                        </div>
+                                        <ul class="social">
+                                            <li class="home">
+                                                <a href="https://siyuanhuang.com/">
+                                                    <i class="lni lni-home">
+                                                    </i>
+                                                </a>
+                                            </li>
+                                            <li class="linkedin">
+                                                <a href="https://siyuanhuang.com/">
+                                                    <i class="lni lni-linkedin-original">
+                                                    </i>
+                                                </a>
+                                            </li>
+                                            <li class="scholar">
+                                                <a href="https://scholar.google.com/citations?user=1NN7Ee8AAAAJ&hl=en">
+                                                    <i class="lni lni-google"></i>
+                                                </a>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                    <div class="name">
+                                        <h3><a href="https://siyuanhuang.com/">Siyuan Huang</a></h3>
+                                        <span>Research Scientist, Beijing Institute for General Artificial Intelligence (BIGAI)</span>
+                                    </div>
+                                </div>
+                            </div>
+        
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <!-- End Speaker Area -->
+        
     <!-- Start Schedule Area -->
     <section class="events-schedule section" id="schedule-section">
         <div class="container">
@@ -1329,14 +1140,17 @@
             </div>
             <div class="row">
                 <div class="col-lg-10 offset-lg-1 col-12">
-                    <!-- <ul class="nav nav-tabs" role="tablist">
+                    <ul class="nav nav-tabs" role="tablist" style="margin-bottom: 30px;">
                         <li class="nav-item" role="presentation">
-                            <button class="nav-link active" id="three-tab" data-bs-toggle="tab" data-bs-target="#three" type="button" role="tab" aria-controls="one" aria-selected="true">Afternoon session<span>June 18th, 12:45 - 17:45</span></button>
+                            <button class="nav-link active" id="morning-tab" data-bs-toggle="tab" data-bs-target="#morning" type="button" role="tab" aria-controls="morning" aria-selected="true">Morning Session<span style="display: block; font-size: 0.8em; opacity: 0.8;">08:45 - 13:00</span></button>
                         </li>
-                    </ul>  -->
+                        <li class="nav-item" role="presentation">
+                            <button class="nav-link" id="afternoon-tab" data-bs-toggle="tab" data-bs-target="#afternoon" type="button" role="tab" aria-controls="afternoon" aria-selected="false">Afternoon Session<span style="display: block; font-size: 0.8em; opacity: 0.8;">13:00 - 18:00</span></button>
+                        </li>
+                    </ul>
                     <div class="tab-content">
-                        <!-- Afternoon session -->
-                        <div class="tab-pane fade active show" id="three" role="tabpanel" aria-labelledby="three-tab">
+                        <!-- Morning session -->
+                        <div class="tab-pane fade active show" id="morning" role="tabpanel" aria-labelledby="morning-tab">
                             <div class="events-head">
                                 <div class="single-event">
                                     <div class="row align-items-center">
@@ -1625,6 +1439,13 @@
                                         </div>
                                     </div>
                                 </div>
+
+                            </div>
+                        </div>
+
+                        <!-- Afternoon session -->
+                        <div class="tab-pane fade" id="afternoon" role="tabpanel" aria-labelledby="afternoon-tab">
+                            <div class="events-head">
 								
 								
 								<div class="single-event">
@@ -1921,6 +1742,328 @@
     </section>
     <!-- End Schedule Area -->
 	
+
+        <!-- Start Workshop Organizers Area -->
+        <section class="speakers organizers section" id="organizers-section">
+            <div class="container">
+                <div class="row">
+                    <div class="col-12">
+                        <div class="section-title">
+                            <h3 class="wow zoomIn" data-wow-delay=".2s"
+                                style="visibility: visible; animation-delay: 0.2s; animation-name: zoomIn;">Organizers</h3>
+                            <h2 class="wow fadeInUp" data-wow-delay=".4s"
+                                style="visibility: visible; animation-delay: 0.4s; animation-name: fadeInUp;">Workshop
+                                Organizers</h2>
+                        </div>
+                    </div>
+                </div>
+                <div class="all-speakers">
+                    <div class="row text-center justify-content-center">
+                        
+                        <div class="col-lg-3 col-md-4 col-12 wow fadeInUp" data-wow-delay=".2s"
+                            style="visibility: visible; animation-delay: 0.2s; animation-name: fadeInUp;">
+    
+                            <div class="single-speaker">
+                                <div class="top-content">
+                                    <div class="image">
+                                        <img alt="#" src="images/organizers/lily.jpg"
+                                            onerror="this.onerror=null;pagespeed.lazyLoadImages.loadIfVisibleAndMaybeBeacon(this);">
+                                    </div>
+                                    <ul class="social">
+                                        <li class="home">
+                                            <a href="https://lilyzhng.github.io/">
+                                                <i class="lni lni-home">
+                                                </i>
+                                            </a>
+                                        </li>
+                                        <li class="linkedin">
+                                            <a href="https://www.linkedin.com/in/lilyzen/">
+                                                <i class="lni lni-linkedin-original">
+                                                </i>
+                                            </a>
+                                        </li>
+                                        <li class="scholar">
+                                            <a href="">
+                                                <i class="lni lni-google"></i>
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <div class="name">
+                                    <h3><a href="https://lilyzhng.github.io/">Xianling (Lily) Zhang</a></h3>
+                                    <span>Technical Lead</span>
+                                    <span>Ford Motor Company / Latitude AI</span>
+                                </div>
+                            </div>
+                        </div>
+    
+                        <div class="col-lg-3 col-md-4 col-12 wow fadeInUp" data-wow-delay=".2s"
+                            style="visibility: visible; animation-delay: 0.2s; animation-name: fadeInUp;">
+    
+                            <div class="single-speaker">
+                                <div class="top-content">
+                                    <div class="image">
+                                        <img alt="#" src="images/organizers/gaurav.jpg"
+                                            onerror="this.onerror=null;pagespeed.lazyLoadImages.loadIfVisibleAndMaybeBeacon(this);">
+                                    </div>
+                                    <ul class="social">
+                                        <li class="home">
+                                            <a href="https://engineering.tamu.edu/etid/profiles/pandey-gaurav.html">
+                                                <i class="lni lni-home">
+                                                </i>
+                                            </a>
+                                        </li>
+                                        <li class="linkedin">
+                                            <a href="https://www.linkedin.com/in/gaurav-pandey-86334aa/">
+                                                <i class="lni lni-linkedin-original">
+                                                </i>
+                                            </a>
+                                        </li>
+                                        <li class="scholar">
+                                            <a href="">
+                                                <i class="lni lni-google"></i>
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <div class="name">
+                                    <h3><a href="https://engineering.tamu.edu/etid/profiles/pandey-gaurav.html">Gaurav Pandey</a></h3>
+                                    <span>Associate Professor</span>
+                                    <span>Texas A&M University</span>
+                                </div>
+                            </div>
+                        </div>
+    
+                        <div class="col-lg-3 col-md-4 col-12 wow fadeInUp" data-wow-delay=".2s"
+                            style="visibility: visible; animation-delay: 0.2s; animation-name: fadeInUp;">
+    
+                            <div class="single-speaker">
+                                <div class="top-content">
+                                    <div class="image">
+                                        <img alt="#" src="images/organizers/katie.jpg"
+                                            onerror="this.onerror=null;pagespeed.lazyLoadImages.loadIfVisibleAndMaybeBeacon(this);">
+                                    </div>
+                                    <ul class="social">
+                                        <li class="home">
+                                            <a href="https://fieldrobotics.engin.umich.edu/">
+                                                <i class="lni lni-home">
+                                                </i>
+                                            </a>
+                                        </li>
+                                        <li class="linkedin">
+                                            <a href="https://www.linkedin.com/in/katherine-a-skinner-073ab779/">
+                                                <i class="lni lni-linkedin-original">
+                                                </i>
+                                            </a>
+                                        </li>
+                                        <li class="scholar">
+                                            <a href="">
+                                                <i class="lni lni-google"></i>
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <div class="name">
+                                    <h3><a href="https://fieldrobotics.engin.umich.edu/">Katherine A. (Katie) Skinner</a></h3>
+                                    <span>Assistant Professor</span>
+                                    <span>University of Michigan</span>
+                                </div>
+                            </div>
+                        </div>
+    
+                        <div class="col-lg-3 col-md-4 col-12 wow fadeInUp" data-wow-delay=".2s"
+                            style="visibility: visible; animation-delay: 0.2s; animation-name: fadeInUp;">
+    
+                            <div class="single-speaker">
+                                <div class="top-content">
+                                    <div class="image">
+                                        <img alt="#" src="images/organizers/shubh.jpg"
+                                            onerror="this.onerror=null;pagespeed.lazyLoadImages.loadIfVisibleAndMaybeBeacon(this);">
+                                    </div>
+                                    <ul class="social">
+                                        <li class="home">
+                                            <a href="https://shubhg1996.github.io/">
+                                                <i class="lni lni-home">
+                                                </i>
+                                            </a>
+                                        </li>
+                                        <li class="linkedin">
+                                            <a href="https://www.linkedin.com/in/shubhgupta1996/">
+                                                <i class="lni lni-linkedin-original">
+                                                </i>
+                                            </a>
+                                        </li>
+                                        <li class="scholar">
+                                            <a href="">
+                                                <i class="lni lni-google"></i>
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <div class="name">
+                                    <h3><a href="https://shubhg1996.github.io/">Shubh Gupta</a></h3>
+                                    <span>Post-Doc Researcher</span>
+                                    <span>Stanford University</span>
+                                </div>
+                            </div>
+                        </div>
+    
+                        <div class="col-lg-3 col-md-4 col-12 wow fadeInUp" data-wow-delay=".2s"
+                            style="visibility: visible; animation-delay: 0.2s; animation-name: fadeInUp;">
+    
+                            <div class="single-speaker">
+                                <div class="top-content">
+                                    <div class="image">
+                                        <img alt="#" src="images/organizers/frank.jpg"
+                                            onerror="this.onerror=null;pagespeed.lazyLoadImages.loadIfVisibleAndMaybeBeacon(this);">
+                                    </div>
+                                    <ul class="social">
+                                        <li class="home">
+                                            <a href="https://kungfrank.github.io/">
+                                                <i class="lni lni-home">
+                                                </i>
+                                            </a>
+                                        </li>
+                                        <li class="linkedin">
+                                            <a href="https://www.linkedin.com/in/pou-chun-kung/">
+                                                <i class="lni lni-linkedin-original">
+                                                </i>
+                                            </a>
+                                        </li>
+                                        <li class="scholar">
+                                            <a href="">
+                                                <i class="lni lni-google"></i>
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <div class="name">
+                                    <h3><a href="https://kungfrank.github.io/">Pou-Chun (Frank) Kung</a></h3>
+                                    <span>PhD Candidate</span>
+                                    <span>University of Michigan</span>
+                                </div>
+                            </div>
+                        </div>
+    
+                        <div class="col-lg-3 col-md-4 col-12 wow fadeInUp" data-wow-delay=".2s"
+                            style="visibility: visible; animation-delay: 0.2s; animation-name: fadeInUp;">
+    
+                            <div class="single-speaker">
+                                <div class="top-content">
+                                    <div class="image">
+                                        <img alt="#" src="images/organizers/nalin.jpg"
+                                            onerror="this.onerror=null;pagespeed.lazyLoadImages.loadIfVisibleAndMaybeBeacon(this);">
+                                    </div>
+                                    <ul class="social">
+                                        <li class="home">
+                                            <a href="https://www.linkedin.com/in/nalin-bendapudi/">
+                                                <i class="lni lni-home">
+                                                </i>
+                                            </a>
+                                        </li>
+                                        <li class="linkedin">
+                                            <a href="https://www.linkedin.com/in/nalin-bendapudi/">
+                                                <i class="lni lni-linkedin-original">
+                                                </i>
+                                            </a>
+                                        </li>
+                                        <li class="scholar">
+                                            <a href="">
+                                                <i class="lni lni-google"></i>
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <div class="name">
+                                    <h3><a href="https://www.linkedin.com/in/nalin-bendapudi/">Nalin Bendapudi</a></h3>
+                                    <span>PhD Student</span>
+                                    <span>Texas A&M University</span>
+                                </div>
+    
+                            </div>
+                        </div>
+    
+                        <div class="col-lg-3 col-md-4 col-12 wow fadeInUp" data-wow-delay=".2s"
+                            style="visibility: visible; animation-delay: 0.2s; animation-name: fadeInUp;">
+    
+                            <div class="single-speaker">
+                                <div class="top-content">
+                                    <div class="image">
+                                        <img alt="#" src="images/organizers/simon.jpg"
+                                            onerror="this.onerror=null;pagespeed.lazyLoadImages.loadIfVisibleAndMaybeBeacon(this);">
+                                    </div>
+                                    <ul class="social">
+                                        <li class="home">
+                                            <a href="https://www.grasp.upenn.edu/people/yifei-shao/">
+                                                <i class="lni lni-home">
+                                                </i>
+                                            </a>
+                                        </li>
+                                        <li class="linkedin">
+                                            <a href="https://www.linkedin.com/in/yifei-simon-shao/">
+                                                <i class="lni lni-linkedin-original">
+                                                </i>
+                                            </a>
+                                        </li>
+                                        <li class="scholar">
+                                            <a href="">
+                                                <i class="lni lni-google"></i>
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <div class="name">
+                                    <h3><a href="https://www.grasp.upenn.edu/people/yifei-shao/">Yifei (Simon) Shao</a></h3>
+                                    <span>PhD Student</span>
+                                    <span>University of Pennsylvania</span>
+                                </div>
+    
+                            </div>
+                        </div>
+                        
+                        <div class="col-lg-3 col-md-4 col-12 wow fadeInUp" data-wow-delay=".2s"
+                            style="visibility: visible; animation-delay: 0.2s; animation-name: fadeInUp;">
+    
+                            <div class="single-speaker">
+                                <div class="top-content">
+                                    <div class="image">
+                                        <img alt="#" src="images/organizers/xuezhang.jpg"
+                                            onerror="this.onerror=null;pagespeed.lazyLoadImages.loadIfVisibleAndMaybeBeacon(this);">
+                                    </div>
+                                    <ul class="social">
+                                        <li class="home">
+                                            <a href="https://www.linkedin.com/in/xuezhang-wu-a313a01a/">
+                                                <i class="lni lni-home">
+                                                </i>
+                                            </a>
+                                        </li>
+                                        <li class="linkedin">
+                                            <a href="https://www.linkedin.com/in/xuezhang-wu-a313a01a/">
+                                                <i class="lni lni-linkedin-original">
+                                                </i>
+                                            </a>
+                                        </li>
+                                        <li class="scholar">
+                                            <a href="">
+                                                <i class="lni lni-google"></i>
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <div class="name">
+                                    <h3><a href="https://www.linkedin.com/in/xuezhang-wu-a313a01a/">Xuezhang Wu</a></h3>
+                                    <span>Supply-Chain Manager</span>
+                                    <span>Alibaba Group, Hangzhou</span>
+                                </div>
+                            </div>
+                        </div>
+                        
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- End Speaker Area -->
+        
 	
 	<!-- Start Companies and Organizations Area -->
     <section class="companies-organizations section" id="companies-section">
@@ -1928,17 +2071,16 @@
             <div class="row">
                 <div class="col-12">
                     <div class="section-title">
-                        <h3 class="wow zoomIn" data-wow-delay=".2s"
-                            style="visibility: visible; animation-delay: 0.2s; animation-name: zoomIn;">Sponsors and Organizers</h3>
+                        <!-- <h3 class="wow zoomIn" data-wow-delay=".2s"
+                            style="visibility: visible; animation-delay: 0.2s; animation-name: zoomIn;">Sponsors and Organizers</h3> -->
                         <h2 class="wow fadeInUp" data-wow-delay=".4s"
-                            style="visibility: visible; animation-delay: 0.4s; animation-name: fadeInUp;">Companies and Organizations</h2>
+                            style="visibility: visible; animation-delay: 0.4s; animation-name: fadeInUp;">Affiliations</h2>
                     </div>
                 </div>
             </div>
             
-            <!-- Academic Institutions -->
+            <!-- Combined Organizations -->
             <div class="logo-category">
-                <h4 class="category-title">Academic Institutions</h4>
                 <div class="logos-grid">
                     <div class="logo-item wow fadeInUp" data-wow-delay=".2s">
                         <div class="logo-container">
@@ -1990,13 +2132,6 @@
                             <img alt="UC Berkeley" src="images/companies/ucb.jpg">
                         </div>
                     </div>
-                </div>
-            </div>
-            
-            <!-- Industry Partners -->
-            <div class="logo-category">
-                <h4 class="category-title">Industry Companies</h4>
-                <div class="logos-grid">
                     <div class="logo-item wow fadeInUp" data-wow-delay=".2s">
                         <div class="logo-container">
                             <img alt="Ford Motor Company" src="images/companies/ford.jpg">
@@ -2037,21 +2172,14 @@
                             <img alt="BIGAI" src="images/companies/bigai.jpg">
                         </div>
                     </div>
-                    <div class="logo-item wow fadeInUp" data-wow-delay=".2s">
-                        <div class="logo-container">
-                            <img alt="Voxel51" src="images/companies/voxel.jpg">
-                        </div>
-                    </div>
                 </div>
             </div>
             
         </div>
     </section>
 	<!-- End Companies and Organizations Area -->
-    
-
 	
-	<div class="row" id="contact-section">
+    <div class="row" id="contact-section">
         <div class="col-12">
             <div class="section-title">
                 <br><br>
@@ -2122,6 +2250,158 @@
         }
         timer();
         setInterval(timer, 1000);
+    </script>
+
+    <!-- Language Translation Script -->
+    <script type="text/javascript">
+        let currentLanguage = 'en';
+        
+        const translations = {
+            en: {
+                // Navigation
+                home: "Home",
+                overview: "Overview", 
+                submission: "Submission",
+                speakers: "Speakers",
+                program: "Program",
+                organizers: "Organizers",
+                contact: "Contact",
+                
+                // Hero section
+                title: "RoboGen: 3D World Generation<br>for Robot Learning and Autonomous Systems",
+                subtitle: "Full-day Workshop on 3D World Understanding and Generation for Robotics",
+                location: "Hangzhou, China, Hangzhou International Expo Center",
+                date: "October 24th, 2025 • Hosted at",
+                
+                // Section titles
+                overviewTitle: "Workshop Details",
+                submissionTitle: "Call for Papers",
+                speakersTitle: "Invited Speakers",
+                programTitle: "Workshop Schedule (Tentative)",
+                organizersTitle: "Workshop Organizers",
+                contactTitle: "Contact",
+                
+                // Buttons and labels
+                sponsoredBy: "Sponsored by Voxel51"
+            },
+            
+            cn: {
+                // Navigation
+                home: "首页",
+                overview: "概述",
+                submission: "投稿",
+                speakers: "演讲者",
+                program: "议程",
+                organizers: "组织者",
+                contact: "联系我们",
+                
+                // Hero section
+                title: "RoboGen: 3D世界生成<br>机器人学习与无人系统",
+                subtitle: "全天研讨会 - 3D世界理解与生成",
+                location: "中国杭州，杭州国际博览中心",
+                date: "2025年10月24日",
+                
+                // Section titles
+                overviewTitle: "研讨会详情",
+                submissionTitle: "论文征集",
+                speakersTitle: "特邀演讲者",
+                programTitle: "研讨会议程（暂定）",
+                organizersTitle: "研讨会组织者",
+                contactTitle: "联系我们",
+                
+                // Buttons and labels
+                sponsoredBy: "由Voxel51赞助"
+            }
+        };
+
+        function switchLanguage(lang) {
+            currentLanguage = lang;
+            
+            // Update navigation
+            document.getElementById('home-nav').textContent = translations[lang].home;
+            document.getElementById('overview-nav').textContent = translations[lang].overview;
+            document.getElementById('submission-nav').textContent = translations[lang].submission;
+            document.getElementById('speakers-nav').textContent = translations[lang].speakers;
+            document.getElementById('schedule-nav').textContent = translations[lang].program;
+            document.getElementById('organizers-nav').textContent = translations[lang].organizers;
+            document.getElementById('contact-nav').textContent = translations[lang].contact;
+            
+            // Update hero section
+            const heroTitle = document.querySelector('.hero-content h1');
+            if (heroTitle) heroTitle.innerHTML = translations[lang].title;
+            
+            const heroSubtitle = document.querySelector('.hero-content h3');
+            if (heroSubtitle) heroSubtitle.textContent = translations[lang].subtitle;
+            
+            // Update location
+            const heroLocation = document.querySelector('.hero-content h4:nth-of-type(1)');
+            if (heroLocation) {
+                heroLocation.innerHTML = `<i class="lni lni-map-marker"></i> ${translations[lang].location}`;
+            }
+            
+            // Update date  
+            const heroDate = document.querySelector('.hero-content h4:nth-of-type(2)');
+            if (heroDate) {
+                if (lang === 'en') {
+                    heroDate.innerHTML = `${translations[lang].date} <a href="http://www.iros25.org/">#IROS2025</a>`;
+                } else {
+                    heroDate.innerHTML = `${translations[lang].date} • 举办于 <a href="http://www.iros25.org/">#IROS2025</a>`;
+                }
+            }
+            
+            // Update section titles
+            const overviewSection = document.querySelector('#overview-section .section-title h2');
+            if (overviewSection) overviewSection.textContent = translations[lang].overviewTitle;
+            
+            const submissionSection = document.querySelector('#submission-section .section-title h2');
+            if (submissionSection) submissionSection.textContent = translations[lang].submissionTitle;
+            
+            const speakersSection = document.querySelector('#speakers-section .section-title h2');
+            if (speakersSection) speakersSection.textContent = translations[lang].speakersTitle;
+            
+            const scheduleSection = document.querySelector('#schedule-section .section-title h2');
+            if (scheduleSection) scheduleSection.textContent = translations[lang].programTitle;
+            
+            const organizersSection = document.querySelector('#organizers-section .section-title h2');
+            if (organizersSection) organizersSection.textContent = translations[lang].organizersTitle;
+            
+            const contactSection = document.querySelector('#contact-section .section-title h3');
+            if (contactSection) contactSection.textContent = translations[lang].contactTitle;
+            
+            // Update sponsor text
+            const sponsorText = document.getElementById('sponsor-text');
+            if (sponsorText) sponsorText.textContent = translations[lang].sponsoredBy;
+            
+            // Update language toggle button display
+            const currentLangSpan = document.getElementById('current-lang');
+            const otherLangSpan = document.getElementById('other-lang');
+            
+            if (lang === 'en') {
+                currentLangSpan.textContent = 'EN';
+                otherLangSpan.textContent = 'CN';
+                currentLangSpan.style.opacity = '1';
+                otherLangSpan.style.opacity = '0.6';
+            } else {
+                currentLangSpan.textContent = 'CN';
+                otherLangSpan.textContent = 'EN';
+                currentLangSpan.style.opacity = '1';
+                otherLangSpan.style.opacity = '0.6';
+            }
+            
+            // Store language preference
+            localStorage.setItem('selectedLanguage', lang);
+        }
+        
+        function toggleLanguage() {
+            const newLang = currentLanguage === 'en' ? 'cn' : 'en';
+            switchLanguage(newLang);
+        }
+        
+        // Initialize language on page load
+        document.addEventListener('DOMContentLoaded', function() {
+            const savedLanguage = localStorage.getItem('selectedLanguage') || 'en';
+            switchLanguage(savedLanguage);
+        });
     </script>
 </body>
 
