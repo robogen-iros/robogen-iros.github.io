@@ -201,6 +201,43 @@
                 padding: 10px;
             }
         }
+
+        /* Language Toggle Styling */
+        
+        /* Custom language toggle button */
+        .custom-lang-toggle {
+            display: inline-block;
+            background: rgba(255,255,255,0.9);
+            padding: 6px 12px;
+            border-radius: 15px;
+            border: 1px solid rgba(255,255,255,0.7);
+            font-size: 0.75rem;
+            font-weight: 600;
+            color: #333;
+            cursor: pointer;
+            transition: all 0.3s;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            text-decoration: none;
+        }
+        
+        .custom-lang-toggle:hover {
+            background: rgba(255,255,255,1);
+            box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+            color: #333;
+            text-decoration: none;
+        }
+        
+        @media (max-width: 768px) {
+            .language-toggle-nav {
+                margin-left: 10px !important;
+                margin-right: 5px !important;
+            }
+            
+            .custom-lang-toggle {
+                font-size: 0.7rem !important;
+                padding: 5px 10px !important;
+            }
+        }
     </style>
 </head>
 
@@ -281,8 +318,15 @@
                                             aria-label="Toggle navigation">Contact</a>
                                     </li>
                                 </ul>
+                                <!-- Language Toggle -->
+                                <div class="language-toggle-nav" style="margin-left: 15px; margin-right: 5px;">
+                                    <button id="lang-toggle" class="custom-lang-toggle" onclick="toggleLanguage()">
+                                        <span id="current-lang">EN</span> / <span id="other-lang" style="opacity: 0.6;">CN</span>
+                                    </button>
+                                </div>
+                                
                                 <!-- Sponsor Badge -->
-                                <div class="sponsor-badge-nav" style="margin-left: 20px;">
+                                <div class="sponsor-badge-nav" style="margin-left: 15px;">
                                     <a href="https://voxel51.com/" id="sponsor-badge" style="display: inline-block; background: rgba(255,255,255,0.9); padding: 6px 12px; border-radius: 15px; border: 1px solid rgba(255,255,255,0.7); text-decoration: none; color: #333; font-size: 0.75rem; font-weight: 600; transition: all 0.3s; white-space: nowrap; box-shadow: 0 2px 4px rgba(0,0,0,0.1); position: relative; overflow: hidden;">
                                         <span id="sponsor-text" style="transition: opacity 0.3s ease;">Sponsored by Voxel51</span>
                                         <img id="sponsor-logo" src="images/companies/voxel.jpg" alt="Voxel51" style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); height: 20px; opacity: 0; transition: opacity 0.3s ease;">
@@ -2218,6 +2262,142 @@
         }
         timer();
         setInterval(timer, 1000);
+    </script>
+
+    <!-- Language Translation Script -->
+    <script type="text/javascript">
+        let currentLanguage = 'en';
+        
+        const translations = {
+            en: {
+                // Navigation
+                home: "Home",
+                overview: "Overview", 
+                submission: "Submission",
+                speakers: "Speakers",
+                program: "Program",
+                organizers: "Organizers",
+                contact: "Contact",
+                
+                // Hero section
+                title: "RoboGen: 3D World Generation<br>for Robot Learning and Autonomous Systems",
+                subtitle: "Full-day Workshop on 3D World Understanding and Generation for Robotics",
+                location: "Hangzhou, China, Hangzhou International Expo Center",
+                date: "October 24th, 2025 • Hosted at",
+                
+                // Section titles
+                overviewTitle: "Workshop Details",
+                submissionTitle: "Call for Papers",
+                speakersTitle: "Invited Speakers",
+                programTitle: "Workshop Schedule (Tentative)",
+                organizersTitle: "Workshop Organizers",
+                contactTitle: "Contact",
+                
+                // Buttons and labels
+                sponsoredBy: "Sponsored by Voxel51"
+            },
+            
+            cn: {
+                // Navigation
+                home: "首页",
+                overview: "概述",
+                submission: "投稿",
+                speakers: "演讲者",
+                program: "议程",
+                organizers: "组织者",
+                contact: "联系我们",
+                
+                // Hero section
+                title: "RoboGen: 机器人学习与自主系统的<br>3D世界生成",
+                subtitle: "全天研讨会 - 机器人3D世界理解与生成",
+                location: "中国杭州，杭州国际博览中心",
+                date: "2025年10月24日",
+                
+                // Section titles
+                overviewTitle: "研讨会详情",
+                submissionTitle: "论文征集",
+                speakersTitle: "特邀演讲者",
+                programTitle: "研讨会议程（暂定）",
+                organizersTitle: "研讨会组织者",
+                contactTitle: "联系我们",
+                
+                // Buttons and labels
+                sponsoredBy: "由Voxel51赞助"
+            }
+        };
+
+        function switchLanguage(lang) {
+            currentLanguage = lang;
+            
+            // Update navigation
+            document.getElementById('home-nav').textContent = translations[lang].home;
+            document.getElementById('overview-nav').textContent = translations[lang].overview;
+            document.getElementById('submission-nav').textContent = translations[lang].submission;
+            document.getElementById('speakers-nav').textContent = translations[lang].speakers;
+            document.getElementById('schedule-nav').textContent = translations[lang].program;
+            document.getElementById('organizers-nav').textContent = translations[lang].organizers;
+            document.getElementById('contact-nav').textContent = translations[lang].contact;
+            
+            // Update hero section
+            const heroTitle = document.querySelector('.hero-content h1');
+            if (heroTitle) heroTitle.innerHTML = translations[lang].title;
+            
+            const heroSubtitle = document.querySelector('.hero-content h3');
+            if (heroSubtitle) heroSubtitle.textContent = translations[lang].subtitle;
+            
+            // Update section titles
+            const overviewSection = document.querySelector('#overview-section .section-title h2');
+            if (overviewSection) overviewSection.textContent = translations[lang].overviewTitle;
+            
+            const submissionSection = document.querySelector('#submission-section .section-title h2');
+            if (submissionSection) submissionSection.textContent = translations[lang].submissionTitle;
+            
+            const speakersSection = document.querySelector('#speakers-section .section-title h2');
+            if (speakersSection) speakersSection.textContent = translations[lang].speakersTitle;
+            
+            const scheduleSection = document.querySelector('#schedule-section .section-title h2');
+            if (scheduleSection) scheduleSection.textContent = translations[lang].programTitle;
+            
+            const organizersSection = document.querySelector('#organizers-section .section-title h2');
+            if (organizersSection) organizersSection.textContent = translations[lang].organizersTitle;
+            
+            const contactSection = document.querySelector('#contact-section .section-title h3');
+            if (contactSection) contactSection.textContent = translations[lang].contactTitle;
+            
+            // Update sponsor text
+            const sponsorText = document.getElementById('sponsor-text');
+            if (sponsorText) sponsorText.textContent = translations[lang].sponsoredBy;
+            
+            // Update language toggle button display
+            const currentLangSpan = document.getElementById('current-lang');
+            const otherLangSpan = document.getElementById('other-lang');
+            
+            if (lang === 'en') {
+                currentLangSpan.textContent = 'EN';
+                otherLangSpan.textContent = 'CN';
+                currentLangSpan.style.opacity = '1';
+                otherLangSpan.style.opacity = '0.6';
+            } else {
+                currentLangSpan.textContent = 'CN';
+                otherLangSpan.textContent = 'EN';
+                currentLangSpan.style.opacity = '1';
+                otherLangSpan.style.opacity = '0.6';
+            }
+            
+            // Store language preference
+            localStorage.setItem('selectedLanguage', lang);
+        }
+        
+        function toggleLanguage() {
+            const newLang = currentLanguage === 'en' ? 'cn' : 'en';
+            switchLanguage(newLang);
+        }
+        
+        // Initialize language on page load
+        document.addEventListener('DOMContentLoaded', function() {
+            const savedLanguage = localStorage.getItem('selectedLanguage') || 'en';
+            switchLanguage(savedLanguage);
+        });
     </script>
 </body>
 
