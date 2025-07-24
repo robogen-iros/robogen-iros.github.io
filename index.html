@@ -266,18 +266,14 @@
                                             aria-label="Toggle navigation">Speakers</a>
                                     </li>
                                     <li class="nav-item">
-                                        <a id="organizers-nav" href="#organizers-section"
-                                            onclick="switch_nav(MainNav.Organizers)"
-                                            aria-label="Toggle navigation">Organizers</a>
-                                    </li>
-                                    <li class="nav-item">
-                                        <a id="dates-nav" href="#dates-section" onclick="switch_nav(MainNav.Dates)"
-                                            aria-label="Toggle navigation">Dates</a>
-                                    </li>
-                                    <li class="nav-item">
                                         <a id="schedule-nav" href="#schedule-section"
                                             onclick="switch_nav(MainNav.Schedule)"
                                             aria-label="Toggle navigation">Program</a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a id="organizers-nav" href="#organizers-section"
+                                            onclick="switch_nav(MainNav.Organizers)"
+                                            aria-label="Toggle navigation">Organizers</a>
                                     </li>
                                     <li class="nav-item">
                                         <a id="contact-nav" href="#contact-section"
@@ -1112,14 +1108,17 @@
             </div>
             <div class="row">
                 <div class="col-lg-10 offset-lg-1 col-12">
-                    <!-- <ul class="nav nav-tabs" role="tablist">
+                    <ul class="nav nav-tabs" role="tablist" style="margin-bottom: 30px;">
                         <li class="nav-item" role="presentation">
-                            <button class="nav-link active" id="three-tab" data-bs-toggle="tab" data-bs-target="#three" type="button" role="tab" aria-controls="one" aria-selected="true">Afternoon session<span>June 18th, 12:45 - 17:45</span></button>
+                            <button class="nav-link active" id="morning-tab" data-bs-toggle="tab" data-bs-target="#morning" type="button" role="tab" aria-controls="morning" aria-selected="true">Morning Session<span style="display: block; font-size: 0.8em; opacity: 0.8;">08:45 - 12:00</span></button>
                         </li>
-                    </ul>  -->
+                        <li class="nav-item" role="presentation">
+                            <button class="nav-link" id="afternoon-tab" data-bs-toggle="tab" data-bs-target="#afternoon" type="button" role="tab" aria-controls="afternoon" aria-selected="false">Afternoon Session<span style="display: block; font-size: 0.8em; opacity: 0.8;">13:00 - 18:00</span></button>
+                        </li>
+                    </ul>
                     <div class="tab-content">
-                        <!-- Afternoon session -->
-                        <div class="tab-pane fade active show" id="three" role="tabpanel" aria-labelledby="three-tab">
+                        <!-- Morning session -->
+                        <div class="tab-pane fade active show" id="morning" role="tabpanel" aria-labelledby="morning-tab">
                             <div class="events-head">
                                 <div class="single-event">
                                     <div class="row align-items-center">
@@ -1373,8 +1372,14 @@
 										-->
                                     </div>
                                 </div>
-								
-								
+
+                            </div>
+                        </div>
+
+                        <!-- Afternoon session -->
+                        <div class="tab-pane fade" id="afternoon" role="tabpanel" aria-labelledby="afternoon-tab">
+                            <div class="events-head">
+
 								<div class="single-event">
                                     <div class="row align-items-center">
                                         <div class="col-lg-3 col-md-3 col-12">
