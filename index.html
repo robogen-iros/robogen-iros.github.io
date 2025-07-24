@@ -319,6 +319,15 @@
                                     const robogenLogo = document.getElementById('robogen-logo');
                                     let hasCustomBg = false;
                                     
+                                    // Set initial background to bg.png
+                                    const heroSection = document.querySelector('.hero-area');
+                                    if (heroSection) {
+                                        heroSection.style.backgroundImage = 'url("images/logos/bg.png")';
+                                        heroSection.style.backgroundSize = 'cover';
+                                        heroSection.style.backgroundPosition = 'center';
+                                        heroSection.style.backgroundRepeat = 'no-repeat';
+                                    }
+                                    
                                     brandLogo.addEventListener('click', function(e) {
                                         e.preventDefault();
                                         
@@ -333,15 +342,25 @@
                                         
                                         const heroSection = document.querySelector('.hero-area');
                                         if (heroSection) {
+                                            // Remove transition temporarily for instant background change
+                                            heroSection.style.transition = 'none';
+                                            
                                             if (hasCustomBg) {
-                                                heroSection.style.backgroundImage = 'url("images/logos/bg_3.png")';
+                                                heroSection.style.backgroundImage = 'url("images/logos/bg_2.png")';
                                                 heroSection.style.backgroundSize = 'cover';
                                                 heroSection.style.backgroundPosition = 'center';
                                                 heroSection.style.backgroundRepeat = 'no-repeat';
                                             } else {
-                                                heroSection.style.backgroundImage = 'none';
+                                                heroSection.style.backgroundImage = 'url("images/logos/bg.png")';
+                                                heroSection.style.backgroundSize = 'cover';
+                                                heroSection.style.backgroundPosition = 'center';
+                                                heroSection.style.backgroundRepeat = 'no-repeat';
                                             }
-                                            heroSection.style.transition = 'all 0.3s ease';
+                                            
+                                            // Restore transition for other effects after a brief delay
+                                            setTimeout(() => {
+                                                heroSection.style.transition = '';
+                                            }, 50);
                                         }
                                     });
                                 });
