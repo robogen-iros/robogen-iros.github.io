@@ -1020,7 +1020,7 @@
                     <div class="section-title" style="margin-bottom: 30px;">
                         <h3 class="wow zoomIn" data-wow-delay=".2s"
                             style="visibility: hidden; animation-delay: 0.2s; animation-name: none;">Submission</h3>
-                        <h2 class="wow fadeInUp" data-wow-delay=".4s"
+                        <h2 id="submission-guidelines-title" class="wow fadeInUp" data-wow-delay=".4s"
                             style="visibility: hidden; animation-delay: 0.4s; animation-name: none; margin-bottom: 20px;">Submission Guidelines</h2>
                     </div>
                     
@@ -2389,7 +2389,7 @@
                     <div class="section-title">
                         <!-- <h3 class="wow zoomIn" data-wow-delay=".2s"
                             style="visibility: visible; animation-delay: 0.2s; animation-name: zoomIn;">Sponsors and Organizers</h3> -->
-                        <h2 class="wow fadeInUp" data-wow-delay=".4s"
+                        <h2 id="affiliations-title" class="wow fadeInUp" data-wow-delay=".4s"
                             style="visibility: visible; animation-delay: 0.4s; animation-name: fadeInUp;">Affiliations</h2>
                     </div>
                 </div>
@@ -2621,6 +2621,10 @@
                 mentorTitle: "Mentor 1:1 Session",
                 mentorDesc: "Beyond formal talks and breaks, we're facilitating personalized 15-30 minute one-on-one sessions between junior researchers and keynote speakers or organizing committee members during IROS. Prior to the conference, RoboGen workshop participants will receive a signup form to indicate their interests. This creates valuable mentorship opportunities, connecting junior researchers with senior experts for both technical guidance and career development.",
                 
+                // Section titles only
+                submissionGuidelinesTitle: "Submission Guidelines",
+                affiliationsTitle: "Affiliations",
+                
                 // Buttons and labels
                 sponsoredBy: "Sponsored by Voxel51"
             },
@@ -2677,6 +2681,10 @@
                 awardDesc: "设立多个奖项类别，包括最佳论文奖、最佳海报奖、最具影响力开源项目奖和最佳演讲奖，表彰杰出贡献，激励创新发展。",
                 mentorTitle: "导师面对面交流",
                 mentorDesc: "除正式议程外，我们特别安排IROS会议期间的个性化导师交流环节，青年研究者可与主旨演讲嘉宾或组委会专家进行15-30分钟的一对一深度交流。会前将通过问卷了解参会者需求和兴趣方向，精准匹配导师资源，为青年学者提供技术指导和职业发展建议。",
+                
+                // Section titles only
+                submissionGuidelinesTitle: "投稿指南",
+                affiliationsTitle: "合作机构",
             }
         };
 
@@ -2813,6 +2821,13 @@
             
             const mentorDesc = document.getElementById('mentor-desc');
             if (mentorDesc) mentorDesc.textContent = translations[lang].mentorDesc;
+            
+            // Update section titles only
+            const submissionGuidelinesTitle = document.getElementById('submission-guidelines-title');
+            if (submissionGuidelinesTitle) submissionGuidelinesTitle.textContent = translations[lang].submissionGuidelinesTitle;
+            
+            const affiliationsTitle = document.getElementById('affiliations-title');
+            if (affiliationsTitle) affiliationsTitle.textContent = translations[lang].affiliationsTitle;
             
             // Update language toggle button display
             const currentLangSpan = document.getElementById('current-lang');
