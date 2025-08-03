@@ -2586,7 +2586,7 @@
                 
                 // Hero section
                 title: "RoboGen: 3D World Generation<br>for Robot Learning and Autonomous Systems",
-                subtitle: "Full-day Workshop on 3D World Understanding and Generation for Robotics",
+                subtitle: "Full-day Workshop on world understanding and generation.<br>Building towards AGI, we are tackling the data bottleneck for scaling law.",
                 location: "Hangzhou, China, Hangzhou International Expo Center",
                 date: "October 24th, 2025 • Hosted at",
                 
@@ -2614,7 +2614,7 @@
                 
                 // Hero section
                 title: "RoboGen: 3D世界生成<br>机器人学习与无人系统",
-                subtitle: "全天研讨会 - 3D世界理解与生成",
+                subtitle: "全天研讨会 - 世界理解与生成<br>构建通用人工智能，解决数据瓶颈问题",
                 location: "中国杭州，杭州国际博览中心",
                 date: "2025年10月24日",
                 
@@ -2648,7 +2648,7 @@
             if (heroTitle) heroTitle.innerHTML = translations[lang].title;
             
             const heroSubtitle = document.querySelector('.hero-content h3');
-            if (heroSubtitle) heroSubtitle.textContent = translations[lang].subtitle;
+            if (heroSubtitle) heroSubtitle.innerHTML = translations[lang].subtitle;
             
             // Update location
             const heroLocation = document.querySelector('.hero-content h4:nth-of-type(1)');
