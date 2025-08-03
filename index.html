@@ -885,22 +885,21 @@
             </div>
             
             <div class="section-text-content">
-                <h4> Welcome to the
+                <h4 id="workshop-welcome"> Welcome to the
                 <a href="http://www.iros25.org/" class="badge" style="background-color:#d20a78;">IROS 2025</a>
                 Workshop on 3D World Generation for Robot Learning and Autonomous Systems! </h4>
                 <br>
-                Recent advances in 3D Vision (NeRF, Gaussian Splatting) and multimodal foundation models (LLM, VLM, diffusion model) are transforming robotics by enabling the creation of photorealistic synthetic environments for training, testing, and validation. Despite impressive capabilities of learning-based robotics in embodied AI, autonomous driving, unmanned aerial navigation, and manipulation, progress in generalizable robot learning systems remains constrained by the fundamental challenge of data acquisition and scaling.
+                <span id="workshop-intro">Recent advances in 3D Vision (NeRF, Gaussian Splatting) and multimodal foundation models (LLM, VLM, diffusion model) are transforming robotics by enabling the creation of photorealistic synthetic environments for training, testing, and validation. Despite impressive capabilities of learning-based robotics in embodied AI, autonomous driving, unmanned aerial navigation, and manipulation, progress in generalizable robot learning systems remains constrained by the fundamental challenge of data acquisition and scaling.</span>
                 <br><br>
-                RoboGen brings together researchers and industry experts to develop innovative approaches that leverage recent advances in 3D data generation and understanding methods to address this data bottleneck. Our workshop emphasizes practical applications and solutions to long-tail data problems in challenging robotics scenarios, with the goal of empowering 3D deep learning systems for real-world deployment.
+                <span id="workshop-mission">RoboGen brings together researchers and industry experts to develop innovative approaches that leverage recent advances in 3D data generation and understanding methods to address this data bottleneck. Our workshop emphasizes practical applications and solutions to long-tail data problems in challenging robotics scenarios, with the goal of empowering 3D deep learning systems for real-world deployment.</span>
                 <br><br>
-                The RoboGen workshop aims to advance 3D world generation for robotics with four key objectives:
+                <span id="workshop-objectives">The RoboGen workshop aims to advance 3D world generation for robotics with four key objectives:</span>
                 <ol style="margin-left: 20px; margin-top: 10px; margin-bottom: 10px;">
-                    <li>(1) explore state-of-the-art neural fields and generative models for robot learning generalization,</li>
-                    <li>(2) address challenges in physical 3D world representation,</li>
-                    <li>(3) democratize access to high-quality synthetic data for robust robotics systems.</li>
-                    <li>(4) advance 3D scene understanding through vision-language models for enhanced robot perception and reasoning.</li>
+                    <li id="objective-1">(1) explore state-of-the-art neural fields and generative models for robot learning generalization,</li>
+                    <li id="objective-2">(2) address challenges in physical 3D world representation,</li>
+                    <li id="objective-3">(3) democratize access to high-quality synthetic data for robust robotics systems.</li>
+                    <li id="objective-4">(4) advance 3D scene understanding through vision-language models for enhanced robot perception and reasoning.</li>
                 </ol>
-                RoboGen specifically explores how cutting-edge 3D world understanding and generation technologies can create scalable, high-fidelity data engines for robotics deployment.
                 <br><br>
             </div>
 			<div class="section-text-content">
@@ -2598,6 +2597,16 @@
                 organizersTitle: "Workshop Organizers",
                 contactTitle: "Contact",
                 
+                // Workshop Details Content
+                workshopWelcome: " Welcome to the",
+                workshopIntro: "Recent advances in 3D Vision (NeRF, Gaussian Splatting) and multimodal foundation models (LLM, VLM, diffusion model) are transforming robotics by enabling the creation of photorealistic synthetic environments for training, testing, and validation. Despite impressive capabilities of learning-based robotics in embodied AI, autonomous driving, unmanned aerial navigation, and manipulation, progress in generalizable robot learning systems remains constrained by the fundamental challenge of data acquisition and scaling.",
+                workshopMission: "RoboGen brings together researchers and industry experts to develop innovative approaches that leverage recent advances in 3D data generation and understanding methods to address this data bottleneck. Our workshop emphasizes practical applications and solutions to long-tail data problems in challenging robotics scenarios, with the goal of empowering 3D deep learning systems for real-world deployment.",
+                workshopObjectives: "The RoboGen workshop aims to advance 3D world generation for robotics with four key objectives:",
+                objective1: "(1) explore state-of-the-art neural fields and generative models for robot learning generalization,",
+                objective2: "(2) address challenges in physical 3D world representation,",
+                objective3: "(3) democratize access to high-quality synthetic data for robust robotics systems.",
+                objective4: "(4) advance 3D scene understanding through vision-language models for enhanced robot perception and reasoning.",
+                
                 // Buttons and labels
                 sponsoredBy: "Sponsored by Voxel51"
             },
@@ -2627,7 +2636,19 @@
                 contactTitle: "联系我们",
                 
                 // Buttons and labels
-                sponsoredBy: "由Voxel51赞助"
+                sponsoredBy: "由Voxel51赞助",
+                
+                // Workshop Details Content
+                workshopWelcome: " 欢迎参加",
+                workshopIntro: "RoboGen 研究尖端世界多模态理解与生成技术，专注于如何打造可扩展、高质量的数据引擎，驱动智能系统走向大规模真实部署。近年来，三维视觉技术以及多模态基础模型（LLM、VLM、扩散模型）的突破正在重塑智能系统领域，使研究者能够构建逼真的合成数据用于训练、测试与验证。尽管具身智能、自动驾驶、无人机导航和机器人操作等方向的学习型系统已展现出卓越能力，scaling law仍受制于数据获取与规模化的根本难题。",
+                
+                workshopMission: "RoboGen 研讨会分会汇聚学术与产业专家，利用最新的高质量数据生成与理解方法，开发创新方案以破解数据瓶颈。研讨会分会聚焦复杂场景中的实际应用与长尾数据问题，旨在为真实世界部署赋能。",
+                
+                workshopObjectives: "RoboGen 致力于推进智能世界理解生成，核心目标包括：",
+                objective1: "(1) 探索用于机器人学习泛化的最前沿神经场与生成模型；",
+                objective2: "(2) 攻克物理三维世界表示的关键挑战；", 
+                objective3: "(3) 推广高质量合成数据引擎，构建稳健的机器人系统；",
+                objective4: "(4) 提升视觉‑语言模型驱动的物理场景理解，强化智能系统感知与推理。",
             }
         };
 
@@ -2688,6 +2709,40 @@
             // Update sponsor text
             const sponsorText = document.getElementById('sponsor-text');
             if (sponsorText) sponsorText.textContent = translations[lang].sponsoredBy;
+            
+            // Update Workshop Details content
+            const workshopWelcome = document.getElementById('workshop-welcome');
+            if (workshopWelcome) {
+                if (lang === 'en') {
+                    workshopWelcome.innerHTML = `${translations[lang].workshopWelcome}<a href="http://www.iros25.org/" class="badge" style="background-color:#d20a78;">IROS 2025</a>Workshop on 3D World Generation for Robot Learning and Autonomous Systems! `;
+                } else {
+                    workshopWelcome.innerHTML = `${translations[lang].workshopWelcome}<a href="http://www.iros25.org/" class="badge" style="background-color:#d20a78;">IROS 2025</a>机器人学习与无人系统3D世界生成研讨会！ `;
+                }
+            }
+            
+            const workshopIntro = document.getElementById('workshop-intro');
+            if (workshopIntro) workshopIntro.textContent = translations[lang].workshopIntro;
+            
+            const workshopMission = document.getElementById('workshop-mission');
+            if (workshopMission) workshopMission.textContent = translations[lang].workshopMission;
+            
+            const workshopObjectives = document.getElementById('workshop-objectives');
+            if (workshopObjectives) workshopObjectives.textContent = translations[lang].workshopObjectives;
+            
+            const objective1 = document.getElementById('objective-1');
+            if (objective1) objective1.textContent = translations[lang].objective1;
+            
+            const objective2 = document.getElementById('objective-2');
+            if (objective2) objective2.textContent = translations[lang].objective2;
+            
+            const objective3 = document.getElementById('objective-3');
+            if (objective3) objective3.textContent = translations[lang].objective3;
+            
+            const objective4 = document.getElementById('objective-4');
+            if (objective4) objective4.textContent = translations[lang].objective4;
+            
+            const workshopConclusion = document.getElementById('workshop-conclusion');
+            if (workshopConclusion) workshopConclusion.textContent = translations[lang].workshopConclusion;
             
             // Update language toggle button display
             const currentLangSpan = document.getElementById('current-lang');
