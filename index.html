@@ -301,8 +301,139 @@
             }
         }
 
-        /* Responsive adjustments for award highlight */
+        /* Hero Awards Banner Styles */
+        .hero-awards-banner {
+            margin-top: 25px;
+            background: rgba(255, 255, 255, 0.15);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            border-radius: 20px;
+            padding: 15px 20px;
+            animation: hero-award-glow 3s ease-in-out infinite alternate;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            overflow: hidden;
+        }
+
+        .hero-awards-banner:hover {
+            background: rgba(255, 255, 255, 0.25);
+            border-color: rgba(255, 215, 0, 0.5);
+            transform: translateY(-2px);
+            box-shadow: 0 10px 40px rgba(255, 215, 0, 0.3);
+        }
+
+        .awards-button {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 5px;
+            transition: all 0.3s ease;
+        }
+
+        .award-trophy {
+            font-size: 2.2rem;
+            filter: drop-shadow(0 0 10px rgba(255, 215, 0, 0.8));
+            animation: trophy-bounce 2s ease-in-out infinite;
+            transition: all 0.3s ease;
+        }
+
+        .hero-awards-banner:hover .award-trophy {
+            transform: scale(1.1);
+            filter: drop-shadow(0 0 15px rgba(255, 215, 0, 1));
+        }
+
+        .award-text {
+            color: #FFD700;
+            font-size: 1.2rem;
+            font-weight: bold;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+            letter-spacing: 1px;
+            transition: all 0.3s ease;
+        }
+
+        .hero-awards-banner:hover .award-text {
+            color: #FFF;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+        }
+
+        .award-categories-hidden {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.4s ease, padding-top 0.3s ease;
+            padding-top: 0;
+        }
+
+        .hero-awards-banner:hover .award-categories-hidden {
+            max-height: 100px;
+            padding-top: 15px;
+        }
+
+        .award-categories {
+            color: white;
+            font-size: 1rem;
+            font-weight: 500;
+            text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.7);
+            text-align: center;
+            line-height: 1.4;
+            display: block;
+            opacity: 0;
+            transform: translateY(-10px);
+            transition: all 0.4s ease 0.1s;
+        }
+
+        .hero-awards-banner:hover .award-categories {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        @keyframes hero-award-glow {
+            0% {
+                box-shadow: 0 5px 20px rgba(255, 215, 0, 0.2);
+                border-color: rgba(255, 255, 255, 0.2);
+            }
+            100% {
+                box-shadow: 0 8px 30px rgba(255, 215, 0, 0.4);
+                border-color: rgba(255, 215, 0, 0.3);
+            }
+        }
+
+        @keyframes trophy-bounce {
+            0%, 100% {
+                transform: translateY(0);
+            }
+            50% {
+                transform: translateY(-5px);
+            }
+        }
+
+        /* Responsive adjustments for hero awards and existing award highlight */
         @media (max-width: 768px) {
+            .hero-awards-banner {
+                margin-top: 20px;
+                padding: 15px;
+                border-radius: 20px;
+            }
+            
+            .award-trophy {
+                font-size: 2rem;
+            }
+            
+            .award-text {
+                font-size: 1.1rem;
+            }
+            
+            .award-categories {
+                font-size: 0.9rem;
+            }
+            
+            .hero-awards-banner:hover .award-categories-hidden {
+                max-height: 120px;
+            }
+            
+            .hero-awards-banner {
+                padding: 12px 15px;
+            }
+            
             .best-oral-award::after {
                 font-size: 0.7rem;
                 padding: 6px 12px;
@@ -323,6 +454,25 @@
             .award-banner {
                 font-size: 1rem;
                 padding: 12px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .awards-button {
+                gap: 4px;
+            }
+            
+            .award-categories {
+                font-size: 0.8rem;
+            }
+            
+            .hero-awards-banner {
+                padding: 10px 12px;
+                margin-top: 20px;
+            }
+            
+            .hero-awards-banner:hover .award-categories-hidden {
+                max-height: 140px;
             }
         }
 
@@ -556,12 +706,26 @@
                         <h4 class="wow fadeInUp" data-wow-delay=".8s">
                             October 24th, 2025 • Hosted at <a href="http://www.iros25.org/">#IROS2025</a>
                         </h4>
+                        
+                        <!-- Awards Banner -->
+                        <div class="hero-awards-banner wow fadeInUp" data-wow-delay="1.0s">
+                            <div class="awards-button">
+                                <span class="award-trophy">🏆</span>
+                                <span class="award-text">Workshop Awards</span>
+                                <!-- <div class="hover-hint">hover to see awards</div> -->
+                            </div>
+                            <div class="award-categories-hidden">
+                                <span class="award-categories">Best Oral • Best Poster • Best Open-Source • Most Engaging Speaker</span>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
     </section>
     <!-- End Hero Area -->
+
+
 
     <!-- Start Count Down Area -->
     <!-- <div class="count-down">
@@ -913,7 +1077,7 @@
                                 <ul style="margin-top: 8px; margin-bottom: 8px;">
                                     <li>&nbsp;&nbsp;&nbsp;&nbsp;• Best Oral Presentation</li>
                                     <li>&nbsp;&nbsp;&nbsp;&nbsp;• Best Poster Presentation</li>
-                                    <li>&nbsp;&nbsp;&nbsp;&nbsp;• Most Impactful Open-Source Project</li>
+                                    <li>&nbsp;&nbsp;&nbsp;&nbsp;• Best Open-Source Project</li>
                                 </ul>
                                 <br>
                                 <strong>Additional Information:</strong>
@@ -1864,7 +2028,7 @@
                                                     <div style="background: rgba(255, 215, 0, 0.1); padding: 15px; border-radius: 10px; margin: 10px 0; border-left: 5px solid #FFD700;">
                                                         <p style="margin: 5px 0; color: #333;"><strong>🥇 Best Oral Presentation:</strong> <span style="color: #DC143C; font-weight: bold;">TBA</span></p>
                                                         <p style="margin: 5px 0; color: #333;"><strong>🏅 Best Poster Presentation:</strong> TBA</p>
-                                                        <p style="margin: 5px 0; color: #333;"><strong>💻 Most Impactful Open-Source Project:</strong> TBA</p>
+                                                        <p style="margin: 5px 0; color: #333;"><strong>💻 Best Open-Source Project:</strong> TBA</p>
                                                         <p style="margin: 5px 0; color: #333;"><strong>🎤 Most Engaging Speaker:</strong> TBA</p>
                                                     </div>
                                                     
