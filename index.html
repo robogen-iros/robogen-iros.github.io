@@ -202,6 +202,130 @@
             }
         }
 
+        /* Best Oral Award Highlight Styles */
+        .best-oral-award {
+            position: relative;
+            background: linear-gradient(135deg, #FFD700 0%, #FFA500 100%);
+            border: 3px solid #FF4500;
+            border-radius: 15px;
+            padding: 20px;
+            margin: 15px 0;
+            box-shadow: 0 8px 25px rgba(255, 215, 0, 0.3);
+            animation: award-glow 2s ease-in-out infinite alternate;
+        }
+
+        .best-oral-award::before {
+            content: '🏆';
+            position: absolute;
+            top: -15px;
+            left: 20px;
+            font-size: 2rem;
+            background: linear-gradient(135deg, #FFD700 0%, #FFA500 100%);
+            padding: 8px 15px;
+            border-radius: 50%;
+            border: 3px solid #FF4500;
+            box-shadow: 0 4px 15px rgba(255, 215, 0, 0.4);
+        }
+
+        .best-oral-award::after {
+            content: 'BEST ORAL AWARD';
+            position: absolute;
+            top: -15px;
+            right: 20px;
+            background: linear-gradient(135deg, #FF4500 0%, #DC143C 100%);
+            color: white;
+            padding: 8px 15px;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            font-weight: bold;
+            letter-spacing: 1px;
+            box-shadow: 0 4px 15px rgba(220, 20, 60, 0.3);
+        }
+
+        .best-oral-award .award-content {
+            background: rgba(255, 255, 255, 0.95);
+            border-radius: 10px;
+            padding: 20px;
+            margin-top: 15px;
+            box-shadow: inset 0 2px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .best-oral-award .award-content h4 {
+            color: #FF4500;
+            font-weight: bold;
+            margin-bottom: 10px;
+            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
+        }
+
+        .best-oral-award .award-content p {
+            color: #333;
+            margin-bottom: 8px;
+            font-weight: 500;
+        }
+
+        .best-oral-award .award-content .presenter-name {
+            color: #DC143C;
+            font-weight: bold;
+            font-size: 1.1rem;
+        }
+
+        @keyframes award-glow {
+            0% {
+                box-shadow: 0 8px 25px rgba(255, 215, 0, 0.3), 0 0 20px rgba(255, 215, 0, 0.2);
+            }
+            100% {
+                box-shadow: 0 8px 25px rgba(255, 215, 0, 0.5), 0 0 30px rgba(255, 215, 0, 0.4);
+            }
+        }
+
+        .award-banner {
+            background: linear-gradient(45deg, #FFD700, #FFA500, #FF4500);
+            color: white;
+            text-align: center;
+            padding: 15px;
+            margin: 20px 0;
+            border-radius: 10px;
+            font-weight: bold;
+            font-size: 1.2rem;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+            box-shadow: 0 5px 15px rgba(255, 215, 0, 0.3);
+            animation: banner-pulse 3s ease-in-out infinite;
+        }
+
+        @keyframes banner-pulse {
+            0%, 100% {
+                transform: scale(1);
+            }
+            50% {
+                transform: scale(1.02);
+            }
+        }
+
+        /* Responsive adjustments for award highlight */
+        @media (max-width: 768px) {
+            .best-oral-award::after {
+                font-size: 0.7rem;
+                padding: 6px 12px;
+                right: 15px;
+            }
+            
+            .best-oral-award::before {
+                font-size: 1.5rem;
+                padding: 6px 12px;
+                left: 15px;
+            }
+            
+            .best-oral-award {
+                padding: 15px;
+                margin: 10px 0;
+            }
+            
+            .award-banner {
+                font-size: 1rem;
+                padding: 12px;
+            }
+        }
+
         /* Language Toggle Styling */
         #lang-toggle:hover {
             background: rgba(255,255,255,1) !important;
@@ -1284,12 +1408,18 @@
                                                 </div>
                                                 <div class="info">
                                                     <h4>
-                                                        <a>Rising Junior Researcher Presentations</a>
+                                                        <a>Spotlight Oral Presentations</a>
                                                     </h4>
-                                                    <ul>
+                                                    
+                                                    <!-- Best Oral Award Highlight -->
+                                                    <!-- <div class="best-oral-award">
+                                                        <div class="award-content">
+                                                        </div>
+                                                    </div> -->
+                                                    
+                                                    <ul style="margin-top: 15px;">
                                                         <li><i class="lni lni-user"></i>
-                                                            <a href=""
-                                                                class="btn">Frank Kung, Adam Tonderski, Georg Hess</a>
+                                                            <a href="" class="btn">TBA</a>
                                                         </li>
                                                     </ul>
                                                 </div>
@@ -1725,9 +1855,22 @@
                                                     <h4>
                                                         <a href="javascript:void(0)">Award Ceremony and Social</a>
                                                     </h4>
+                                                    
+                                                    <!-- Award Winners Banner -->
+                                                    <div class="award-banner">
+                                                        🏆 CONGRATULATIONS TO OUR AWARD WINNERS! 🏆
+                                                    </div>
+                                                    
+                                                    <div style="background: rgba(255, 215, 0, 0.1); padding: 15px; border-radius: 10px; margin: 10px 0; border-left: 5px solid #FFD700;">
+                                                        <p style="margin: 5px 0; color: #333;"><strong>🥇 Best Oral Presentation:</strong> <span style="color: #DC143C; font-weight: bold;">TBA</span></p>
+                                                        <p style="margin: 5px 0; color: #333;"><strong>🏅 Best Poster Presentation:</strong> TBA</p>
+                                                        <p style="margin: 5px 0; color: #333;"><strong>💻 Most Impactful Open-Source Project:</strong> TBA</p>
+                                                        <p style="margin: 5px 0; color: #333;"><strong>🎤 Most Engaging Speaker:</strong> TBA</p>
+                                                    </div>
+                                                    
                                                     <ul>
                                                         <li><i class="lni lni-user"></i>
-                                                            <a href="" class="btn">Best Oral, Best Poster, Most Impactful Open-Source Project, Most Engaging Speaker</a>
+                                                            <a href="" class="btn">Award Recognition & Networking Reception</a>
                                                         </li>
                                                     </ul>
                                                 </div>
