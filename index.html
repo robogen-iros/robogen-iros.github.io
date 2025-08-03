@@ -903,16 +903,16 @@
                 <br><br>
             </div>
 			<div class="section-text-content">
-				<h4>Workshop Features</h4>
+				<h4 id="workshop-features-title">Workshop Features</h4>
             	<br>
-				The workshop will feature the following events and activities to encourage discussion and participation on these topics:
+				<span id="workshop-features-intro">The workshop will feature the following events and activities to encourage discussion and participation on these topics:</span>
 				<ul style="list-style-type: disc; padding-left: 20px;">
-                    <li><h6 style= "color:#d20a78">Industry-Academia Keynote Sessions</h6> Leading researchers and practitioners from both academia and industry will present cutting-edge advancements in neural rendering and 3D generative models for robotics applications.</li>
-                    <li><h6 style= "color:#d20a78">Oral Presentations</h6> Selected paper presentations highlighting impactful approaches to data generation, artifact mitigation, and domain-specific applications of neural rendering and generative models for robotics.</li>
-                    <li><h6 style= "color:#d20a78">Interactive Poster & Demo Session</h6> A dedicated session where student researchers can demonstrate their methods and techniques, fostering discussions and collaborations. This will provide an opportunity for junior researchers to directly interact with senior researchers.</li>
-                    <li><h6 style= "color:#d20a78">Expert Panel Discussion</h6> A focused discussion on bridging the gap between theoretical advancements in neural rendering and practical robotics applications.</li>
-                    <li><h6 style= "color:#d20a78">Award Ceremony</h6> Awards will be presented in multiple categories including Best Paper, Best Poster, Most Impactful Open-Source Project, and Most Engaging Speaker to encourage participation and recognize outstanding contributions.</li>
-                    <li><h6 style= "color:#d20a78">Mentor 1:1 Session</h6> Beyond formal talks and breaks, we're facilitating personalized 15-30 minute one-on-one sessions between junior researchers and keynote speakers or organizing committee members during IROS. Prior to the conference, RoboGen workshop participants will receive a signup form to indicate their interests. This creates valuable mentorship opportunities, connecting junior researchers with senior experts for both technical guidance and career development.</li>
+                    <li><h6 style= "color:#d20a78" id="keynote-title">Industry-Academia Keynote Sessions</h6> <span id="keynote-desc">Leading researchers and practitioners from both academia and industry will present cutting-edge advancements in multimodal foundation models and 3D world generation methods for robotics applications.</span></li>
+                    <li><h6 style= "color:#d20a78" id="oral-title">Oral Presentations</h6> <span id="oral-desc">Selected paper presentations highlighting impactful approaches to data generation, artifact mitigation, and domain-specific applications of neural rendering and generative models for robotics.</span></li>
+                    <li><h6 style= "color:#d20a78" id="poster-title">Interactive Poster & Demo Session</h6> <span id="poster-desc">A dedicated session where student researchers can demonstrate their methods and techniques, fostering discussions and collaborations. This will provide an opportunity for junior researchers to directly interact with senior researchers.</span></li>
+                    <li><h6 style= "color:#d20a78" id="panel-title">Expert Panel Discussion</h6> <span id="panel-desc">A focused discussion on bridging the gap between theoretical advancements in neural rendering and practical robotics applications.</span></li>
+                    <li><h6 style= "color:#d20a78" id="award-title">Award Ceremony</h6> <span id="award-desc">Awards will be presented in multiple categories including Best Paper, Best Poster, Most Impactful Open-Source Project, and Most Engaging Speaker to encourage participation and recognize outstanding contributions.</span></li>
+                    <li><h6 style= "color:#d20a78" id="mentor-title">Mentor 1:1 Session</h6> <span id="mentor-desc">Beyond formal talks and breaks, we're facilitating personalized 15-30 minute one-on-one sessions between junior researchers and keynote speakers or organizing committee members during IROS. Prior to the conference, RoboGen workshop participants will receive a signup form to indicate their interests. This creates valuable mentorship opportunities, connecting junior researchers with senior experts for both technical guidance and career development.</span></li>
 				</ul>
                 <br><br>
 				
@@ -2606,6 +2606,20 @@
                 objective2: "(2) address challenges in physical 3D world representation,",
                 objective3: "(3) democratize access to high-quality synthetic data for robust robotics systems.",
                 objective4: "(4) advance 3D scene understanding through vision-language models for enhanced robot perception and reasoning.",
+                workshopFeaturesTitle: "Workshop Features",
+                workshopFeaturesIntro: "The workshop will feature the following events and activities to encourage discussion and participation on these topics:",
+                keynoteTitle: "Industry-Academia Keynote Sessions",
+                keynoteDesc: "Leading researchers and practitioners from both academia and industry will present cutting-edge advancements in multimodal foundation models and 3d world generation methods for robotics applications.",
+                oralTitle: "Oral Presentations",
+                oralDesc: "Selected paper presentations highlighting impactful approaches to data generation, artifact mitigation, and domain-specific applications of neural rendering and generative models for robotics.",
+                posterTitle: "Interactive Poster & Demo Session",
+                posterDesc: "A dedicated session where student researchers can demonstrate their methods and techniques, fostering discussions and collaborations. This will provide an opportunity for junior researchers to directly interact with senior researchers.",
+                panelTitle: "Expert Panel Discussion",
+                panelDesc: "A focused discussion on bridging the gap between theoretical advancements in neural rendering and practical robotics applications.",
+                awardTitle: "Award Ceremony",
+                awardDesc: "Awards will be presented in multiple categories including Best Paper, Best Poster, Most Impactful Open-Source Project, and Most Engaging Speaker to encourage participation and recognize outstanding contributions.",
+                mentorTitle: "Mentor 1:1 Session",
+                mentorDesc: "Beyond formal talks and breaks, we're facilitating personalized 15-30 minute one-on-one sessions between junior researchers and keynote speakers or organizing committee members during IROS. Prior to the conference, RoboGen workshop participants will receive a signup form to indicate their interests. This creates valuable mentorship opportunities, connecting junior researchers with senior experts for both technical guidance and career development.",
                 
                 // Buttons and labels
                 sponsoredBy: "Sponsored by Voxel51"
@@ -2649,6 +2663,20 @@
                 objective2: "(2) 攻克物理三维世界表示的关键挑战；", 
                 objective3: "(3) 推广高质量合成数据引擎，构建稳健的机器人系统；",
                 objective4: "(4) 提升视觉‑语言模型驱动的物理场景理解，强化智能系统感知与推理。",
+                workshopFeaturesTitle: "研讨会特色",
+                workshopFeaturesIntro: "本次研讨会将举办以下丰富多样的活动，促进学术交流与合作：",
+                keynoteTitle: "产学研主旨演讲",
+                keynoteDesc: "来自学术界和产业界的顶尖研究人员将分享多模态基础模型和3D世界生成技术在机器人领域的最新突破。",
+                oralTitle: "论文口头报告",
+                oralDesc: "精选优秀论文进行现场展示，重点介绍数据生成、噪声消除以及神经渲染和生成模型在机器人特定应用中的创新方法。",
+                posterTitle: "互动海报与演示环节",
+                posterDesc: "专设展示环节，学生研究者可展示最新方法和技术成果，促进深入讨论与学术合作。为青年学者与资深专家提供直接交流的宝贵机会。",
+                panelTitle: "专家圆桌讨论",
+                panelDesc: "深度探讨如何缩小神经渲染理论发展与机器人实际应用之间的差距，推动技术转化。",
+                awardTitle: "颁奖典礼",
+                awardDesc: "设立多个奖项类别，包括最佳论文奖、最佳海报奖、最具影响力开源项目奖和最佳演讲奖，表彰杰出贡献，激励创新发展。",
+                mentorTitle: "导师面对面交流",
+                mentorDesc: "除正式议程外，我们特别安排IROS会议期间的个性化导师交流环节，青年研究者可与主旨演讲嘉宾或组委会专家进行15-30分钟的一对一深度交流。会前将通过问卷了解参会者需求和兴趣方向，精准匹配导师资源，为青年学者提供技术指导和职业发展建议。",
             }
         };
 
@@ -2716,7 +2744,7 @@
                 if (lang === 'en') {
                     workshopWelcome.innerHTML = `${translations[lang].workshopWelcome}<a href="http://www.iros25.org/" class="badge" style="background-color:#d20a78;">IROS 2025</a>Workshop on 3D World Generation for Robot Learning and Autonomous Systems! `;
                 } else {
-                    workshopWelcome.innerHTML = `${translations[lang].workshopWelcome}<a href="http://www.iros25.org/" class="badge" style="background-color:#d20a78;">IROS 2025</a>机器人学习与无人系统3D世界生成研讨会！ `;
+                    workshopWelcome.innerHTML = `${translations[lang].workshopWelcome}<a href="http://www.iros25.org/" class="badge" style="background-color:#d20a78;">IROS 2025</a>RoboGen: 世界理解与生成研讨会！ `;
                 }
             }
             
@@ -2743,6 +2771,48 @@
             
             const workshopConclusion = document.getElementById('workshop-conclusion');
             if (workshopConclusion) workshopConclusion.textContent = translations[lang].workshopConclusion;
+            
+            const workshopFeaturesTitle = document.getElementById('workshop-features-title');
+            if (workshopFeaturesTitle) workshopFeaturesTitle.textContent = translations[lang].workshopFeaturesTitle;
+            
+            const workshopFeaturesIntro = document.getElementById('workshop-features-intro');
+            if (workshopFeaturesIntro) workshopFeaturesIntro.textContent = translations[lang].workshopFeaturesIntro;
+            
+            const keynoteTitle = document.getElementById('keynote-title');
+            if (keynoteTitle) keynoteTitle.textContent = translations[lang].keynoteTitle;
+            
+            const keynoteDesc = document.getElementById('keynote-desc');
+            if (keynoteDesc) keynoteDesc.textContent = translations[lang].keynoteDesc;
+            
+            const oralTitle = document.getElementById('oral-title');
+            if (oralTitle) oralTitle.textContent = translations[lang].oralTitle;
+            
+            const oralDesc = document.getElementById('oral-desc');
+            if (oralDesc) oralDesc.textContent = translations[lang].oralDesc;
+            
+            const posterTitle = document.getElementById('poster-title');
+            if (posterTitle) posterTitle.textContent = translations[lang].posterTitle;
+            
+            const posterDesc = document.getElementById('poster-desc');
+            if (posterDesc) posterDesc.textContent = translations[lang].posterDesc;
+            
+            const panelTitle = document.getElementById('panel-title');
+            if (panelTitle) panelTitle.textContent = translations[lang].panelTitle;
+            
+            const panelDesc = document.getElementById('panel-desc');
+            if (panelDesc) panelDesc.textContent = translations[lang].panelDesc;
+            
+            const awardTitle = document.getElementById('award-title');
+            if (awardTitle) awardTitle.textContent = translations[lang].awardTitle;
+            
+            const awardDesc = document.getElementById('award-desc');
+            if (awardDesc) awardDesc.textContent = translations[lang].awardDesc;
+            
+            const mentorTitle = document.getElementById('mentor-title');
+            if (mentorTitle) mentorTitle.textContent = translations[lang].mentorTitle;
+            
+            const mentorDesc = document.getElementById('mentor-desc');
+            if (mentorDesc) mentorDesc.textContent = translations[lang].mentorDesc;
             
             // Update language toggle button display
             const currentLangSpan = document.getElementById('current-lang');
