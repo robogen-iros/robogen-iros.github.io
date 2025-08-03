@@ -53,7 +53,7 @@
             backdrop-filter: blur(10px);
             padding: 40px;
             border-radius: 20px;
-            margin-top: 100px;
+            margin-top: 120px;
         }
 
         /* Logo Layout Styles */
@@ -199,6 +199,286 @@
                 width: 100px;
                 height: 75px;
                 padding: 10px;
+            }
+        }
+
+        /* Best Oral Award Highlight Styles */
+        .best-oral-award {
+            position: relative;
+            background: linear-gradient(135deg, #FFD700 0%, #FFA500 100%);
+            border: 3px solid #FF4500;
+            border-radius: 15px;
+            padding: 20px;
+            margin: 15px 0;
+            box-shadow: 0 8px 25px rgba(255, 215, 0, 0.3);
+            animation: award-glow 2s ease-in-out infinite alternate;
+        }
+
+        .best-oral-award::before {
+            content: '🏆';
+            position: absolute;
+            top: -15px;
+            left: 20px;
+            font-size: 2rem;
+            background: linear-gradient(135deg, #FFD700 0%, #FFA500 100%);
+            padding: 8px 15px;
+            border-radius: 50%;
+            border: 3px solid #FF4500;
+            box-shadow: 0 4px 15px rgba(255, 215, 0, 0.4);
+        }
+
+        .best-oral-award::after {
+            content: 'BEST ORAL AWARD';
+            position: absolute;
+            top: -15px;
+            right: 20px;
+            background: linear-gradient(135deg, #FF4500 0%, #DC143C 100%);
+            color: white;
+            padding: 8px 15px;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            font-weight: bold;
+            letter-spacing: 1px;
+            box-shadow: 0 4px 15px rgba(220, 20, 60, 0.3);
+        }
+
+        .best-oral-award .award-content {
+            background: rgba(255, 255, 255, 0.95);
+            border-radius: 10px;
+            padding: 20px;
+            margin-top: 15px;
+            box-shadow: inset 0 2px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .best-oral-award .award-content h4 {
+            color: #FF4500;
+            font-weight: bold;
+            margin-bottom: 10px;
+            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
+        }
+
+        .best-oral-award .award-content p {
+            color: #333;
+            margin-bottom: 8px;
+            font-weight: 500;
+        }
+
+        .best-oral-award .award-content .presenter-name {
+            color: #DC143C;
+            font-weight: bold;
+            font-size: 1.1rem;
+        }
+
+        @keyframes award-glow {
+            0% {
+                box-shadow: 0 8px 25px rgba(255, 215, 0, 0.3), 0 0 20px rgba(255, 215, 0, 0.2);
+            }
+            100% {
+                box-shadow: 0 8px 25px rgba(255, 215, 0, 0.5), 0 0 30px rgba(255, 215, 0, 0.4);
+            }
+        }
+
+        .award-banner {
+            background: linear-gradient(45deg, #FFD700, #FFA500, #FF4500);
+            color: white;
+            text-align: center;
+            padding: 15px;
+            margin: 20px 0;
+            border-radius: 10px;
+            font-weight: bold;
+            font-size: 1.2rem;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+            box-shadow: 0 5px 15px rgba(255, 215, 0, 0.3);
+            animation: banner-pulse 3s ease-in-out infinite;
+        }
+
+        @keyframes banner-pulse {
+            0%, 100% {
+                transform: scale(1);
+            }
+            50% {
+                transform: scale(1.02);
+            }
+        }
+
+        /* Hero Awards Banner Styles */
+        .hero-awards-banner {
+            margin-top: 25px;
+            background: rgba(255, 255, 255, 0.15);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            border-radius: 20px;
+            padding: 15px 12px;
+            animation: hero-award-glow 3s ease-in-out infinite alternate;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            overflow: hidden;
+            max-width: 280px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .hero-awards-banner:hover {
+            background: rgba(255, 255, 255, 0.25);
+            border-color: rgba(255, 215, 0, 0.5);
+            transform: translateY(-2px);
+            box-shadow: 0 10px 40px rgba(255, 215, 0, 0.3);
+        }
+
+        .awards-button {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 5px;
+            transition: all 0.3s ease;
+        }
+
+        .award-trophy {
+            font-size: 2.2rem;
+            filter: drop-shadow(0 0 10px rgba(255, 215, 0, 0.8));
+            animation: trophy-bounce 2s ease-in-out infinite;
+            transition: all 0.3s ease;
+        }
+
+        .hero-awards-banner:hover .award-trophy {
+            transform: scale(1.1);
+            filter: drop-shadow(0 0 15px rgba(255, 215, 0, 1));
+        }
+
+        .award-text {
+            color: #FFD700;
+            font-size: 1.2rem;
+            font-weight: bold;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+            letter-spacing: 1px;
+            transition: all 0.3s ease;
+        }
+
+        .hero-awards-banner:hover .award-text {
+            color: #FFF;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+        }
+
+        .award-categories-hidden {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.4s ease, padding-top 0.3s ease;
+            padding-top: 0;
+        }
+
+        .hero-awards-banner:hover .award-categories-hidden {
+            max-height: 60px;
+            padding-top: 12px;
+        }
+
+        .award-categories {
+            color: white;
+            font-size: 0.9rem;
+            font-weight: 500;
+            text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.7);
+            text-align: center;
+            line-height: 1.3;
+            display: block;
+            opacity: 0;
+            transform: translateY(-10px);
+            transition: all 0.4s ease 0.1s;
+            padding: 0 5px;
+        }
+
+        .hero-awards-banner:hover .award-categories {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        @keyframes hero-award-glow {
+            0% {
+                box-shadow: 0 5px 20px rgba(255, 215, 0, 0.2);
+                border-color: rgba(255, 255, 255, 0.2);
+            }
+            100% {
+                box-shadow: 0 8px 30px rgba(255, 215, 0, 0.4);
+                border-color: rgba(255, 215, 0, 0.3);
+            }
+        }
+
+        @keyframes trophy-bounce {
+            0%, 100% {
+                transform: translateY(0);
+            }
+            50% {
+                transform: translateY(-5px);
+            }
+        }
+
+        /* Responsive adjustments for hero awards and existing award highlight */
+        @media (max-width: 768px) {
+            .hero-awards-banner {
+                margin-top: 20px;
+                padding: 15px;
+                border-radius: 20px;
+            }
+            
+            .award-trophy {
+                font-size: 2rem;
+            }
+            
+            .award-text {
+                font-size: 1.1rem;
+            }
+            
+            .award-categories {
+                font-size: 0.9rem;
+            }
+            
+            .hero-awards-banner:hover .award-categories-hidden {
+                max-height: 65px;
+            }
+            
+            .hero-awards-banner {
+                padding: 12px 10px;
+                max-width: 260px;
+            }
+            
+            .best-oral-award::after {
+                font-size: 0.7rem;
+                padding: 6px 12px;
+                right: 15px;
+            }
+            
+            .best-oral-award::before {
+                font-size: 1.5rem;
+                padding: 6px 12px;
+                left: 15px;
+            }
+            
+            .best-oral-award {
+                padding: 15px;
+                margin: 10px 0;
+            }
+            
+            .award-banner {
+                font-size: 1rem;
+                padding: 12px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .awards-button {
+                gap: 4px;
+            }
+            
+            .award-categories {
+                font-size: 0.8rem;
+            }
+            
+            .hero-awards-banner {
+                padding: 10px 8px;
+                margin-top: 20px;
+                max-width: 240px;
+            }
+            
+            .hero-awards-banner:hover .award-categories-hidden {
+                max-height: 70px;
             }
         }
 
@@ -432,12 +712,26 @@
                         <h4 class="wow fadeInUp" data-wow-delay=".8s">
                             October 24th, 2025 • Hosted at <a href="http://www.iros25.org/">#IROS2025</a>
                         </h4>
+                        
+                        <!-- Awards Banner -->
+                        <div class="hero-awards-banner wow fadeInUp" data-wow-delay="1.0s">
+                            <div class="awards-button">
+                                <span class="award-trophy">🏆</span>
+                                <span class="award-text">Workshop Awards</span>
+                                <!-- <div class="hover-hint">hover to see awards</div> -->
+                            </div>
+                            <div class="award-categories-hidden">
+                                <span class="award-categories">Best Paper • Best Poster<br>Best Open-Source • Best Speaker</span>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
     </section>
     <!-- End Hero Area -->
+
+
 
     <!-- Start Count Down Area -->
     <!-- <div class="count-down">
@@ -618,7 +912,7 @@
                     <li><h6 style= "color:#d20a78">Oral Presentations</h6> Selected paper presentations highlighting impactful approaches to data generation, artifact mitigation, and domain-specific applications of neural rendering and generative models for robotics.</li>
                     <li><h6 style= "color:#d20a78">Interactive Poster & Demo Session</h6> A dedicated session where student researchers can demonstrate their methods and techniques, fostering discussions and collaborations. This will provide an opportunity for junior researchers to directly interact with senior researchers.</li>
                     <li><h6 style= "color:#d20a78">Expert Panel Discussion</h6> A focused discussion on bridging the gap between theoretical advancements in neural rendering and practical robotics applications.</li>
-                    <li><h6 style= "color:#d20a78">Award Ceremony</h6> Awards will be presented in multiple categories including Best Oral Presentation, Runner-up Oral Presentation, Best Poster Presentation, Most Impactful Open-Source Project, and Most Engaging Speaker to encourage participation and recognize outstanding contributions.</li>
+                    <li><h6 style= "color:#d20a78">Award Ceremony</h6> Awards will be presented in multiple categories including Best Paper, Best Poster, Most Impactful Open-Source Project, and Most Engaging Speaker to encourage participation and recognize outstanding contributions.</li>
                     <li><h6 style= "color:#d20a78">Mentor 1:1 Session</h6> Beyond formal talks and breaks, we're facilitating personalized 15-30 minute one-on-one sessions between junior researchers and keynote speakers or organizing committee members during IROS. Prior to the conference, RoboGen workshop participants will receive a signup form to indicate their interests. This creates valuable mentorship opportunities, connecting junior researchers with senior experts for both technical guidance and career development.</li>
 				</ul>
                 <br><br>
@@ -774,8 +1068,10 @@
                             <div class="section-text-content">
                                 <h4 style="text-align: center; margin-bottom: 20px; color: #333;">📝 Submission Format</h4>
                                 <br>
-                                Authors may submit either <strong>extended abstracts (2-4 pages)</strong> to present preliminary findings or observations, or <strong>full papers (6-8 pages)</strong> for detailed research contributions, including complete methodology and analysis. 
+                                All submissions are non-archival. We welcome submissions that have been submitted to or accepted by other venues, as well as highly <strong> impactful open-source projects </strong>in the field.
+                                Authors may submit either <strong> (1) extended abstracts (2–4 pages) </strong>, which is suitable for preliminary work-in-progress or already-published results; (2) <strong>full papers (6–8 pages)</strong> that present original, detailed research contributions (methodology, experiments, and analysis).
                                 <br><br>
+                                
                                 <strong>Formatting Requirements:</strong>
                                 <br>
                                 All submissions must follow the IROS/IEEE double column format with page limits that include references, appendices, and any additional material. Papers should be submitted as a single PDF file (up to 6MB). Official formatting templates are available <a href="https://ras.papercept.net/conferences/support/support.php">here</a>.
@@ -783,7 +1079,15 @@
                                 <strong>Submission Portal:</strong>
                                 <br>
                                 <a href="https://openreview.net/group?id=IEEE.org/IROS/2025/Workshop/RoboGen">RoboGen @ OpenReview</a>
-                                <br><br>
+
+                                <br><br>To recognize and encourage outstanding contributions, RoboGen will present awards in the following categories:
+                                <ul style="margin-top: 8px; margin-bottom: 8px;">
+                                    <li>&nbsp;&nbsp;&nbsp;&nbsp;• Best Paper</li>
+                                    <li>&nbsp;&nbsp;&nbsp;&nbsp;• Best Poster</li>
+                                    <li>&nbsp;&nbsp;&nbsp;&nbsp;• Best Open-Source</li>
+                                    <li>&nbsp;&nbsp;&nbsp;&nbsp;• Best Speaker</li>
+                                </ul>
+                                <br>
                                 <strong>Additional Information:</strong>
                                 <br>
                                 &nbsp;&nbsp;&nbsp;&nbsp;• All submissions will be peer-reviewed
@@ -1276,12 +1580,12 @@
                                                 </div>
                                                 <div class="info">
                                                     <h4>
-                                                        <a>Rising Junior Researcher Presentations</a>
+                                                        <a>Spotlight Oral Presentations</a>
                                                     </h4>
-                                                    <ul>
+                                                    
+                                                    <ul style="margin-top: 15px;">
                                                         <li><i class="lni lni-user"></i>
-                                                            <a href=""
-                                                                class="btn">Frank Kung, Adam Tonderski, Georg Hess</a>
+                                                            <a href="" class="btn">TBA</a>
                                                         </li>
                                                     </ul>
                                                 </div>
@@ -1717,9 +2021,22 @@
                                                     <h4>
                                                         <a href="javascript:void(0)">Award Ceremony and Social</a>
                                                     </h4>
+                                                    
+                                                    <!-- Award Winners Banner -->
+                                                    <div class="award-banner">
+                                                        CONGRATULATIONS TO OUR AWARD WINNERS!
+                                                    </div>
+                                                    
+                                                    <div style="background: rgba(255, 215, 0, 0.1); padding: 15px; border-radius: 10px; margin: 10px 0; border-left: 5px solid #FFD700;">
+                                                        <p style="margin: 5px 0; color: #333;"><strong>🥇 Best Paper Presentation:</strong> <span style="color: #DC143C; font-weight: bold;">TBA</span></p>
+                                                        <p style="margin: 5px 0; color: #333;"><strong>🏅 Best Poster Presentation:</strong> TBA</p>
+                                                        <p style="margin: 5px 0; color: #333;"><strong>💻 Most Impactful Open-Source:</strong> TBA</p>
+                                                        <p style="margin: 5px 0; color: #333;"><strong>🎤 Most Engaging Speaker:</strong> TBA</p>
+                                                    </div>
+                                                    
                                                     <ul>
                                                         <li><i class="lni lni-user"></i>
-                                                            <a href="" class="btn">Best Oral, Best Poster, Most Impactful Open-Source Project, Most Engaging Speaker</a>
+                                                            <a href="" class="btn">Award Recognition & Networking Reception</a>
                                                         </li>
                                                     </ul>
                                                 </div>
