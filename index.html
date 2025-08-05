@@ -49,7 +49,7 @@
         }
 
         .text-overlay {
-            background: rgba(0, 0, 0, 0.3);
+            background: rgba(0, 0, 0, 0.5);
             backdrop-filter: blur(10px);
             padding: 40px;
             border-radius: 20px;
@@ -558,7 +558,7 @@
                                             aria-label="Toggle navigation">Overview</a>
                                     </li>
                                     <li class="nav-item">
-                                        <a id="submission-nav" href="#submission-section"
+                                        <a id="submission-nav" href="#call-for-papers-section"
                                             onclick="switch_nav(MainNav.Submission)"
                                             aria-label="Toggle navigation">Submission</a>
                                     </li>
@@ -731,152 +731,10 @@
     </section>
     <!-- End Hero Area -->
 
-
-
-    <!-- Start Count Down Area -->
-    <!-- <div class="count-down">
+    <!-- Start Overview Section -->
+    <section class="events dates section" id="overview-section" style="padding: 40px 0;">
         <div class="container">
             <div class="row">
-                <div class="col-12">
-                    <div class="box-head">
-                        <div class="box-content">
-                            <div class="box">
-                                <h1 id="days">000</h1>
-                                <h2 id="daystxt">Days</h2>
-                            </div>
-                            <div class="box">
-                                <h1 id="hours">00</h1>
-                                <h2 id="hourstxt">Hours</h2>
-                            </div>
-                            <div class="box">
-                                <h1 id="minutes">00</h1>
-                                <h2 id="minutestxt">Minutes</h2>
-                            </div>
-                            <div class="box">
-                                <h1 id="seconds">00</h1>
-                                <h2 id="secondstxt">Secondes</h2>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div> -->
-    <!-- End Count Down Area -->
-
-    <!-- Start Features Area -->
-
-
-    <!-- <section class="challenge section" id="main-section">
-        <div class="container">
-            <div class="row">
-                <div class="col-12">
-                    <div class="section-title">
-                        <h3 class="wow zoomIn" data-wow-delay=".2s">Challenge</h3>
-                        <h2 class="wow fadeInUp" data-wow-delay=".4s">3DCoMPaT Challenge</h2>
-                    </div>
-
-                    Challenge section
-                    <div class="section-text-content">
-                         add a centered image here
-                        <img src="images/_figures-anim_header.gif" class="img-fluid" alt="3DCoMPaT dataset"
-                            style="display: block; margin-left: auto; margin-right: auto; width: 30%;">
-
-                        <h4>Challenge overview</h4>
-
-                        trunk-ignore(git-diff-check/error)
-                        The Grounded CoMPaT Recognition (GCR) is a compositional 3D vision task that aims to
-                        collectively recognize and ground compositions of materials on parts of 3D objects.
-                        This task is based on the 3DCoMPaT dataset, a large-scale dataset composed of stylized 3D
-                        objects and associated 2D renderings.
-
-
-                        We propose two variations of this task:
-                        <a href="https://3dcompat-dataset.org/doc/annotations.html#part-annotations" class="badge"
-                            style="background-color:#d20a78;">GCR-Coarse</a>
-                        and
-                        <a href="https://3dcompat-dataset.org/doc/annotations.html#part-annotations" class="badge"
-                            style="background-color:#F20487;">GCR-Fine</a>,
-                        which are based on coarse-grained and fine-grained 3D segmentations of the 3DCoMPaT models.
-
-
-                        We highly encourage participants of the challenge to enter and submit to both tracks of the
-                        challenge.
-
-
-
-                        <h4>&#128202; Dataset</h4>
-
-                        The 3DCoMPaT dataset for both challenge tracks is available through our <a
-                            href="https://3dcompat-dataset.org/doc/dl-dataset.html#challenge">download page</a>.
-
-
-
-                        <h4>&#128232; Submission</h4>
-
-                        Submission will be made through the <a
-                            href="https://eval.ai/web/challenges/challenge-page/2031">eval.ai platform</a>.
-
-
-
-                        <h4>&#128220; Rules</h4>
-
-                        Here are the rules for the challenge:
-
-
-
-
-                        <ul class="list-group list-group-flush">
-                            <li class="list-group-item"><b>Submission Limit:</b> Each participant is allowed to submit
-                                their solution a maximum of three times per day.</li>
-                            <li class="list-group-item"><b>Data Usage:</b> Participants are not permitted to use any
-                                data other than the 3DCoMPaT data for training their models.</li>
-                            <li class="list-group-item"><b>Technical Report:</b> Each participant must submit a
-                                technical report detailing their methods, which will be made public, in order to be
-                                eligible for any prizes or rewards.</li>
-                        </ul>
-
-
-
-                        <h4>&#127942; Awards</h4>
-
-                        Total prize pool: <b>$3000</b>. Teams are encouraged to particpate to both challenge tracks.
-
-                        <div style="margin-top: 2em; margin-bottom: 0.5em; color: #F20487;"><b>Fine track:</b></div>
-                        <ul class="list-group list-group-flush">
-                            <li class="list-group-item"><b>1st:</b> $1300</li>
-                            <li class="list-group-item"><b>2nd:</b> $700</li>
-                        </ul>
-
-                        <div style="margin-top: 1em; margin-bottom: 0.5em; color: #d20a78;"><b>Coarse track:</b></div>
-                        <ul class="list-group list-group-flush">
-                            <li class="list-group-item"><b>1st:</b> $700</li>
-                            <li class="list-group-item"><b>2nd:</b> $300</li>
-                        </ul>
-
-
-                        These prizes are designed to motivate participants to put their best effort into the challenge
-                        and to reward those who perform exceptionally well. The challenge organizers hope that these
-                        prizes will encourage a high level of participation and help to drive innovation in the field of
-                        3D computer vision.
-                        It should be noted that eligibility for these prizes is contingent on participants adhering to
-                        the rules of the challenge. Therefore, participants must submit their solutions in accordance
-                        with the rules and provide a technical report detailing their methods to be considered for any
-                        prizes or rewards.
-
-
-
-                        <h4>&#128172; Q&amp;A</h4>
-
-
-                        If you encounter any technical issue related to the challenge, or if you're missing critical
-                        information, please open a ticket on our <a
-                            href="https://github.com/Vision-CAIR/3DCoMPaT-v2">GitHub repository</a>.
-                    </div>
-                </div>
-            </div> -->
-
-    <div class="row" id="overview-section">
         <div class="col-12">
             <div class="section-title">
                 <br><br>
@@ -889,41 +747,46 @@
                 <a href="http://www.iros25.org/" class="badge" style="background-color:#d20a78;">IROS 2025</a>
                 RoboGen Workshop on World Understanding and Generation! </h4>
                 <br>
-                <span id="workshop-intro">Recent advances in 3D Vision (NeRF, Gaussian Splatting) and multimodal foundation models (LLM, VLM, diffusion model) are transforming robotics by enabling the creation of photorealistic synthetic environments for training, testing, and validation. Despite impressive capabilities of learning-based robotics in embodied AI, autonomous driving, unmanned aerial navigation, and manipulation, progress in generalizable robot learning systems remains constrained by the fundamental challenge of data acquisition and scaling.</span>
+                <span id="workshop-intro">RoboGen focuses on 2 aspects: multimodal world understanding and generation, because we believe these two problems are tightly bound, only if understanding is done right, then the generation is reasonable. Recent advances in 3D Vision (NeRF, Gaussian Splatting) and multimodal foundation models (LLM, VLM, diffusion and flow-based model) are transforming robotics by enabling the creation of high quality data for training, testing, and validation. Despite impressive capabilities of learning-based robotics in embodied AI, autonomous driving, unmanned aerial navigation, progress in generalizable systems remains constrained by the fundamental challenge of data acquisition.</span>
                 <br><br>
-                <span id="workshop-mission">RoboGen brings together researchers and industry experts to develop innovative approaches that leverage recent advances in 3D data generation and understanding methods to address this data bottleneck. Our workshop emphasizes practical applications and solutions to long-tail data problems in challenging robotics scenarios, with the goal of empowering 3D deep learning systems for real-world deployment.</span>
+                <span id="workshop-mission">Building towards AGI, RoboGen brings together researchers and industry experts to address this data bottleneck for scaling law.
+                The goal is to develop innovative approaches that leverage recent advances in 3D data generation and understanding methods to . Our workshop emphasizes practical applications and solutions to long-tail data problems in challenging robotics scenarios, with the goal of empowering 3D deep learning systems for real-world deployment.</span>
                 <br><br>
                 <span id="workshop-objectives">The RoboGen workshop aims to advance 3D world generation for robotics with four key objectives:</span>
                 <ol style="margin-left: 20px; margin-top: 10px; margin-bottom: 10px;">
-                    <li id="objective-1">(1) explore state-of-the-art neural fields and generative models for robot learning generalization,</li>
-                    <li id="objective-2">(2) address challenges in physical 3D world representation,</li>
-                    <li id="objective-3">(3) democratize access to high-quality synthetic data for robust robotics systems.</li>
-                    <li id="objective-4">(4) advance 3D scene understanding through vision-language models for enhanced robot perception and reasoning.</li>
+                    <li id="objective-1">(1) Understanding: advance multimodal world understanding and spatial-temporal reasoning through vision-language models,</li>
+                    <li id="objective-2">(2) Representation: explore video diffusion and flow-based models conditioned on sensor geometry cues for physical 3D world representation,</li>
+                    <li id="objective-3">(3) Action: democratize access to high-quality synthetic data generation to train robust vision-language-action models.</li>
+                    <li id="objective-4">(4) Scaling: enable practical deployment of generalizable robot learning systems overcoming the data scaling law bottleneck.</li>
                 </ol>
                 <br><br>
             </div>
 			<div class="section-text-content">
 				<h4 id="workshop-features-title">Workshop Features</h4>
             	<br>
-				<span id="workshop-features-intro">The workshop will feature the following events and activities to encourage discussion and participation on these topics:</span>
+				<span id="workshop-features-intro">The workshop will feature the following events and activities to encourage discussion and participation. <mark>We are looking for industry partners to showcase their products and services. If you are interested in sponsoring the workshop, please contact us at <a href="mailto:robogen-iros@googlegroups.com">robogen-iros@googlegroups.com</a>.</mark></span>
+				<br><br>
 				<ul style="list-style-type: disc; padding-left: 20px;">
                     <li><h6 style= "color:#d20a78" id="keynote-title">Industry-Academia Keynote Sessions</h6> <span id="keynote-desc">Leading researchers and practitioners from both academia and industry will present cutting-edge advancements in multimodal foundation models and 3D world generation methods for robotics applications.</span></li>
                     <li><h6 style= "color:#d20a78" id="oral-title">Oral Presentations</h6> <span id="oral-desc">Selected paper presentations highlighting impactful approaches to data generation, artifact mitigation, and domain-specific applications of neural rendering and generative models for robotics.</span></li>
                     <li><h6 style= "color:#d20a78" id="poster-title">Interactive Poster & Demo Session</h6> <span id="poster-desc">A dedicated session where student researchers can demonstrate their methods and techniques, fostering discussions and collaborations. This will provide an opportunity for junior researchers to directly interact with senior researchers.</span></li>
                     <li><h6 style= "color:#d20a78" id="panel-title">Expert Panel Discussion</h6> <span id="panel-desc">A focused discussion on bridging the gap between theoretical advancements in neural rendering and practical robotics applications.</span></li>
-                    <li><h6 style= "color:#d20a78" id="award-title">Award Ceremony</h6> <span id="award-desc">Awards will be presented in multiple categories including Best Paper, Best Poster, Most Impactful Open-Source Project, and Most Engaging Speaker to encourage participation and recognize outstanding contributions.</span></li>
+                                        <li><h6 style= "color:#d20a78" id="award-title">Award Ceremony</h6> <span id="award-desc">Awards will be presented in multiple categories including Best Paper, Best Poster, Most Impactful Open-Source Project, and Most Engaging Speaker to encourage participation and recognize outstanding contributions.</span></li>
+                </ul>
+                <ul style="list-style-type: disc; padding-left: 20px;">
                     <li><h6 style= "color:#d20a78" id="mentor-title">Mentor 1:1 Session</h6> <span id="mentor-desc">Beyond formal talks and breaks, we're facilitating personalized 15-30 minute one-on-one sessions between junior researchers and keynote speakers or organizing committee members during IROS. Prior to the conference, RoboGen workshop participants will receive a signup form to indicate their interests. This creates valuable mentorship opportunities, connecting junior researchers with senior experts for both technical guidance and career development.</span></li>
 				</ul>
                 <br><br>
 				
             </div>
-
+            </div>
         </div>
-    </div>
-    </div>
     </section>
 
-    <div class="row" id="submission-section">
+    <!-- Start Call for Papers Section -->
+    <section class="events dates section" id="call-for-papers-section" style="padding: 40px 0;">
+        <div class="container">
+            <div class="row">
         <div class="col-12">
             <div class="section-title">
                 <br><br>
@@ -932,184 +795,129 @@
             </div>
 
             <div class="section-text-content">
-                <h4>&#128218; Topics</h4>
-                <br><br>
-                Topics of this workshop include but are not limited to:
-                <br><br>
-                <ul class="list-group list-group-flush">
-                <li class="list-group-item"> Vision-Language dataset generation for robotic action learning and task execution</li>
-                <li class="list-group-item"> Language-guided scene generation for robot learning</li>
-                <li class="list-group-item"> Spatial-Temporal scene understanding using vision-language models</li>
-				<li class="list-group-item"> Real-time 3D Gaussian Splatting for embodied robot learning and navigation</li>
-				<li class="list-group-item"> Sim-to-real transfer using world modeling for robotic policy learning</li>
-				<li class="list-group-item"> Deploying autonomous robotic system with data-driven closed-loop simulation evaluation</li>
-				<li class="list-group-item"> Neural or Gaussian rendering for perception in adverse weather conditions (low-light, bad weather, extreme long range, very sparse view, occlusions)</li>
-				<li class="list-group-item"> 3D scene generation using cost-effective multi-modal sensors (e.g., radar, sonar, IMU, etc.) for robust robot perception</li>
-				<li class="list-group-item"> Robot Simultaneous Localization And Mapping (SLAM) with neural or Gaussian scene representation</li>
-				<li class="list-group-item"> Simultaneous sensor and traffic simulation for novel environment adaptation in robotics</li>
-				<li class="list-group-item"> 4D dynamic scene composition for robot manipulation and interaction with deformable objects</li>
-				
-				<li class="list-group-item"> Language/Feature-embedded neural or gaussian scene representation for robot manipulation</li>
-				<li class="list-group-item"> Efficient on-robot neural scene representation for real-time decision-making</li>
-				<li class="list-group-item"> General-purpose robot learning trained with a large corpus of synthetic data</li>
-                </ul>
+                <div style="background: linear-gradient(135deg, #e3f2fd, #bbdefb); border: 3px solid #1976d2; padding: 20px; margin: 25px auto; border-radius: 10px; box-shadow: 0 4px 15px rgba(25, 118, 210, 0.3); text-align: center; max-width: 1000px;">
+                    <h5 style="color: #0d47a1; margin-bottom: 15px; font-weight: bold;">
+                        Important Note
+                    </h5>
+                    <div style="font-size: 16px; line-height: 1.6; color: #1a237e;">
+                        <strong style="color: #0d47a1;">All submissions are non-archival</strong>, which allows authors to submit to other conferences and journals in the future.
+                        In addition, we welcome papers that have been submitted to or accepted by other venues, as well as highly <strong> impactful open-source projects </strong>.
+                    </div>
+                </div>
 
                 
             </div>
         </div>
-    </div>
-    </div>
-    </section>
-    
-    <!--
-	<section class="events-schedule dates section" id="papers-section">
-        <div class="container">
-            <div class="row">
-                <div class="col-12">
-                    <div class="section-title">
-                        <h3 class="wow zoomIn" data-wow-delay=".2s"
-                            style="visibility: hidden; animation-delay: 0.2s; animation-name: none;">Papers</h3>
-                        <h2 class="wow fadeInUp" data-wow-delay=".4s"
-                            style="visibility: hidden; animation-delay: 0.4s; animation-name: none;">Accepted Papers
-                        </h2>
-
-                        <div class="tab-pane fade show active" id="date-wshop" role="tabpanel"
-                            aria-labelledby="wshop-tab">
-                            <h6>Spotlight:</h6>
-                        </div>
-
-                        <div class="section-text-content">
-                            <ul style="list-style-type:disc; text-align:left;">
-                                <li><a href="https://openreview.net/forum?id=V2zPyBSF0P"><b>Learning Any-View 6DoF
-                                            Robotic Grasping in Cluttered Scenes via Neural
-                                            Surface
-                                            Rendering</b>
-                                    </a>
-                                    <br>
-                                    Snehal Jauhri, Ishikaa Lunawat, Georgia Chalvatzaki
-                                </li>
-                            </ul>
-                        </div>
-
-                        <div class="tab-pane fade show active" id="date-wshop" role="tabpanel"
-                            aria-labelledby="wshop-tab">
-                            <h6>Poster:</h6>
-                        </div>
-
-                        <div class="section-text-content">
-                            <ul style="list-style-type:disc; text-align:left;">
-                                <li><a href="https://openreview.net/forum?id=EAq380xBb4"><b>Photo-SLAM: Real-time
-                                            Simultaneous Localization and Photorealistic Mapping for
-                                            Monocular, Stereo, and RGB-D Cameras</b></a><br>
-                                    Huajian Huang, Longwei Li, Hui Cheng, Sai-Kit Yeung
-                                </li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        </div>
-    </section> -->
-
-    <!-- Start Dates & Submission Area -->
-	<section class="events dates section" id="submission-section" style="padding: 40px 0;">
-        <div class="container">
-            <div class="row">
-                <div class="col-12">
-                    <div class="section-title" style="margin-bottom: 30px;">
-                        <h3 class="wow zoomIn" data-wow-delay=".2s"
-                            style="visibility: hidden; animation-delay: 0.2s; animation-name: none;">Submission</h3>
-                        <h2 id="submission-guidelines-title" class="wow fadeInUp" data-wow-delay=".4s"
-                            style="visibility: hidden; animation-delay: 0.4s; animation-name: none; margin-bottom: 20px;">Submission Guidelines</h2>
-                    </div>
+        
+        <!-- Topics within the same section -->
+        <div class="row justify-content-center" style="margin-top: 40px;">
+            <div class="col-lg-10 col-md-12">
+                <div class="section-text-content" style="max-width: 1000px; margin: 0 auto;">
+                    <h4 style="text-align: center; margin-bottom: 20px; color: #333;">&#128218; Topics</h4>
                     
-                    <!-- Important Dates -->
-                    <div class="row justify-content-center" style="margin-bottom: 40px;">
-                        <div class="col-lg-8 col-md-10">
-                            <h4 style="text-align: center; margin-bottom: 20px; color: #333;">📅 Important Dates </h4>
-                            <table class="table table-striped" style="margin-bottom: 0;">
-                                <thead>
-                                    <tr>
-                                        <th class="event" style="padding: 12px 15px;">Event</th>
-                                        <th class="date" style="padding: 12px 15px;">Date</th>
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                    <tr>
-                                        <td style="padding: 10px 15px;">Submission open</td>
-                                        <td style="padding: 10px 15px;">June 1st, 2025, 11:59 PM AOE</td>
-                                    </tr>
-                                    <tr>
-                                        <td style="padding: 10px 15px;">Submission due</td>
-                                        <td style="padding: 10px 15px;">August 15th, 2025, 11:59 PM AOE</td>
-                                    </tr>
-                                    <tr>
-                                        <td style="padding: 10px 15px;">Notification to authors</td>
-                                        <td style="padding: 10px 15px;">August 30th, 2025, 11:59 PM AOE</td>
-                                    </tr>
-                                    <tr>
-                                        <td style="padding: 10px 15px;">Camera Ready</td>
-                                        <td style="padding: 10px 15px;">September 15th, 2025, 11:59 PM AOE</td>
-                                    </tr>
-                                    <tr>
-                                        <td style="padding: 10px 15px; font-weight: bold;">Workshop Date</td>
-                                        <td style="padding: 10px 15px;"><b>Oct 24th, 2025</b></td>
-                                    </tr>
-                                </tbody>
-                            </table>
-                        </div>
-                    </div>
-
-                    <!-- Submission Guidelines -->
-                    <div class="row justify-content-center">
-                        <div class="col-lg-10 col-md-12">
-                            <div class="section-text-content">
-                                <h4 style="text-align: center; margin-bottom: 20px; color: #333;">📝 Submission Format</h4>
-                                <br>
-                                All submissions are non-archival. We welcome submissions that have been submitted to or accepted by other venues, as well as highly <strong> impactful open-source projects </strong>in the field.
-                                Authors may submit either <strong> (1) extended abstracts (2–4 pages) </strong>, which is suitable for preliminary work-in-progress or already-published results; (2) <strong>full papers (6–8 pages)</strong> that present original, detailed research contributions (methodology, experiments, and analysis).
-                                <br><br>
-                                
-                                <strong>Formatting Requirements:</strong>
-                                <br>
-                                All submissions must follow the IROS/IEEE double column format with page limits that include references, appendices, and any additional material. Papers should be submitted as a single PDF file (up to 6MB). Official formatting templates are available <a href="https://ras.papercept.net/conferences/support/support.php">here</a>.
-                                <br><br>
-                                <strong>Submission Portal:</strong>
-                                <br>
-                                <a href="https://openreview.net/group?id=IEEE.org/IROS/2025/Workshop/RoboGen">RoboGen @ OpenReview</a>
-
-                                <br><br>To recognize and encourage outstanding contributions, RoboGen will present awards in the following categories. All awards will be selected by the organizing committee:
-                                <ul style="margin-top: 8px; margin-bottom: 8px;">
-                                    <li>&nbsp;&nbsp;&nbsp;&nbsp;• <strong>Best Paper:</strong> Three best paper candidates will be invited for oral spotlight presentations, with one selected as the winner</li>
-                                    <li>&nbsp;&nbsp;&nbsp;&nbsp;• <strong>Best Poster:</strong> Selected from all accepted papers presented in the poster session</li>
-                                    <li>&nbsp;&nbsp;&nbsp;&nbsp;• <strong>Best Open-Source:</strong> Open to already published open-source projects of great impact in the field</li>
-                                    <li>&nbsp;&nbsp;&nbsp;&nbsp;• <strong>Best Speaker:</strong> Awarded to the most engaging speaker across all presentations</li>
-                                </ul>
-                                <br>
-                                <strong>Additional Information:</strong>
-                                <br>
-                                &nbsp;&nbsp;&nbsp;&nbsp;• All submissions will be peer-reviewed
-                                <br>
-                                &nbsp;&nbsp;&nbsp;&nbsp;• Optional supplementary materials (videos, images, code) may be submitted as a separate ZIP file
-                                <br>
-                                &nbsp;&nbsp;&nbsp;&nbsp;• Accepted papers and abstracts will be made publicly available on this website
-                                <br>
-                                &nbsp;&nbsp;&nbsp;&nbsp;• Authors will present their work in either oral or poster sessions
-                                <!-- <br>
-                                &nbsp;&nbsp;&nbsp;&nbsp;• For award candidates, in-person attendance and presentation by at least one author is mandatory -->
-                                <br>
-                            </div>
-                        </div>
-                    </div>
+                    Topics of this workshop include but are not limited to:
+                    <br><br>
+                    <ul class="list-group list-group-flush">
+                    <li class="list-group-item"> Vision-language conditioned image/video synthesis addressing data bottleneck for scaling law</li>
+                    <li class="list-group-item"> Controllable video-diffusion and flow-based models fused with sensor-geometry cues</li>
+                    <li class="list-group-item"> Language-guided 3D scene generation for embodied robot policy training</li>
+                    <li class="list-group-item"> Spatial-temporal world understanding with dense video captioning</li>
+    				<li class="list-group-item"> Sim-to-real transfer using world modeling for robotic policy learning</li> 
+    				<li class="list-group-item"> Deploying autonomous robotic system with data-driven closed-loop simulation evaluation</li>
+    				<li class="list-group-item"> Neural or gaussian rendering for perception in adverse weather conditions (low-light, extreme long range, sparse view, occlusions)</li>
+    				<li class="list-group-item"> 4D dynamic scene composition using cost-effective multi-modal sensors (e.g., radar, sonar, IMU, etc.)</li>
+    				<li class="list-group-item"> Robot simultaneous localization and mapping (SLAM) with neural or Gaussian scene representation</li>
+    				<li class="list-group-item"> Simultaneous sensor and traffic simulation for novel environment adaptation in robotics</li>
+    				<li class="list-group-item"> Efficient on-robot neural scene representation for real-time decision-making</li>
+    				<li class="list-group-item"> General-purpose robot learning trained with a large corpus of synthetic data</li>
+                    </ul>
                 </div>
             </div>
         </div>
+        
+        <!-- Important Dates -->
+        <div class="row justify-content-center" style="margin-top: 40px; margin-bottom: 40px;">
+            <div class="col-lg-8 col-md-10">
+                <h4 style="text-align: center; margin-bottom: 20px; color: #333;">📅 Important Dates </h4>
+                <table class="table table-striped" style="margin-bottom: 0;">
+                    <thead>
+                        <tr>
+                            <th class="event" style="padding: 12px 15px;">Event</th>
+                            <th class="date" style="padding: 12px 15px;">Date</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td style="padding: 10px 15px;">Submission open</td>
+                            <td style="padding: 10px 15px;">June 1st, 2025, 11:59 PM AOE</td>
+                        </tr>
+                        <tr>
+                            <td style="padding: 10px 15px;">Submission due</td>
+                            <td style="padding: 10px 15px;">August 15th, 2025, 11:59 PM AOE</td>
+                        </tr>
+                        <tr>
+                            <td style="padding: 10px 15px;">Notification to authors</td>
+                            <td style="padding: 10px 15px;">August 30th, 2025, 11:59 PM AOE</td>
+                        </tr>
+                        <tr>
+                            <td style="padding: 10px 15px;">Camera Ready</td>
+                            <td style="padding: 10px 15px;">September 15th, 2025, 11:59 PM AOE</td>
+                        </tr>
+                        <tr>
+                            <td style="padding: 10px 15px; font-weight: bold;">Workshop Date</td>
+                            <td style="padding: 10px 15px;"><b>Oct 24th, 2025</b></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <!-- Submission Guidelines -->
+        <div class="row justify-content-center">
+            <div class="col-lg-10 col-md-12">
+                <div class="section-text-content" style="max-width: 1000px; margin: 0 auto;">
+                    <h4 style="text-align: center; margin-bottom: 20px; color: #333;">📝 Submission Format</h4>
+
+                    <br>
+                    Authors may submit either <strong> (1) extended abstracts (2–4 pages) </strong>, which is suitable for preliminary work-in-progress or already-published results; <strong>(2) full papers (6–8 pages)</strong> that present original, detailed research contributions (methodology, experiments, and analysis).
+                    <br><br>
+                    
+                    <strong>Formatting Requirements:</strong>
+                    <br>
+                    All submissions must follow the IROS/IEEE double column format with page limits that include references, appendices, and any additional material. Papers should be submitted as a single PDF file (up to 6MB). Official formatting templates are available <a href="https://ras.papercept.net/conferences/support/support.php">here</a>.
+                    <br><br>
+                    <strong>Submission Portal:</strong>
+                    <br>
+                    <a href="https://openreview.net/group?id=IEEE.org/IROS/2025/Workshop/RoboGen">RoboGen @ OpenReview</a>
+
+                    <br><br>To recognize and encourage outstanding contributions, RoboGen will present awards in the following categories. All awards will be selected by the organizing committee:
+                    <ul style="margin-top: 8px; margin-bottom: 8px;">
+                        <li>&nbsp;&nbsp;&nbsp;&nbsp;• <strong>Best Paper:</strong> Three best paper candidates will be invited for oral spotlight presentations, with one selected as the winner</li>
+                        <li>&nbsp;&nbsp;&nbsp;&nbsp;• <strong>Best Poster:</strong> Selected from all accepted papers presented in the poster session</li>
+                        <li>&nbsp;&nbsp;&nbsp;&nbsp;• <strong>Best Open-Source:</strong> Open to novel datasets, projects or already published open-source works of great impact in the field</li>
+                        <li>&nbsp;&nbsp;&nbsp;&nbsp;• <strong>Best Speaker:</strong> Awarded to the most engaging speaker across all presentations</li>
+                    </ul>
+                    <br>
+                    <strong>Additional Information:</strong>
+                    <br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;• All submissions will be peer-reviewed
+                    <br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;• Optional supplementary materials (videos, images, code) may be submitted as a separate ZIP file
+                    <br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;• Accepted papers and abstracts will be made publicly available on this website
+                    <br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;• Authors will present their work in either oral or poster sessions
+                    <br>
+                </div>
+            </div>
+        </div>
+        </div>
     </section>
-    <!-- End Dates & Submission Area -->
+
+
 
             <!-- Start Dates Area -->
-            <section class="speakers section" id="speakers-section">
+            <section class="events dates section" id="speakers-section" style="padding: 40px 0;">
                 <div class="container">
                     <div class="row">
                         <div class="col-12">
@@ -2580,7 +2388,7 @@
                 // Hero section
                 title: "RoboGen: 3D World Generation<br>for Robot Learning and Autonomous Systems",
                 subtitle: "Full-day Workshop on world understanding and generation.<br>Building towards AGI, we are tackling the data bottleneck for scaling law.",
-                location: "Hangzhou, China, Hangzhou International Expo Center, Grand Ballroom A",
+                location: "Grand Ballroom A, Hangzhou International Expo Center, Hangzhou, China",
                 date: "October 24th, 2025 • Hosted at",
                 
                 // Section titles
@@ -2593,15 +2401,15 @@
                 
                 // Workshop Details Content
                 workshopWelcome: " Welcome to the ",
-                workshopIntro: "Recent advances in 3D Vision (NeRF, Gaussian Splatting) and multimodal foundation models (LLM, VLM, diffusion model) are transforming robotics by enabling the creation of photorealistic synthetic environments for training, testing, and validation. Despite impressive capabilities of learning-based robotics in embodied AI, autonomous driving, unmanned aerial navigation, and manipulation, progress in generalizable robot learning systems remains constrained by the fundamental challenge of data acquisition and scaling.",
-                workshopMission: "RoboGen brings together researchers and industry experts to develop innovative approaches that leverage recent advances in 3D data generation and understanding methods to address this data bottleneck. Our workshop emphasizes practical applications and solutions to long-tail data problems in challenging robotics scenarios, with the goal of empowering 3D deep learning systems for real-world deployment.",
+                workshopIntro: "RoboGen focuses on 2 aspects: multimodal world understanding and generation, because we believe these two are tightly bound, only if understanding is done right, then the generation is reasonable. Recent advances in 3D Vision (NeRF, Gaussian Splatting) and multimodal foundation models (LLM, VLM, diffusion and flow-based model) are transforming robotics by enabling the creation of high quality data for training, testing, and validation. Despite impressive capabilities of learning-based robotics in embodied AI, autonomous driving, unmanned aerial navigation, progress in generalizable robot learning systems remains constrained by the fundamental challenge of data acquisition.",
+                workshopMission: "Building towards AGI, RoboGen brings together researchers and industry experts to address this data bottleneck for scaling law. The goal is to develop innovative approaches that leverage recent advances in 3D data generation and understanding methods to . Our workshop emphasizes practical applications and solutions to long-tail data problems in challenging robotics scenarios, with the goal of empowering 3D deep learning systems for real-world deployment.",
                 workshopObjectives: "The RoboGen workshop aims to advance 3D world generation for robotics with four key objectives:",
-                objective1: "(1) explore state-of-the-art neural fields and generative models for robot learning generalization,",
-                objective2: "(2) address challenges in physical 3D world representation,",
-                objective3: "(3) democratize access to high-quality synthetic data for robust robotics systems.",
-                objective4: "(4) advance 3D scene understanding through vision-language models for enhanced robot perception and reasoning.",
+                objective1: "(1) Understanding: advance multimodal world understanding and spatial-temporal reasoning through vision-language models.",
+                objective2: "(2) Representation: explore video diffusion and flow-based models conditioned on sensor geometry cues for physical 3D world representation.",
+                objective3: "(3) Action: democratize access to high-quality synthetic data generation to train robust vision-language-action models.",
+                objective4: "(4) Scaling: enable practical deployment of generalizable robot learning systems overcoming the data scaling law bottleneck.",
                 workshopFeaturesTitle: "Workshop Features",
-                workshopFeaturesIntro: "The workshop will feature the following events and activities to encourage discussion and participation on these topics:",
+                workshopFeaturesIntro: "The workshop will feature the following events and activities to encourage discussion and participation . <mark>We are looking for industry partners to showcase their products and services. If you are interested in sponsoring the workshop, please contact us at <a href=\"mailto:robogen-iros@googlegroups.com\">robogen-iros@googlegroups.com</a>.</mark>",
                 keynoteTitle: "Industry-Academia Keynote Sessions",
                 keynoteDesc: "Leading researchers and practitioners from both academia and industry will present cutting-edge advancements in multimodal foundation models and 3d world generation methods for robotics applications.",
                 oralTitle: "Oral Presentations",
@@ -2636,7 +2444,7 @@
                 // Hero section
                 title: "RoboGen: 3D世界生成<br>机器人学习与无人系统",
                 subtitle: "全天研讨会 - 世界理解与生成<br>构建通用人工智能，解决数据瓶颈问题",
-                location: "中国杭州，杭州国际博览中心, Grand Ballroom A",
+                location: "Grand Ballroom A, 杭州国际博览中心, 中国杭州",
                 date: "2025年10月24日",
                 
                 // Section titles
@@ -2652,17 +2460,17 @@
                 
                 // Workshop Details Content
                 workshopWelcome: " 欢迎参加 ",
-                workshopIntro: "RoboGen 研究尖端世界多模态理解与生成技术，专注于如何打造可扩展、高质量的数据引擎，驱动智能系统走向大规模真实部署。近年来，三维视觉技术以及多模态基础模型（LLM、VLM、扩散模型）的突破正在重塑智能系统领域，使研究者能够构建逼真的合成数据用于训练、测试与验证。尽管具身智能、自动驾驶、无人机导航和机器人操作等方向的学习型系统已展现出卓越能力，scaling law仍受制于数据获取与规模化的根本难题。",
+                workshopIntro: "RoboGen聚焦于两个方向：多模态世界的理解与生成。二者相辅相成——惟有真正洞悉世界，方能生成合乎情理的场景。本次研讨会专注于如何打造可扩展、高质量的数据引擎，驱动智能系统走向大规模真实部署。近年来，三维视觉技术以及多模态基础模型（LLM、VLM、扩散模型、流模型）的突破正在重塑智能系统领域，使研究者能够构建逼真的合成数据用于训练、测试与验证。尽管具身智能、自动驾驶、无人机导航和机器人操作等方向的学习型系统已展现出卓越能力，scaling law仍受制于数据获取与规模化的根本难题。",
                 
                 workshopMission: "RoboGen 研讨会分会汇聚学术与产业专家，利用最新的高质量数据生成与理解方法，开发创新方案以破解数据瓶颈。研讨会分会聚焦复杂场景中的实际应用与长尾数据问题，旨在为真实世界部署赋能。",
                 
                 workshopObjectives: "RoboGen 致力于推进智能世界理解生成，核心目标包括：",
-                objective1: "(1) 探索用于机器人学习泛化的最前沿神经场与生成模型；",
-                objective2: "(2) 攻克物理三维世界表示的关键挑战；", 
-                objective3: "(3) 推广高质量合成数据引擎，构建稳健的机器人系统；",
-                objective4: "(4) 提升视觉‑语言模型驱动的物理场景理解，强化智能系统感知与推理。",
+                objective1: "(1) 理解：通过视觉-语言模型推进多模态世界理解和时空推理。",
+                objective2: "(2) 表征：探索基于传感器几何线索条件的视频扩散模型用于物理3D世界表征。", 
+                objective3: "(3) 行动：普及高质量合成数据生成的获取途径，以训练鲁棒的视觉-语言-行动模型。",
+                objective4: "(4) 扩展：实现通用机器人学习系统的实际部署，克服数据扩展定律瓶颈。",
                 workshopFeaturesTitle: "研讨会特色",
-                workshopFeaturesIntro: "本次研讨会将举办以下丰富多样的活动，促进学术交流与合作：",
+                workshopFeaturesIntro: "本次研讨会将举办以下丰富多样的活动，促进学术交流与合作。<mark>我们诚挚邀请业界公司进行赞助/demo展示, 如有兴趣, 请通过<a href=\"mailto:robogen-iros@googlegroups.com\">robogen-iros@googlegroups.com</a>与我们联系.</mark>",
                 keynoteTitle: "产学研主旨演讲",
                 keynoteDesc: "来自学术界和产业界的顶尖研究人员将分享多模态基础模型和3D世界生成技术在机器人领域的最新突破。",
                 oralTitle: "论文口头报告",
@@ -2721,7 +2529,7 @@
             const overviewSection = document.querySelector('#overview-section .section-title h2');
             if (overviewSection) overviewSection.textContent = translations[lang].overviewTitle;
             
-            const submissionSection = document.querySelector('#submission-section .section-title h2');
+            const submissionSection = document.querySelector('#call-for-papers-section .section-title h2');
             if (submissionSection) submissionSection.textContent = translations[lang].submissionTitle;
             
             const speakersSection = document.querySelector('#speakers-section .section-title h2');
@@ -2778,7 +2586,7 @@
             if (workshopFeaturesTitle) workshopFeaturesTitle.textContent = translations[lang].workshopFeaturesTitle;
             
             const workshopFeaturesIntro = document.getElementById('workshop-features-intro');
-            if (workshopFeaturesIntro) workshopFeaturesIntro.textContent = translations[lang].workshopFeaturesIntro;
+            if (workshopFeaturesIntro) workshopFeaturesIntro.innerHTML = translations[lang].workshopFeaturesIntro;
             
             const keynoteTitle = document.getElementById('keynote-title');
             if (keynoteTitle) keynoteTitle.textContent = translations[lang].keynoteTitle;
