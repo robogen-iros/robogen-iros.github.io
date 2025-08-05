@@ -558,7 +558,7 @@
                                             aria-label="Toggle navigation">Overview</a>
                                     </li>
                                     <li class="nav-item">
-                                        <a id="submission-nav" href="#submission-section"
+                                        <a id="submission-nav" href="#call-for-papers-section"
                                             onclick="switch_nav(MainNav.Submission)"
                                             aria-label="Toggle navigation">Submission</a>
                                     </li>
@@ -778,7 +778,10 @@
     </div>
     </section>
 
-    <div class="row" id="submission-section">
+    <!-- Start Call for Papers Section -->
+    <section class="events dates section" id="call-for-papers-section" style="padding: 40px 0;">
+        <div class="container">
+            <div class="row">
         <div class="col-12">
             <div class="section-title">
                 <br><br>
@@ -796,129 +799,117 @@
                         In addition, we welcome papers that have been submitted to or accepted by other venues, as well as highly <strong> impactful open-source projects </strong>.
                     </div>
                 </div>
-                
-                <h4>&#128218; Topics</h4>
-                <br><br>
-                Topics of this workshop include but are not limited to:
-                <br><br>
-                <ul class="list-group list-group-flush">
-                <li class="list-group-item"> Vision-language conditioned image/video synthesis addressing data bottleneck for scaling law</li>
-                <li class="list-group-item"> Controllable video-diffusion models fused with sensor-geometry cues</li>
-                <li class="list-group-item"> Language-guided 3D scene generation for embodied robot policy training</li>
-                <li class="list-group-item"> Spatial-temporal world understanding with dense video captioning</li>
-				<li class="list-group-item"> Sim-to-real transfer using world modeling for robotic policy learning</li> 
-				<li class="list-group-item"> Deploying autonomous robotic system with data-driven closed-loop simulation evaluation</li>
-				<li class="list-group-item"> Neural or gaussian rendering for perception in adverse weather conditions (low-light, bad weather, extreme long range, very sparse view, occlusions)</li>
-				<li class="list-group-item"> 4D dynamic scene composition using cost-effective multi-modal sensors (e.g., radar, sonar, IMU, etc.) for robust robot perception</li>
-				<li class="list-group-item"> Robot simultaneous localization and mapping (SLAM) with neural or Gaussian scene representation</li>
-				<li class="list-group-item"> Simultaneous sensor and traffic simulation for novel environment adaptation in robotics</li>
-				<li class="list-group-item"> Efficient on-robot neural scene representation for real-time decision-making</li>
-				<li class="list-group-item"> General-purpose robot learning trained with a large corpus of synthetic data</li>
-                </ul>
-                
 
                 
             </div>
         </div>
-    </div>
-    </div>
-    </section>
-
-    <!-- Start Dates & Submission Area -->
-	<section class="events dates section" id="submission-section" style="padding: 40px 0;">
-        <div class="container">
-            <div class="row">
-                <div class="col-12">
-                    <div class="section-title" style="margin-bottom: 30px;">
-                        <h3 class="wow zoomIn" data-wow-delay=".2s"
-                            style="visibility: hidden; animation-delay: 0.2s; animation-name: none;">Submission</h3>
-                        <h2 id="submission-guidelines-title" class="wow fadeInUp" data-wow-delay=".4s"
-                            style="visibility: hidden; animation-delay: 0.4s; animation-name: none; margin-bottom: 20px;">Submission Guidelines</h2>
-                    </div>
+        
+        <!-- Topics within the same section -->
+        <div class="row justify-content-center" style="margin-top: 40px;">
+            <div class="col-lg-10 col-md-12">
+                <div class="section-text-content" style="max-width: 1000px; margin: 0 auto;">
+                    <h4 style="text-align: center; margin-bottom: 20px; color: #333;">&#128218; Topics</h4>
                     
-                    <!-- Important Dates -->
-                    <div class="row justify-content-center" style="margin-bottom: 40px;">
-                        <div class="col-lg-8 col-md-10">
-                            <h4 style="text-align: center; margin-bottom: 20px; color: #333;">📅 Important Dates </h4>
-                            <table class="table table-striped" style="margin-bottom: 0;">
-                                <thead>
-                                    <tr>
-                                        <th class="event" style="padding: 12px 15px;">Event</th>
-                                        <th class="date" style="padding: 12px 15px;">Date</th>
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                    <tr>
-                                        <td style="padding: 10px 15px;">Submission open</td>
-                                        <td style="padding: 10px 15px;">June 1st, 2025, 11:59 PM AOE</td>
-                                    </tr>
-                                    <tr>
-                                        <td style="padding: 10px 15px;">Submission due</td>
-                                        <td style="padding: 10px 15px;">August 15th, 2025, 11:59 PM AOE</td>
-                                    </tr>
-                                    <tr>
-                                        <td style="padding: 10px 15px;">Notification to authors</td>
-                                        <td style="padding: 10px 15px;">August 30th, 2025, 11:59 PM AOE</td>
-                                    </tr>
-                                    <tr>
-                                        <td style="padding: 10px 15px;">Camera Ready</td>
-                                        <td style="padding: 10px 15px;">September 15th, 2025, 11:59 PM AOE</td>
-                                    </tr>
-                                    <tr>
-                                        <td style="padding: 10px 15px; font-weight: bold;">Workshop Date</td>
-                                        <td style="padding: 10px 15px;"><b>Oct 24th, 2025</b></td>
-                                    </tr>
-                                </tbody>
-                            </table>
-                        </div>
-                    </div>
-
-                    <!-- Submission Guidelines -->
-                    <div class="row justify-content-center">
-                        <div class="col-lg-10 col-md-12">
-                            <div class="section-text-content">
-                                <h4 style="text-align: center; margin-bottom: 20px; color: #333;">📝 Submission Format</h4>
-
-                                <br>
-                                Authors may submit either <strong> (1) extended abstracts (2–4 pages) </strong>, which is suitable for preliminary work-in-progress or already-published results; <strong>(2) full papers (6–8 pages)</strong> that present original, detailed research contributions (methodology, experiments, and analysis).
-                                <br><br>
-                                
-                                <strong>Formatting Requirements:</strong>
-                                <br>
-                                All submissions must follow the IROS/IEEE double column format with page limits that include references, appendices, and any additional material. Papers should be submitted as a single PDF file (up to 6MB). Official formatting templates are available <a href="https://ras.papercept.net/conferences/support/support.php">here</a>.
-                                <br><br>
-                                <strong>Submission Portal:</strong>
-                                <br>
-                                <a href="https://openreview.net/group?id=IEEE.org/IROS/2025/Workshop/RoboGen">RoboGen @ OpenReview</a>
-
-                                <br><br>To recognize and encourage outstanding contributions, RoboGen will present awards in the following categories. All awards will be selected by the organizing committee:
-                                <ul style="margin-top: 8px; margin-bottom: 8px;">
-                                    <li>&nbsp;&nbsp;&nbsp;&nbsp;• <strong>Best Paper:</strong> Three best paper candidates will be invited for oral spotlight presentations, with one selected as the winner</li>
-                                    <li>&nbsp;&nbsp;&nbsp;&nbsp;• <strong>Best Poster:</strong> Selected from all accepted papers presented in the poster session</li>
-                                    <li>&nbsp;&nbsp;&nbsp;&nbsp;• <strong>Best Open-Source:</strong> Open to novel datasets, projects or already published open-source works of great impact in the field</li>
-                                    <li>&nbsp;&nbsp;&nbsp;&nbsp;• <strong>Best Speaker:</strong> Awarded to the most engaging speaker across all presentations</li>
-                                </ul>
-                                <br>
-                                <strong>Additional Information:</strong>
-                                <br>
-                                &nbsp;&nbsp;&nbsp;&nbsp;• All submissions will be peer-reviewed
-                                <br>
-                                &nbsp;&nbsp;&nbsp;&nbsp;• Optional supplementary materials (videos, images, code) may be submitted as a separate ZIP file
-                                <br>
-                                &nbsp;&nbsp;&nbsp;&nbsp;• Accepted papers and abstracts will be made publicly available on this website
-                                <br>
-                                &nbsp;&nbsp;&nbsp;&nbsp;• Authors will present their work in either oral or poster sessions
-                                <!-- <br>
-                                &nbsp;&nbsp;&nbsp;&nbsp;• For award candidates, in-person attendance and presentation by at least one author is mandatory -->
-                                <br>
-                            </div>
-                        </div>
-                    </div>
+                    Topics of this workshop include but are not limited to:
+                    <br><br>
+                    <ul class="list-group list-group-flush">
+                    <li class="list-group-item"> Vision-language conditioned image/video synthesis addressing data bottleneck for scaling law</li>
+                    <li class="list-group-item"> Controllable video-diffusion models fused with sensor-geometry cues</li>
+                    <li class="list-group-item"> Language-guided 3D scene generation for embodied robot policy training</li>
+                    <li class="list-group-item"> Spatial-temporal world understanding with dense video captioning</li>
+    				<li class="list-group-item"> Sim-to-real transfer using world modeling for robotic policy learning</li> 
+    				<li class="list-group-item"> Deploying autonomous robotic system with data-driven closed-loop simulation evaluation</li>
+    				<li class="list-group-item"> Neural or gaussian rendering for perception in adverse weather conditions (low-light, extreme long range, sparse view, occlusions)</li>
+    				<li class="list-group-item"> 4D dynamic scene composition using cost-effective multi-modal sensors (e.g., radar, sonar, IMU, etc.)</li>
+    				<li class="list-group-item"> Robot simultaneous localization and mapping (SLAM) with neural or Gaussian scene representation</li>
+    				<li class="list-group-item"> Simultaneous sensor and traffic simulation for novel environment adaptation in robotics</li>
+    				<li class="list-group-item"> Efficient on-robot neural scene representation for real-time decision-making</li>
+    				<li class="list-group-item"> General-purpose robot learning trained with a large corpus of synthetic data</li>
+                    </ul>
                 </div>
             </div>
         </div>
+        
+        <!-- Important Dates -->
+        <div class="row justify-content-center" style="margin-top: 40px; margin-bottom: 40px;">
+            <div class="col-lg-8 col-md-10">
+                <h4 style="text-align: center; margin-bottom: 20px; color: #333;">📅 Important Dates </h4>
+                <table class="table table-striped" style="margin-bottom: 0;">
+                    <thead>
+                        <tr>
+                            <th class="event" style="padding: 12px 15px;">Event</th>
+                            <th class="date" style="padding: 12px 15px;">Date</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td style="padding: 10px 15px;">Submission open</td>
+                            <td style="padding: 10px 15px;">June 1st, 2025, 11:59 PM AOE</td>
+                        </tr>
+                        <tr>
+                            <td style="padding: 10px 15px;">Submission due</td>
+                            <td style="padding: 10px 15px;">August 15th, 2025, 11:59 PM AOE</td>
+                        </tr>
+                        <tr>
+                            <td style="padding: 10px 15px;">Notification to authors</td>
+                            <td style="padding: 10px 15px;">August 30th, 2025, 11:59 PM AOE</td>
+                        </tr>
+                        <tr>
+                            <td style="padding: 10px 15px;">Camera Ready</td>
+                            <td style="padding: 10px 15px;">September 15th, 2025, 11:59 PM AOE</td>
+                        </tr>
+                        <tr>
+                            <td style="padding: 10px 15px; font-weight: bold;">Workshop Date</td>
+                            <td style="padding: 10px 15px;"><b>Oct 24th, 2025</b></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <!-- Submission Guidelines -->
+        <div class="row justify-content-center">
+            <div class="col-lg-10 col-md-12">
+                <div class="section-text-content" style="max-width: 1000px; margin: 0 auto;">
+                    <h4 style="text-align: center; margin-bottom: 20px; color: #333;">📝 Submission Format</h4>
+
+                    <br>
+                    Authors may submit either <strong> (1) extended abstracts (2–4 pages) </strong>, which is suitable for preliminary work-in-progress or already-published results; <strong>(2) full papers (6–8 pages)</strong> that present original, detailed research contributions (methodology, experiments, and analysis).
+                    <br><br>
+                    
+                    <strong>Formatting Requirements:</strong>
+                    <br>
+                    All submissions must follow the IROS/IEEE double column format with page limits that include references, appendices, and any additional material. Papers should be submitted as a single PDF file (up to 6MB). Official formatting templates are available <a href="https://ras.papercept.net/conferences/support/support.php">here</a>.
+                    <br><br>
+                    <strong>Submission Portal:</strong>
+                    <br>
+                    <a href="https://openreview.net/group?id=IEEE.org/IROS/2025/Workshop/RoboGen">RoboGen @ OpenReview</a>
+
+                    <br><br>To recognize and encourage outstanding contributions, RoboGen will present awards in the following categories. All awards will be selected by the organizing committee:
+                    <ul style="margin-top: 8px; margin-bottom: 8px;">
+                        <li>&nbsp;&nbsp;&nbsp;&nbsp;• <strong>Best Paper:</strong> Three best paper candidates will be invited for oral spotlight presentations, with one selected as the winner</li>
+                        <li>&nbsp;&nbsp;&nbsp;&nbsp;• <strong>Best Poster:</strong> Selected from all accepted papers presented in the poster session</li>
+                        <li>&nbsp;&nbsp;&nbsp;&nbsp;• <strong>Best Open-Source:</strong> Open to novel datasets, projects or already published open-source works of great impact in the field</li>
+                        <li>&nbsp;&nbsp;&nbsp;&nbsp;• <strong>Best Speaker:</strong> Awarded to the most engaging speaker across all presentations</li>
+                    </ul>
+                    <br>
+                    <strong>Additional Information:</strong>
+                    <br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;• All submissions will be peer-reviewed
+                    <br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;• Optional supplementary materials (videos, images, code) may be submitted as a separate ZIP file
+                    <br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;• Accepted papers and abstracts will be made publicly available on this website
+                    <br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;• Authors will present their work in either oral or poster sessions
+                    <br>
+                </div>
+            </div>
+        </div>
+        </div>
     </section>
-    <!-- End Dates & Submission Area -->
+
+
 
             <!-- Start Dates Area -->
             <section class="speakers section" id="speakers-section">
@@ -2533,7 +2524,7 @@
             const overviewSection = document.querySelector('#overview-section .section-title h2');
             if (overviewSection) overviewSection.textContent = translations[lang].overviewTitle;
             
-            const submissionSection = document.querySelector('#submission-section .section-title h2');
+            const submissionSection = document.querySelector('#call-for-papers-section .section-title h2');
             if (submissionSection) submissionSection.textContent = translations[lang].submissionTitle;
             
             const speakersSection = document.querySelector('#speakers-section .section-title h2');
