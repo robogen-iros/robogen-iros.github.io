@@ -6,7 +6,7 @@
     <meta http-equiv="x-ua-compatible" content="ie=edge">
     <title>RoboGen: 3D World Generation for Robot Learning and Autonomous Systems</title>
     <link rel="icon" type="image/x-icon" href="images/logos/robogen-icon.ico">
-    <meta name="description" content="RoboGen: 3D World Generation for Robot Learning and Autonomous Systems - IROS 2025 Workshop on 3D World Understanding and Generation for Robotics. October 24th, 2025, Hangzhou, China.">
+    <meta name="description" content="RoboGen: Physical World Generation for Robot Learning and Autonomous Systems - IROS 2025 Workshop on World Understanding and Generation for Robotics. October 24th, 2025, Hangzhou, China.">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
     <!-- ========================= CSS here ========================= -->
@@ -54,6 +54,43 @@
             padding: 40px;
             border-radius: 20px;
             margin-top: 120px;
+        }
+
+        /* Typing Animation Effect Styles */
+        .typing-container {
+            display: inline;
+            position: relative;
+        }
+
+        .typing-word {
+            background: linear-gradient(45deg, #F20487, #FF4081);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            font-weight: 800;
+            text-shadow: 0 0 20px rgba(242, 4, 135, 0.3);
+            display: inline;
+            position: relative;
+        }
+
+        .typing-cursor {
+            display: inline-block;
+            background: #F20487;
+            width: 2px;
+            height: 1em;
+            margin-left: 2px;
+            animation: blink 1s infinite;
+            vertical-align: baseline;
+        }
+
+        @keyframes blink {
+            0%, 50% { opacity: 1; }
+            51%, 100% { opacity: 0; }
+        }
+
+        .typing-word.typing {
+            overflow: hidden;
+            white-space: nowrap;
         }
 
         /* Logo Layout Styles */
@@ -694,13 +731,15 @@
                     <div class="hero-content text-center text-overlay">
                         <!-- Title (2 rows) -->
                         <h1 class="wow fadeInUp" data-wow-delay=".2s">
-                            RoboGen: 3D World Generation<br>
+                            RoboGen: <span class="typing-container">
+                                <span class="typing-word" id="typing-word">3D</span><span class="typing-cursor" id="typing-cursor"></span>
+                            </span> World Generation<br>
                             for Robot Learning and Autonomous Systems
                         </h1>
                         
                         <!-- Keywords -->
                         <h3 class="wow fadeInUp" data-wow-delay=".4s">
-                            Full-day Workshop on 3D World Understanding and Generation for Robotics
+                            Full-day Workshop on World Understanding and Generation for Robotics
                         </h3>
                         
                         <!-- Location -->
@@ -750,12 +789,12 @@
                 <span id="workshop-intro">RoboGen focuses on 2 aspects: multimodal world understanding and generation, because we believe these two problems are tightly bound, only if understanding is done right, then the generation is reasonable. Recent advances in 3D Vision (NeRF, Gaussian Splatting) and multimodal foundation models (LLM, VLM, diffusion and flow-based model) are transforming robotics by enabling the creation of high quality data for training, testing, and validation. Despite impressive capabilities of learning-based robotics in embodied AI, autonomous driving, unmanned aerial navigation, progress in generalizable systems remains constrained by the fundamental challenge of data acquisition.</span>
                 <br><br>
                 <span id="workshop-mission">Building towards AGI, RoboGen brings together researchers and industry experts to address this data bottleneck for scaling law.
-                The goal is to develop innovative approaches that leverage recent advances in 3D scene generation and understanding methods to . Our workshop emphasizes practical applications and solutions to long-tail data problems in challenging robotics scenarios, with the goal of empowering 3D deep learning systems for real-world deployment.</span>
+                The goal is to develop innovative approaches that leverage recent advances in scene generation and understanding methods to . Our workshop emphasizes practical applications and solutions to long-tail data problems in challenging robotics scenarios, with the goal of empowering deep learning systems for real-world deployment.</span>
                 <br><br>
-                <span id="workshop-objectives">The RoboGen workshop aims to advance 3D world generation for robotics with four key objectives:</span>
+                <span id="workshop-objectives">The RoboGen workshop aims to advance world generation for robotics with four key objectives:</span>
                 <ol style="margin-left: 20px; margin-top: 10px; margin-bottom: 10px;">
                     <li id="objective-1">(1) Understanding: advance multimodal world understanding and spatial-temporal reasoning through vision-language models,</li>
-                    <li id="objective-2">(2) Representation: explore video diffusion and flow-based models conditioned on sensor geometry cues for physical 3D world representation,</li>
+                    <li id="objective-2">(2) Representation: explore video diffusion and flow-based models conditioned on sensor geometry cues for physical world representation,</li>
                     <li id="objective-3">(3) Action: democratize access to high-quality synthetic data generation to train robust vision-language-action models.</li>
                     <li id="objective-4">(4) Scaling: enable practical deployment of generalizable robot learning systems overcoming the data scaling law bottleneck.</li>
                 </ol>
@@ -767,7 +806,7 @@
 				<span id="workshop-features-intro">The workshop will feature the following events and activities to encourage discussion and participation. <mark>We are looking for industry partners to showcase their products and services. If you are interested in sponsoring the workshop, please contact us at <a href="mailto:robogen-iros@googlegroups.com">robogen-iros@googlegroups.com</a>.</mark></span>
 				<br><br>
 				<ul style="list-style-type: disc; padding-left: 20px;">
-                    <li><h6 style= "color:#d20a78" id="keynote-title">Industry-Academia Keynote Sessions</h6> <span id="keynote-desc">Leading researchers and practitioners from both academia and industry will present cutting-edge advancements in multimodal foundation models and 3D world generation methods for robotics applications.</span></li>
+                    <li><h6 style= "color:#d20a78" id="keynote-title">Industry-Academia Keynote Sessions</h6> <span id="keynote-desc">Leading researchers and practitioners from both academia and industry will present cutting-edge advancements in multimodal foundation models and world generation methods for robotics applications.</span></li>
                     <li><h6 style= "color:#d20a78" id="oral-title">Oral Presentations</h6> <span id="oral-desc">Selected paper presentations highlighting impactful approaches to data generation, artifact mitigation, and domain-specific applications of neural rendering and generative models for robotics.</span></li>
                     <li><h6 style= "color:#d20a78" id="poster-title">Interactive Poster & Demo Session</h6> <span id="poster-desc">A dedicated session where student researchers can demonstrate their methods and techniques, fostering discussions and collaborations. This will provide an opportunity for junior researchers to directly interact with senior researchers.</span></li>
                     <li><h6 style= "color:#d20a78" id="panel-title">Expert Panel Discussion</h6> <span id="panel-desc">A focused discussion on bridging the gap between theoretical advancements in neural rendering and practical robotics applications.</span></li>
@@ -2386,7 +2425,7 @@
 
     <!-- Language Translation Script -->
     <script type="text/javascript">
-        let currentLanguage = 'en';
+        window.currentLanguage = 'en';
         
         const translations = {
             en: {
@@ -2400,8 +2439,8 @@
                 contact: "Contact",
                 
                 // Hero section
-                title: "RoboGen: 3D World Generation<br>for Robot Learning and Autonomous Systems",
-                subtitle: "Full-day Workshop on world understanding and generation.<br>Building towards AGI, we are tackling the data bottleneck for scaling law.",
+                title: 'RoboGen: <span class="typing-container"><span class="typing-word" id="typing-word">3D</span><span class="typing-cursor" id="typing-cursor"></span></span> World Generation<br>for Robot Learning and Autonomous Systems',
+                subtitle: "Full-day Workshop on physical world understanding and generation.<br>Building towards AGI, we are tackling the data bottleneck for scaling law.",
                 location: "Grand Ballroom A, Hangzhou International Expo Center, Hangzhou, China",
                 date: "October 24th, 2025 • Hosted at",
                 
@@ -2415,17 +2454,17 @@
                 
                 // Workshop Details Content
                 workshopWelcome: " Welcome to the ",
-                workshopIntro: "RoboGen focuses on 2 aspects: multimodal world understanding and generation, because we believe these two are tightly bound, only if understanding is done right, then the generation is reasonable. Recent advances in 3D Vision (NeRF, Gaussian Splatting) and multimodal foundation models (LLM, VLM, diffusion and flow-based model) are transforming robotics by enabling the creation of high quality data for training, testing, and validation. Despite impressive capabilities of learning-based robotics in embodied AI, autonomous driving, unmanned aerial navigation, progress in generalizable robot learning systems remains constrained by the fundamental challenge of data acquisition.",
-                workshopMission: "Building towards AGI, RoboGen brings together researchers and industry experts to address this data bottleneck for scaling law. The goal is to develop innovative approaches that leverage recent advances in 3D scene generation and understanding methods. Our workshop emphasizes practical applications and solutions to long-tail data problems in challenging robotics scenarios, with the goal of empowering 3D deep learning systems for real-world deployment.",
-                workshopObjectives: "The RoboGen workshop aims to advance 3D world generation for robotics with four key objectives:",
+                workshopIntro: "RoboGen focuses on 2 aspects: physical world understanding and generation, because we believe these two are tightly bound, only if understanding is done right, then the generation is reasonable. Recent advances in 3D Vision (NeRF, Gaussian Splatting) and multimodal foundation models (LLM, VLM, diffusion and flow-based model) are transforming robotics by enabling the creation of high quality data for training, testing, and validation. Despite impressive capabilities of learning-based robotics in embodied AI, autonomous driving, unmanned aerial navigation, progress in generalizable robot learning systems remains constrained by the fundamental challenge of data acquisition.",
+                workshopMission: "Building towards AGI, RoboGen brings together researchers and industry experts to address this data bottleneck for scaling law. The goal is to develop innovative approaches that leverage recent advances in scene generation and understanding methods. Our workshop emphasizes practical applications and solutions to long-tail data problems in challenging robotics scenarios, with the goal of empowering deep learning systems for real-world deployment.",
+                workshopObjectives: "The RoboGen workshop aims to advance physical world generation for robotics with four key objectives:",
                 objective1: "(1) Understanding: advance multimodal world understanding and spatial-temporal reasoning through vision-language models.",
-                objective2: "(2) Representation: explore video diffusion and flow-based models conditioned on sensor geometry cues for physical 3D world representation.",
+                objective2: "(2) Representation: explore video diffusion and flow-based models conditioned on sensor geometry cues for physical world representation.",
                 objective3: "(3) Action: democratize access to high-quality synthetic data generation to train robust vision-language-action models.",
                 objective4: "(4) Scaling: enable practical deployment of generalizable robot learning systems overcoming the data scaling law bottleneck.",
                 workshopFeaturesTitle: "Workshop Features",
                 workshopFeaturesIntro: "The workshop will feature the following events and activities to encourage discussion and participation . <mark>We are looking for industry partners to showcase their products and services. If you are interested in sponsoring the workshop, please contact us at <a href=\"mailto:robogen-iros@googlegroups.com\">robogen-iros@googlegroups.com</a>.</mark>",
                 keynoteTitle: "Industry-Academia Keynote Sessions",
-                keynoteDesc: "Leading researchers and practitioners from both academia and industry will present cutting-edge advancements in multimodal foundation models and 3d world generation methods for robotics applications.",
+                keynoteDesc: "Leading researchers and practitioners from both academia and industry will present cutting-edge advancements in multimodal foundation models and world generation methods for robotics applications.",
                 oralTitle: "Oral Presentations",
                 oralDesc: "Selected paper presentations highlighting impactful approaches to data generation, artifact mitigation, and domain-specific applications of neural rendering and generative models for robotics.",
                 posterTitle: "Interactive Poster & Demo Session",
@@ -2456,7 +2495,7 @@
                 contact: "联系我们",
                 
                 // Hero section
-                title: "RoboGen: 3D世界生成<br>机器人学习与无人系统",
+                title: 'RoboGen: <span class="typing-container"><span class="typing-word" id="typing-word">3D</span><span class="typing-cursor" id="typing-cursor"></span></span>世界生成<br>机器人学习与无人系统',
                 subtitle: "全天研讨会 - 世界理解与生成<br>构建通用人工智能，解决数据瓶颈问题",
                 location: "Grand Ballroom A, 杭州国际博览中心, 中国杭州",
                 date: "2025年10月24日",
@@ -2480,13 +2519,13 @@
                 
                 workshopObjectives: "RoboGen 致力于推进智能世界理解生成，核心目标包括：",
                 objective1: "(1) 理解：通过视觉-语言模型推进多模态世界理解和时空推理。",
-                objective2: "(2) 表征：探索基于传感器几何线索条件的视频扩散模型用于物理3D世界表征。", 
+                objective2: "(2) 表征：探索基于传感器几何线索条件的视频扩散模型用于物理世界表征。", 
                 objective3: "(3) 行动：普及高质量合成数据生成的获取途径，以训练鲁棒的视觉-语言-行动模型。",
                 objective4: "(4) 扩展：实现通用机器人学习系统的实际部署，克服数据扩展定律瓶颈。",
                 workshopFeaturesTitle: "研讨会特色",
                 workshopFeaturesIntro: "本次研讨会将举办以下丰富多样的活动，促进学术交流与合作。<mark>我们诚挚邀请业界公司进行赞助/demo展示, 如有兴趣, 请通过<a href=\"mailto:robogen-iros@googlegroups.com\">robogen-iros@googlegroups.com</a>与我们联系.</mark>",
                 keynoteTitle: "产学研主旨演讲",
-                keynoteDesc: "来自学术界和产业界的顶尖研究人员将分享多模态基础模型和3D世界生成技术在机器人领域的最新突破。",
+                keynoteDesc: "来自学术界和产业界的顶尖研究人员将分享多模态基础模型和世界生成技术在机器人领域的最新突破。",
                 oralTitle: "论文口头报告",
                 oralDesc: "精选优秀论文进行现场展示，重点介绍数据生成、噪声消除以及神经渲染和生成模型在机器人特定应用中的创新方法。",
                 posterTitle: "互动海报与演示环节",
@@ -2505,7 +2544,7 @@
         };
 
         function switchLanguage(lang) {
-            currentLanguage = lang;
+            window.currentLanguage = lang;
             
             // Update navigation
             document.getElementById('home-nav').textContent = translations[lang].home;
@@ -2666,7 +2705,7 @@
         }
         
         function toggleLanguage() {
-            const newLang = currentLanguage === 'en' ? 'cn' : 'en';
+            const newLang = window.currentLanguage === 'en' ? 'cn' : 'en';
             switchLanguage(newLang);
         }
         
@@ -2675,6 +2714,112 @@
             const savedLanguage = localStorage.getItem('selectedLanguage') || 'en';
             switchLanguage(savedLanguage);
         });
+    </script>
+
+    <!-- Typing Animation Script -->
+    <script type="text/javascript">
+        let typingTimeout = null;
+        let currentWordIndex = 0;
+        const words = ['3D', 'Physical'];
+        const chineseWords = ['3D', '物理'];
+        let isTyping = false;
+        
+        function clearAllTimeouts() {
+            if (typingTimeout) {
+                clearTimeout(typingTimeout);
+                typingTimeout = null;
+            }
+        }
+        
+        function typeWord(word, element, callback) {
+            if (isTyping) return;
+            isTyping = true;
+            
+            let i = 0;
+            element.textContent = '';
+            
+            // Calculate timing to make typing last 2 seconds total for any word
+            const typingDuration = 2000; // 2 seconds total
+            const charDelay = typingDuration / word.length;
+            
+            function typeChar() {
+                if (i < word.length) {
+                    element.textContent = word.substring(0, i + 1);
+                    i++;
+                    typingTimeout = setTimeout(typeChar, charDelay);
+                } else {
+                    isTyping = false;
+                    typingTimeout = setTimeout(callback, 2000); // Wait 2 seconds after word completes
+                }
+            }
+            typeChar();
+        }
+        
+        function deleteWord(element, callback) {
+            if (isTyping) return;
+            isTyping = true;
+            
+            const fullText = element.textContent;
+            let i = fullText.length;
+            
+            function deleteChar() {
+                if (i > 0) {
+                    element.textContent = fullText.substring(0, i - 1);
+                    i--;
+                    typingTimeout = setTimeout(deleteChar, 75); // 75ms per character deletion
+                } else {
+                    isTyping = false;
+                    typingTimeout = setTimeout(callback, 500); // Wait 0.5s before typing next word
+                }
+            }
+            deleteChar();
+        }
+        
+        function startTypingAnimation() {
+            const typingWord = document.getElementById('typing-word');
+            if (!typingWord) return;
+            
+            // Clear any existing timeouts
+            clearAllTimeouts();
+            isTyping = false;
+            
+            // Reset to first word
+            currentWordIndex = 0;
+            
+            // Determine which word set to use based on current language
+            const currentLanguage = window.currentLanguage || 'en';
+            const wordSet = currentLanguage === 'cn' ? chineseWords : words;
+            
+            function cycle() {
+                if (isTyping) return; // Prevent overlapping animations
+                
+                const word = wordSet[currentWordIndex];
+                
+                typeWord(word, typingWord, () => {
+                    deleteWord(typingWord, () => {
+                        currentWordIndex = (currentWordIndex + 1) % wordSet.length;
+                        cycle();
+                    });
+                });
+            }
+            
+            // Start the cycle after initial delay
+            typingTimeout = setTimeout(cycle, 1000);
+        }
+        
+        document.addEventListener('DOMContentLoaded', function() {
+            startTypingAnimation();
+        });
+        
+        // Reinitialize typing animation after language changes
+        const originalSwitchLanguage = switchLanguage;
+        switchLanguage = function(lang) {
+            originalSwitchLanguage(lang);
+            // Clear existing animation and restart
+            clearAllTimeouts();
+            isTyping = false;
+            setTimeout(startTypingAnimation, 100);
+        };
     </script>
 </body>
 
