@@ -4,7 +4,7 @@
 <head>
     <meta charset="utf-8">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
-    <title>RoboGen: 3D World Generation for Robot Learning and Autonomous Systems</title>
+    <title>RoboGen: World Generation for Robot Learning and Autonomous Systems</title>
     <link rel="icon" type="image/x-icon" href="images/logos/robogen-icon.ico">
     <meta name="description" content="RoboGen: Physical World Generation for Robot Learning and Autonomous Systems - IROS 2025 Workshop on World Understanding and Generation for Robotics. October 24th, 2025, Hangzhou, China.">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -817,10 +817,6 @@
                     <li><h6 style= "color:#d20a78" id="panel-title">Expert Panel Discussion</h6> <span id="panel-desc">A focused discussion on bridging the gap between theoretical advancements in neural rendering and practical robotics applications.</span></li>
                                         <li><h6 style= "color:#d20a78" id="award-title">Award Ceremony</h6> <span id="award-desc">Awards will be presented in multiple categories including Best Paper, Best Poster, Most Impactful Open-Source Project, and Most Engaging Speaker to encourage participation and recognize outstanding contributions.</span></li>
                 </ul>
-                <ul style="list-style-type: disc; padding-left: 20px;">
-                    <li><h6 style= "color:#d20a78" id="mentor-title">Mentor 1:1 Session</h6> <span id="mentor-desc">Beyond formal talks and breaks, we're facilitating personalized 15-30 minute one-on-one sessions between junior researchers and keynote speakers or organizing committee members during IROS. Prior to the conference, RoboGen workshop participants will receive a signup form to indicate their interests. This creates valuable mentorship opportunities, connecting junior researchers with senior experts for both technical guidance and career development.</span></li>
-				</ul>
-                <br><br>
 				
             </div>
             </div>
@@ -1710,7 +1706,7 @@
                                                 </div>
                                                 <div class="info">
                                                     <h4>
-                                                        <a href="javascript:void(0)">Lunch Break / Mentor 1:1 Session</a>
+                                                        <a href="javascript:void(0)">Lunch Break</a>
                                                     </h4>
                                                     <ul>
                                                         <li><i class="lni lni-user"></i>
@@ -2613,8 +2609,6 @@
                 panelDesc: "A focused discussion on bridging the gap between theoretical advancements in neural rendering and practical robotics applications.",
                 awardTitle: "Award Ceremony",
                 awardDesc: "Awards will be presented in multiple categories including Best Paper, Best Poster, Most Impactful Open-Source Project, and Most Engaging Speaker to encourage participation and recognize outstanding contributions.",
-                mentorTitle: "Mentor 1:1 Session",
-                mentorDesc: "Beyond formal talks and breaks, we're facilitating personalized 15-30 minute one-on-one sessions between junior researchers and keynote speakers or organizing committee members during IROS. Prior to the conference, RoboGen workshop participants will receive a signup form to indicate their interests. This creates valuable mentorship opportunities, connecting junior researchers with senior experts for both technical guidance and career development.",
                 
                 // Section titles only
                 submissionGuidelinesTitle: "Submission Guidelines",
@@ -2673,10 +2667,7 @@
                 panelTitle: "专家圆桌讨论",
                 panelDesc: "深度探讨如何缩小神经渲染理论发展与机器人实际应用之间的差距，推动技术转化。",
                 awardTitle: "颁奖典礼",
-                awardDesc: "设立多个奖项类别，包括最佳论文奖、最佳海报奖、最具影响力开源项目奖和最佳演讲奖，表彰杰出贡献，激励创新发展。",
-                mentorTitle: "导师面对面交流",
-                mentorDesc: "除正式议程外，我们特别安排IROS会议期间的个性化导师交流环节，青年研究者可与主旨演讲嘉宾或组委会专家进行15-30分钟的一对一深度交流。会前将通过问卷了解参会者需求和兴趣方向，精准匹配导师资源，为青年学者提供技术指导和职业发展建议。",
-                
+                awardDesc: "设立多个奖项类别，包括最佳论文奖、最佳海报奖、最具影响力开源项目奖和最佳演讲奖，表彰杰出贡献，激励创新发展。",                
                 // Section titles only
                 submissionGuidelinesTitle: "投稿指南",
                 affiliationsTitle: "合作机构",
@@ -2810,12 +2801,6 @@
             
             const awardDesc = document.getElementById('award-desc');
             if (awardDesc) awardDesc.textContent = translations[lang].awardDesc;
-            
-            const mentorTitle = document.getElementById('mentor-title');
-            if (mentorTitle) mentorTitle.textContent = translations[lang].mentorTitle;
-            
-            const mentorDesc = document.getElementById('mentor-desc');
-            if (mentorDesc) mentorDesc.textContent = translations[lang].mentorDesc;
             
             // Update section titles only
             const submissionGuidelinesTitle = document.getElementById('submission-guidelines-title');
