@@ -45,6 +45,7 @@
 //====== Managing navigation logic
 const MainNav = {
     Home: "home-nav",
+    Papers: "papers-nav",
     Speakers: "speakers-nav",
     Challenge: "challenge-nav",
     Organizers: "organizers-nav",

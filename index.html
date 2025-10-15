@@ -600,6 +600,11 @@
                                             aria-label="Toggle navigation">Submission</a>
                                     </li>
                                     <li class="nav-item">
+                                        <a id="papers-nav" href="#accepted-papers-section"
+                                            onclick="switch_nav(MainNav.Papers)"
+                                            aria-label="Toggle navigation">Accepted Papers</a>
+                                    </li>
+                                    <li class="nav-item">
                                         <a id="speakers-nav" href="#speakers-section"
                                             onclick="switch_nav(MainNav.Speakers)"
                                             aria-label="Toggle navigation">Speakers</a>
@@ -951,6 +956,141 @@
         </div>
         </div>
     </section>
+
+    <!-- Start Accepted Papers Area -->
+    <section class="events dates section" id="accepted-papers-section" style="padding: 40px 0;">
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <div class="section-title">
+                        <h3 class="wow zoomIn" data-wow-delay=".2s"
+                            style="visibility: visible; animation-delay: 0.2s; animation-name: zoomIn;">Papers</h3>
+                        <h2 class="wow fadeInUp" data-wow-delay=".4s"
+                            style="visibility: visible; animation-delay: 0.4s; animation-name: fadeInUp;">Accepted
+                            Papers</h2>
+                        <p class="wow fadeInUp" data-wow-delay=".6s"
+                            style="visibility: visible; animation-delay: 0.6s; animation-name: fadeInUp;">
+                            We are excited to present the following accepted papers for the RoboGen workshop. 
+                            The papers marked with ⭐ will be presented in the oral sessions. All accepted papers will be presented in the poster sessions.
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-12">
+                    <div class="accepted-papers-list">
+                        <div class="row">
+                            <!-- Best Paper Candidates Section -->
+                            
+                            <!-- RoboTwin 2.0 -->
+                            <div class="col-lg-3 col-md-6 col-12 wow fadeInUp" data-wow-delay=".2s" style="margin-bottom: 20px;">
+                                <div class="single-paper" style="background: linear-gradient(135deg, #fff5f5 0%, #fff 100%); border: 2px solid #d20a78; border-radius: 10px; padding: 20px; height: 100%; box-shadow: 0 4px 15px rgba(210, 10, 120, 0.1);">
+                                    <div class="paper-header" style="display: flex; align-items: center; margin-bottom: 15px;">
+                                        <span style="background: #d20a78; color: white; padding: 3px 8px; border-radius: 15px; font-size: 12px; font-weight: bold; margin-right: 10px;">⭐ Oral</span>
+                                    </div>
+                                    <h6 style="margin-bottom: 15px; color: #d20a78; font-weight: bold; line-height: 1.3;">	
+                                        RoboTwin 2.0: A Scalable Data Generator and Benchmark with Strong Domain Randomization for Robust Bimanual Robotic Manipulation</h6>
+                                    <div class="paper-actions">
+                                        <a href="accepted/9_RoboTwin_2_0_A_Scalable_Data.pdf" target="_blank" class="btn btn-primary" style="background: #d20a78; border: none; padding: 8px 15px; font-size: 12px;">View Paper</a>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <!-- Steerable Scene Generation -->
+                            <div class="col-lg-3 col-md-6 col-12 wow fadeInUp" data-wow-delay=".4s" style="margin-bottom: 20px;">
+                                <div class="single-paper" style="background: linear-gradient(135deg, #fff5f5 0%, #fff 100%); border: 2px solid #d20a78; border-radius: 10px; padding: 20px; height: 100%; box-shadow: 0 4px 15px rgba(210, 10, 120, 0.1);">
+                                    <div class="paper-header" style="display: flex; align-items: center; margin-bottom: 15px;">
+                                        <span style="background: #d20a78; color: white; padding: 3px 8px; border-radius: 15px; font-size: 12px; font-weight: bold; margin-right: 10px;">⭐ Oral</span>
+                                    </div>
+                                    <h6 style="margin-bottom: 15px; color: #d20a78; font-weight: bold; line-height: 1.3;">Steerable Scene Generation with Post Training and Inference-Time Search</h6>
+                                    <div class="paper-actions">
+                                        <a href="accepted/1_Steerable_Scene_Generation_w.pdf" target="_blank" class="btn btn-primary" style="background: #d20a78; border: none; padding: 8px 15px; font-size: 12px;">View Paper</a>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <!-- SceneWeaver -->
+                            <div class="col-lg-3 col-md-6 col-12 wow fadeInUp" data-wow-delay=".6s" style="margin-bottom: 20px;">
+                                <div class="single-paper" style="background: linear-gradient(135deg, #fff5f5 0%, #fff 100%); border: 2px solid #d20a78; border-radius: 10px; padding: 20px; height: 100%; box-shadow: 0 4px 15px rgba(210, 10, 120, 0.1);">
+                                    <div class="paper-header" style="display: flex; align-items: center; margin-bottom: 15px;">
+                                        <span style="background: #d20a78; color: white; padding: 3px 8px; border-radius: 15px; font-size: 12px; font-weight: bold; margin-right: 10px;">⭐ Oral</span>
+                                    </div>
+                                    <h6 style="margin-bottom: 15px; color: #d20a78; font-weight: bold; line-height: 1.3;">	
+                                        SceneWeaver: All-in-one 3D Scene Synthesis with an Extensible and Self-Reflective Agent</h6>
+                                    <div class="paper-actions">
+                                        <a href="accepted/8_SceneWeaver_All_in_one_3D_Sc.pdf" target="_blank" class="btn btn-primary" style="background: #d20a78; border: none; padding: 8px 15px; font-size: 12px;">View Paper</a>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <!-- RoboVerse -->
+                            <div class="col-lg-3 col-md-6 col-12 wow fadeInUp" data-wow-delay=".8s" style="margin-bottom: 20px;">
+                                <div class="single-paper" style="background: linear-gradient(135deg, #fff5f5 0%, #fff 100%); border: 2px solid #d20a78; border-radius: 10px; padding: 20px; height: 100%; box-shadow: 0 4px 15px rgba(210, 10, 120, 0.1);">
+                                    <div class="paper-header" style="display: flex; align-items: center; margin-bottom: 15px;">
+                                        <span style="background: #d20a78; color: white; padding: 3px 8px; border-radius: 15px; font-size: 12px; font-weight: bold; margin-right: 10px;">⭐ Oral</span>
+                                    </div>
+                                    <h6 style="margin-bottom: 15px; color: #d20a78; font-weight: bold; line-height: 1.3;">RoboVerse: Towards a Unified Platform, Dataset and Benchmark for Scalable and Generalizable Robot Learning</h6>
+                                    <div class="paper-actions">
+                                        <a href="accepted/16_roboverse.pdf" target="_blank" class="btn btn-primary" style="background: #d20a78; border: none; padding: 8px 15px; font-size: 12px;">View Paper</a>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <!-- Other Papers -->
+                            <div class="col-lg-3 col-md-6 col-12 wow fadeInUp" data-wow-delay="1.0s" style="margin-bottom: 20px;">
+                                <div class="single-paper" style="background: linear-gradient(135deg, #f0f8ff 0%, #fff 100%); border: 2px solid #4a90e2; border-radius: 10px; padding: 20px; height: 100%; box-shadow: 0 4px 15px rgba(74, 144, 226, 0.1);">
+                                    <div class="paper-header" style="display: flex; align-items: center; margin-bottom: 15px;">
+                                        <span style="background: #4a90e2; color: white; padding: 3px 8px; border-radius: 15px; font-size: 12px; font-weight: bold; margin-right: 10px;">Poster</span>
+                                    </div>
+                                    <h6 style="margin-bottom: 15px; color: #4a90e2; font-weight: 600; line-height: 1.3;">Human-level learning for autonomous driving: Learn to drive with Large Multimodal Foundation Models (LMFM)</h6>
+                                    <div class="paper-actions">
+                                        <a href="accepted/6_Human_level_learning_for_aut.pdf" target="_blank" class="btn btn-primary" style="background: #4a90e2; border: none; padding: 8px 15px; font-size: 12px;">View Paper</a>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="col-lg-3 col-md-6 col-12 wow fadeInUp" data-wow-delay="1.2s" style="margin-bottom: 20px;">
+                                <div class="single-paper" style="background: linear-gradient(135deg, #f0f8ff 0%, #fff 100%); border: 2px solid #4a90e2; border-radius: 10px; padding: 20px; height: 100%; box-shadow: 0 4px 15px rgba(74, 144, 226, 0.1);">
+                                    <div class="paper-header" style="display: flex; align-items: center; margin-bottom: 15px;">
+                                        <span style="background: #4a90e2; color: white; padding: 3px 8px; border-radius: 15px; font-size: 12px; font-weight: bold; margin-right: 10px;">Poster</span>
+                                    </div>
+                                    <h6 style="margin-bottom: 15px; color: #4a90e2; font-weight: 600; line-height: 1.3;">Reliable 3D reconstruction from long-sequence in-the-wild videos</h6>
+                                    <div class="paper-actions">
+                                        <a href="accepted/7_Reliable_3D_reconstruction_f.pdf" target="_blank" class="btn btn-primary" style="background: #4a90e2; border: none; padding: 8px 15px; font-size: 12px;">View Paper</a>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="col-lg-3 col-md-6 col-12 wow fadeInUp" data-wow-delay="1.4s" style="margin-bottom: 20px;">
+                                <div class="single-paper" style="background: linear-gradient(135deg, #f0f8ff 0%, #fff 100%); border: 2px solid #4a90e2; border-radius: 10px; padding: 20px; height: 100%; box-shadow: 0 4px 15px rgba(74, 144, 226, 0.1);">
+                                    <div class="paper-header" style="display: flex; align-items: center; margin-bottom: 15px;">
+                                        <span style="background: #4a90e2; color: white; padding: 3px 8px; border-radius: 15px; font-size: 12px; font-weight: bold; margin-right: 10px;">Poster</span>
+                                    </div>
+                                    <h6 style="margin-bottom: 15px; color: #4a90e2; font-weight: 600; line-height: 1.3;">MASt3R-GS: Bridging 3D Reconstruction Priors with Gaussian Splatting for Real-Time Dense SLAM</h6>
+                                    <div class="paper-actions">
+                                        <a href="accepted/12_MASt3R_GS_Bridging_3D_Recon.pdf" target="_blank" class="btn btn-primary" style="background: #4a90e2; border: none; padding: 8px 15px; font-size: 12px;">View Paper</a>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="col-lg-3 col-md-6 col-12 wow fadeInUp" data-wow-delay="1.6s" style="margin-bottom: 20px;">
+                                <div class="single-paper" style="background: linear-gradient(135deg, #f0f8ff 0%, #fff 100%); border: 2px solid #4a90e2; border-radius: 10px; padding: 20px; height: 100%; box-shadow: 0 4px 15px rgba(74, 144, 226, 0.1);">
+                                    <div class="paper-header" style="display: flex; align-items: center; margin-bottom: 15px;">
+                                        <span style="background: #4a90e2; color: white; padding: 3px 8px; border-radius: 15px; font-size: 12px; font-weight: bold; margin-right: 10px;">Poster</span>
+                                    </div>
+                                    <h6 style="margin-bottom: 15px; color: #4a90e2; font-weight: 600; line-height: 1.3;">Physics-Aware Gaussian Radar Enhancement for All-weather Perception</h6>
+                                    <div class="paper-actions">
+                                        <a href="accepted/15_Physics_Aware_Gaussian_Rada.pdf" target="_blank" class="btn btn-primary" style="background: #4a90e2; border: none; padding: 8px 15px; font-size: 12px;">View Paper</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- End Accepted Papers Area -->
 
 
 
@@ -2720,8 +2860,8 @@
     <script type="text/javascript">
         let typingTimeout = null;
         let currentWordIndex = 0;
-        const words = ['3D', 'Physical'];
-        const chineseWords = ['3D', '物理'];
+        const words = ['3D', 'Physical', 'Interactive'];
+        const chineseWords = ['3D', '物理', '交互'];
         let isTyping = false;
         
         function clearAllTimeouts() {
@@ -2821,6 +2961,30 @@
             setTimeout(startTypingAnimation, 100);
         };
     </script>
+<style>
+/* Paper Cards Hover Effects */
+.single-paper {
+    transition: all 0.3s ease !important;
+}
+
+.single-paper:hover {
+    transform: translateY(-5px) !important;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15) !important;
+}
+
+/* Oral Papers (Pink) Hover Effects */
+.single-paper[style*="border: 2px solid #d20a78"]:hover {
+    box-shadow: 0 8px 30px rgba(210, 10, 120, 0.25) !important;
+    border-color: #b8095f !important;
+}
+
+/* Poster Papers (Blue) Hover Effects */
+.single-paper[style*="border: 2px solid #4a90e2"]:hover {
+    box-shadow: 0 8px 30px rgba(74, 144, 226, 0.25) !important;
+    border-color: #357abd !important;
+}
+</style>
+
 </body>
 
 </html>
