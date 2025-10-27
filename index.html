@@ -425,6 +425,307 @@
             }
         }
 
+        /* Video Archive Styles */
+        .video-archive {
+            background: #f8f9fa;
+            padding: 80px 0;
+        }
+
+        .video-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 30px;
+            padding: 0 20px;
+            margin-top: 40px;
+        }
+
+        .video-card {
+            position: relative;
+            background: white;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .video-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 15px 40px rgba(242, 4, 135, 0.2);
+        }
+
+        /* Featured Video Card (Best Paper) */
+        .video-card-featured {
+            border: 4px solid #FFD700;
+            box-shadow: 
+                0 8px 30px rgba(0, 0, 0, 0.15),
+                0 0 40px rgba(255, 215, 0, 0.5),
+                0 0 60px rgba(255, 215, 0, 0.3);
+            position: relative;
+            background: linear-gradient(135deg, rgba(255, 215, 0, 0.05) 0%, rgba(255, 255, 255, 1) 100%);
+        }
+
+        .video-card-featured::before {
+            content: '';
+            position: absolute;
+            top: -4px;
+            left: -4px;
+            right: -4px;
+            bottom: -4px;
+            background: linear-gradient(135deg, #FFD700, #FF8C00, #FFD700);
+            border-radius: 15px;
+            z-index: -1;
+            opacity: 0.7;
+        }
+
+        .video-card-featured:hover {
+            transform: translateY(-12px) scale(1.02);
+            box-shadow: 
+                0 20px 50px rgba(0, 0, 0, 0.2),
+                0 0 50px rgba(255, 215, 0, 0.7),
+                0 0 80px rgba(255, 215, 0, 0.4);
+        }
+
+        .video-thumbnail-container {
+            position: relative;
+            width: 100%;
+            padding-bottom: 56.25%; /* 16:9 aspect ratio */
+            background: #000;
+            overflow: hidden;
+        }
+
+        .video-thumbnail {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.3s ease;
+        }
+
+        .video-card:hover .video-thumbnail {
+            transform: scale(1.05);
+        }
+
+        .play-button-overlay {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 50px;
+            height: 50px;
+            background: rgba(255, 255, 255, 0.9);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.3s ease;
+            z-index: 2;
+        }
+
+        .play-button-overlay::after {
+            content: '';
+            width: 0;
+            height: 0;
+            border-left: 14px solid #333;
+            border-top: 9px solid transparent;
+            border-bottom: 9px solid transparent;
+            margin-left: 3px;
+        }
+
+        .video-card:hover .play-button-overlay {
+            transform: translate(-50%, -50%) scale(1.15);
+            background: rgba(255, 255, 255, 1);
+        }
+
+        .video-info {
+            padding: 20px;
+            background: white;
+        }
+
+        .video-info h4 {
+            font-size: 1.1rem;
+            font-weight: 600;
+            color: #333;
+            margin: 0 0 8px 0;
+            line-height: 1.4;
+        }
+
+        .video-info p {
+            font-size: 0.9rem;
+            color: #666;
+            margin: 0;
+        }
+
+        .video-award-badge {
+            position: absolute;
+            bottom: 12px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: linear-gradient(135deg, #FFD700 0%, #FFA500 100%);
+            color: #fff;
+            padding: 8px 15px;
+            border-radius: 25px;
+            font-size: 0.75rem;
+            font-weight: 800;
+            display: flex;
+            align-items: center;
+            gap: 7px;
+            z-index: 3;
+            box-shadow: 
+                0 8px 30px rgba(0, 0, 0, 0.6),
+                0 0 40px rgba(255, 215, 0, 0.9),
+                0 0 60px rgba(255, 215, 0, 0.6),
+                inset 0 1px 3px rgba(255, 255, 255, 0.4);
+            border: 3px solid rgba(255, 255, 255, 0.95);
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+            letter-spacing: 0.3px;
+            text-transform: uppercase;
+        }
+
+        .video-award-badge.best-keynote {
+            background: linear-gradient(135deg, #FF1493 0%, #DC143C 100%);
+            box-shadow: 
+                0 8px 30px rgba(0, 0, 0, 0.6),
+                0 0 40px rgba(255, 20, 147, 0.9),
+                0 0 60px rgba(255, 20, 147, 0.6),
+                inset 0 1px 3px rgba(255, 255, 255, 0.4);
+        }
+
+        .video-award-badge.best-paper {
+            background: linear-gradient(135deg, #FFD700 0%, #FF8C00 100%);
+            box-shadow: 
+                0 8px 30px rgba(0, 0, 0, 0.6),
+                0 0 40px rgba(255, 215, 0, 0.9),
+                0 0 60px rgba(255, 215, 0, 0.6),
+                inset 0 1px 3px rgba(255, 255, 255, 0.4);
+        }
+
+        .video-award-badge.best-opensource {
+            background: linear-gradient(135deg, #1E90FF 0%, #0066CC 100%);
+            box-shadow: 
+                0 8px 30px rgba(0, 0, 0, 0.6),
+                0 0 40px rgba(30, 144, 255, 0.9),
+                0 0 60px rgba(30, 144, 255, 0.6),
+                inset 0 1px 3px rgba(255, 255, 255, 0.4);
+        }
+
+        .video-award-badge.best-poster {
+            background: linear-gradient(135deg, #32CD32 0%, #228B22 100%);
+            box-shadow: 
+                0 8px 30px rgba(0, 0, 0, 0.6),
+                0 0 40px rgba(50, 205, 50, 0.9),
+                0 0 60px rgba(50, 205, 50, 0.6),
+                inset 0 1px 3px rgba(255, 255, 255, 0.4);
+        }
+
+        .opt-out-label {
+            position: absolute;
+            bottom: 15px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: rgba(0, 0, 0, 0.8);
+            color: white;
+            padding: 8px 16px;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            z-index: 3;
+        }
+
+        /* Video Player Modal */
+        .video-player-modal {
+            display: none;
+            position: fixed;
+            z-index: 10000;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.95);
+            animation: fadeIn 0.3s ease;
+        }
+
+        .video-player-modal.active {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .video-player-container {
+            position: relative;
+            width: 90%;
+            max-width: 1200px;
+            aspect-ratio: 16/9;
+            background: #000;
+            border-radius: 10px;
+            overflow: hidden;
+            animation: zoomIn 0.3s ease;
+        }
+
+        .video-player-container iframe {
+            width: 100%;
+            height: 100%;
+            border: none;
+        }
+
+        .video-player-close {
+            position: absolute;
+            top: -50px;
+            right: 0;
+            color: white;
+            font-size: 40px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            z-index: 10001;
+        }
+
+        .video-player-close:hover {
+            color: #F20487;
+            transform: rotate(90deg);
+        }
+
+        @media (max-width: 1200px) {
+            .video-grid {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 25px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .video-archive {
+                padding: 60px 0;
+            }
+
+            .video-grid {
+                grid-template-columns: repeat(1, 1fr);
+                gap: 20px;
+                padding: 0 10px;
+            }
+
+            .play-button-overlay {
+                width: 45px;
+                height: 45px;
+            }
+
+            .play-button-overlay::after {
+                border-left: 12px solid #333;
+                border-top: 8px solid transparent;
+                border-bottom: 8px solid transparent;
+            }
+
+            .video-player-container {
+                width: 95%;
+            }
+
+            .video-player-close {
+                top: -40px;
+                font-size: 30px;
+            }
+        }
+
         /* Best Oral Award Highlight Styles */
         .best-oral-award {
             position: relative;
@@ -815,9 +1116,9 @@
                                             aria-label="Toggle navigation">Organizers</a>
                                     </li>
                                     <li class="nav-item">
-                                        <a id="photos-nav" href="#photos-section"
-                                            onclick="switch_nav(MainNav.Photos)"
-                                            aria-label="Toggle navigation">Photos</a>
+                                        <a id="archive-nav" href="#recordings-section"
+                                            onclick="switch_nav(MainNav.Archive)"
+                                            aria-label="Toggle navigation">Archive</a>
                                     </li>
                                     <li class="nav-item">
                                         <a id="contact-nav" href="#contact-section"
@@ -2085,7 +2386,7 @@
                                                             <a href="" class="btn">Feishi Wang — RoboVerse</a>
                                                         </li>
                                                         <li style="margin-bottom: 5px;"><i class="lni lni-user"></i>
-                                                            <a href="" class="btn">Nicholas Ezra Pfaff — Steerable Scene Generation</a>
+                                                            <a href="" class="btn">Nicholas Ezra Pfaff — SteerableGen</a>
                                                         </li>
                                                     </ul>
                                                 </div>
@@ -2904,14 +3205,200 @@
     </section>
 	<!-- End Companies and Organizations Area -->
 	
+    <!-- Start Workshop Recordings Area -->
+    <section class="video-archive section" id="recordings-section">
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <div class="section-title">
+                        <h2 class="wow fadeInUp" data-wow-delay=".4s">Workshop Recordings</h2>
+                        <p class="wow fadeInUp" data-wow-delay=".6s">Watch talks from RoboGen IROS 2025 • <a href="https://www.youtube.com/playlist?list=PLndEahq8eg-pNIdLYepFUqFmnD0bGojI9" target="_blank" style="color: #F20487; text-decoration: none; font-weight: 600;">Workshop Recordings YouTube Playlist</a></p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="video-grid">
+                <!-- Video 1: Siyuan Huang -->
+                <div class="video-card wow fadeInUp" data-wow-delay=".2s" onclick="openVideoPlayer('Wd9Z5l6HKHE')">
+                    <div class="video-thumbnail-container">
+                        <img class="video-thumbnail" src="https://img.youtube.com/vi/Wd9Z5l6HKHE/maxresdefault.jpg" alt="Siyuan Huang Keynote">
+                        <div class="play-button-overlay"></div>
+                    </div>
+                    <div class="video-info">
+                        <h4>Keynote Speaker: Siyuan Huang</h4>
+                    </div>
+                </div>
+
+                <!-- Video 2: Yifei Shao -->
+                <div class="video-card wow fadeInUp" data-wow-delay=".25s" onclick="openVideoPlayer('LwjS68OK9Xc')">
+                    <div class="video-thumbnail-container">
+                        <img class="video-thumbnail" src="https://img.youtube.com/vi/LwjS68OK9Xc/maxresdefault.jpg" alt="Yifei Shao">
+                        <div class="play-button-overlay"></div>
+                    </div>
+                    <div class="video-info">
+                        <h4>Rising Star Speaker: Yifei Shao</h4>
+                    </div>
+                </div>
+
+                <!-- Video 3: Pou-Chun Kung -->
+                <div class="video-card wow fadeInUp" data-wow-delay=".3s" onclick="openVideoPlayer('MKHuuGaOwos')">
+                    <div class="video-thumbnail-container">
+                        <img class="video-thumbnail" src="https://img.youtube.com/vi/MKHuuGaOwos/maxresdefault.jpg" alt="Pou-Chun Kung">
+                        <div class="play-button-overlay"></div>
+                    </div>
+                    <div class="video-info">
+                        <h4>Rising Star Speaker: Pou-Chun Kung</h4>
+                    </div>
+                </div>
+
+                <!-- Video 4: Yue Wang -->
+                <div class="video-card wow fadeInUp" data-wow-delay=".35s" onclick="openVideoPlayer('Vsy0beIDWKc')">
+                    <div class="video-thumbnail-container">
+                        <img class="video-thumbnail" src="https://img.youtube.com/vi/Vsy0beIDWKc/maxresdefault.jpg" alt="Yue Wang Keynote">
+                        <div class="play-button-overlay"></div>
+                    </div>
+                    <div class="video-info">
+                        <h4>Keynote Speaker: Yue Wang</h4>
+                    </div>
+                </div>
+
+                <!-- Video 5: Shenlong Wang - Best Keynote Winner -->
+                <div class="video-card wow fadeInUp" data-wow-delay=".4s" onclick="openVideoPlayer('89NE2F9Z3r8')">
+                    <div class="video-thumbnail-container">
+                        <img class="video-thumbnail" src="https://img.youtube.com/vi/89NE2F9Z3r8/maxresdefault.jpg" alt="Shenlong Wang">
+                        <div class="video-award-badge best-keynote">🏆 Best Keynote</div>
+                        <div class="play-button-overlay"></div>
+                    </div>
+                    <div class="video-info">
+                        <h4>Best Keynote Winner: Shenlong Wang</h4>
+                    </div>
+                </div>
+
+                <!-- Video 6: RoboTwin 2.0 -->
+                <div class="video-card wow fadeInUp" data-wow-delay=".45s" onclick="openVideoPlayer('2f0dOztVqXw')">
+                    <div class="video-thumbnail-container">
+                        <img class="video-thumbnail" src="https://img.youtube.com/vi/2f0dOztVqXw/maxresdefault.jpg" alt="RoboTwin 2.0">
+                        <div class="play-button-overlay"></div>
+                    </div>
+                    <div class="video-info">
+                        <h4>Best Paper Candidate: RoboTwin 2.0</h4>
+                        <p>Oral Speaker: Tianxing Chen</p>
+                    </div>
+                </div>
+
+                <!-- Video 7: SceneWeaver - Best Paper Winner -->
+                <div class="video-card video-card-featured wow fadeInUp" data-wow-delay=".5s" onclick="openVideoPlayer('ctnF06XPSv4')">
+                    <div class="video-thumbnail-container">
+                        <img class="video-thumbnail" src="https://img.youtube.com/vi/ctnF06XPSv4/maxresdefault.jpg" alt="SceneWeaver">
+                        <div class="video-award-badge best-paper">🏆 Best Paper</div>
+                        <div class="play-button-overlay"></div>
+                    </div>
+                    <div class="video-info">
+                        <h4>Best Paper Winner: SceneWeaver</h4>
+                        <p>Oral Speaker: Baoxiong Jia</p>
+                    </div>
+                </div>
+
+                <!-- Video 8: RoboVerse - Best OpenSource Winner -->
+                <div class="video-card wow fadeInUp" data-wow-delay=".55s" onclick="openVideoPlayer('_TOUSX3iy7w')">
+                    <div class="video-thumbnail-container">
+                        <img class="video-thumbnail" src="https://img.youtube.com/vi/_TOUSX3iy7w/maxresdefault.jpg" alt="RoboVerse">
+                        <div class="video-award-badge best-opensource">🏆 Best OpenSource</div>
+                        <div class="play-button-overlay"></div>
+                    </div>
+                    <div class="video-info">
+                        <h4>Best OpenSource Winner: RoboVerse</h4>
+                        <p>Oral Speaker: Feishi Wang</p>
+                    </div>
+                </div>
+
+                <!-- Video 9: Steerable Scene Generation - Best Poster Winner -->
+                <div class="video-card wow fadeInUp" data-wow-delay=".6s" onclick="openVideoPlayer('Zpu351btBvo')">
+                    <div class="video-thumbnail-container">
+                        <img class="video-thumbnail" src="https://img.youtube.com/vi/Zpu351btBvo/maxresdefault.jpg" alt="SteerableGen">
+                        <div class="video-award-badge best-poster">🏆 Best Poster</div>
+                        <div class="play-button-overlay"></div>
+                    </div>
+                    <div class="video-info">
+                        <h4>Best Poster Winner: SteerableGen</h4>
+                        <p>Oral Speaker: Nicholas Ezra Pfaff</p>
+                    </div>
+                </div>
+
+                <!-- Video 10: Chenfei Wu -->
+                <div class="video-card wow fadeInUp" data-wow-delay=".65s" onclick="openVideoPlayer('Tl329U6Z6nI')">
+                    <div class="video-thumbnail-container">
+                        <img class="video-thumbnail" src="https://img.youtube.com/vi/Tl329U6Z6nI/maxresdefault.jpg" alt="Chenfei Wu Keynote">
+                        <div class="play-button-overlay"></div>
+                    </div>
+                    <div class="video-info">
+                        <h4>Keynote Speaker: Chenfei Wu</h4>
+                    </div>
+                </div>
+
+                <!-- Video 11: Zhijian Liu - Recording Opt Out -->
+                <div class="video-card wow fadeInUp" data-wow-delay=".7s">
+                    <div class="video-thumbnail-container">
+                        <img class="video-thumbnail" src="images/pm_1_zhijian.png" alt="Zhijian Liu Keynote">
+                        <div class="opt-out-label">Recording Opted Out</div>
+                    </div>
+                    <div class="video-info">
+                        <h4>Keynote Speaker: Zhijian Liu</h4>
+                    </div>
+                </div>
+
+                <!-- Video 12: Ruigang Yang -->
+                <div class="video-card wow fadeInUp" data-wow-delay=".75s" onclick="openVideoPlayer('IZrwWDVKSC4')">
+                    <div class="video-thumbnail-container">
+                        <img class="video-thumbnail" src="https://img.youtube.com/vi/IZrwWDVKSC4/maxresdefault.jpg" alt="Ruigang Yang Keynote">
+                        <div class="play-button-overlay"></div>
+                    </div>
+                    <div class="video-info">
+                        <h4>Keynote Speaker: Ruigang Yang</h4>
+                    </div>
+                </div>
+
+                <!-- Video 13: Peter KT Yu -->
+                <div class="video-card wow fadeInUp" data-wow-delay=".8s" onclick="openVideoPlayer('XJGaiVaQQRk')">
+                    <div class="video-thumbnail-container">
+                        <img class="video-thumbnail" src="https://img.youtube.com/vi/XJGaiVaQQRk/maxresdefault.jpg" alt="Peter KT Yu Keynote">
+                        <div class="play-button-overlay"></div>
+                    </div>
+                    <div class="video-info">
+                        <h4>Keynote Speaker: Peter KT Yu</h4>
+                    </div>
+                </div>
+
+                <!-- Video 14: Panel Discussion -->
+                <div class="video-card wow fadeInUp" data-wow-delay=".85s" onclick="openVideoPlayer('CwWYWrAXkhU')">
+                    <div class="video-thumbnail-container">
+                        <img class="video-thumbnail" src="https://img.youtube.com/vi/CwWYWrAXkhU/maxresdefault.jpg" alt="Panel Discussion">
+                        <div class="play-button-overlay"></div>
+                    </div>
+                    <div class="video-info">
+                        <h4>Panel: Building Toward Embodied AGI - Solving the Data Bottleneck</h4>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- End Workshop Recordings Area -->
+
+    <!-- Video Player Modal -->
+    <div id="video-player-modal" class="video-player-modal" onclick="closeVideoPlayer(event)">
+        <span class="video-player-close" onclick="closeVideoPlayer(event)">&times;</span>
+        <div class="video-player-container" id="video-player-container">
+            <!-- YouTube iframe will be inserted here -->
+        </div>
+    </div>
+
     <!-- Start Photo Gallery Area -->
     <section class="photo-gallery section" id="photos-section">
         <div class="container">
             <div class="row">
                 <div class="col-12">
                     <div class="section-title">
-                        <h2 class="wow fadeInUp" data-wow-delay=".4s">Workshop Photos</h2>
-                        <p class="wow fadeInUp" data-wow-delay=".6s">Highlights from RoboGen IROS 2025</p>
+                        <h2 class="wow fadeInUp" data-wow-delay=".4s">Workshop Photo Highlights</h2>
                     </div>
                 </div>
             </div>
@@ -3184,7 +3671,7 @@
                 speakers: "Speakers",
                 program: "Program",
                 organizers: "Organizers",
-                photos: "Photos",
+                archive: "Recordings",
                 contact: "Contact",
                 
                 // Hero section
@@ -3199,8 +3686,9 @@
                 speakersTitle: "Invited Speakers",
                 programTitle: "Workshop Schedule (Tentative)",
                 organizersTitle: "Workshop Organizers",
-                photosTitle: "Workshop Photos",
-                photosSubtitle: "Highlights from RoboGen IROS 2025",
+                recordingsTitle: "Workshop Recordings",
+                recordingsSubtitle: 'Watch talks from RoboGen IROS 2025 • <a href="https://www.youtube.com/playlist?list=PLndEahq8eg-pNIdLYepFUqFmnD0bGojI9" target="_blank" style="color: #F20487; text-decoration: none; font-weight: 600;">Workshop Recordings Playlist</a>',
+                photosTitle: "Workshop Photo Highlights",
                 contactTitle: "Contact",
                 
                 // Workshop Details Content
@@ -3241,7 +3729,7 @@
                 speakers: "演讲者",
                 program: "议程",
                 organizers: "组织者",
-                photos: "照片",
+                archive: "档案",
                 contact: "联系我们",
                 
                 // Hero section
@@ -3256,8 +3744,9 @@
                 speakersTitle: "特邀演讲者",
                 programTitle: "研讨会议程（暂定）",
                 organizersTitle: "研讨会组织者",
-                photosTitle: "研讨会照片",
-                photosSubtitle: "RoboGen IROS 2025 精彩瞬间",
+                recordingsTitle: "研讨会录像",
+                recordingsSubtitle: '观看RoboGen IROS 2025演讲 • <a href="https://www.youtube.com/playlist?list=PLndEahq8eg-pNIdLYepFUqFmnD0bGojI9" target="_blank" style="color: #F20487; text-decoration: none; font-weight: 600;">YouTube播放列表</a>',
+                photosTitle: "研讨会照片集锦",
                 contactTitle: "联系我们",
                 
                 // Buttons and labels
@@ -3302,7 +3791,7 @@
             document.getElementById('speakers-nav').textContent = translations[lang].speakers;
             document.getElementById('schedule-nav').textContent = translations[lang].program;
             document.getElementById('organizers-nav').textContent = translations[lang].organizers;
-            document.getElementById('photos-nav').textContent = translations[lang].photos;
+            document.getElementById('archive-nav').textContent = translations[lang].archive;
             document.getElementById('contact-nav').textContent = translations[lang].contact;
             
             // Update hero section
@@ -3344,11 +3833,14 @@
             const organizersSection = document.querySelector('#organizers-section .section-title h2');
             if (organizersSection) organizersSection.textContent = translations[lang].organizersTitle;
             
+            const recordingsSection = document.querySelector('#recordings-section .section-title h2');
+            if (recordingsSection) recordingsSection.textContent = translations[lang].recordingsTitle;
+            
+            const recordingsSubtitleSection = document.querySelector('#recordings-section .section-title p');
+            if (recordingsSubtitleSection) recordingsSubtitleSection.innerHTML = translations[lang].recordingsSubtitle;
+            
             const photosSection = document.querySelector('#photos-section .section-title h2');
             if (photosSection) photosSection.textContent = translations[lang].photosTitle;
-            
-            const photosSubtitleSection = document.querySelector('#photos-section .section-title p');
-            if (photosSubtitleSection) photosSubtitleSection.textContent = translations[lang].photosSubtitle;
             
             const contactSection = document.querySelector('#contact-section .section-title h3');
             if (contactSection) contactSection.textContent = translations[lang].contactTitle;
@@ -3691,6 +4183,62 @@
                     changePhoto(-1);
                 } else if (event.key === 'ArrowRight') {
                     changePhoto(1);
+                }
+            }
+        });
+    </script>
+
+    <!-- Video Player JavaScript -->
+    <script>
+        function openVideoPlayer(videoId) {
+            const modal = document.getElementById('video-player-modal');
+            const container = document.getElementById('video-player-container');
+            
+            // Create YouTube iframe with proper configuration
+            const iframe = document.createElement('iframe');
+            iframe.src = `https://www.youtube-nocookie.com/embed/${videoId}?autoplay=1&rel=0&modestbranding=1`;
+            iframe.setAttribute('frameborder', '0');
+            iframe.setAttribute('allow', 'accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share');
+            iframe.setAttribute('allowfullscreen', 'true');
+            iframe.setAttribute('referrerpolicy', 'strict-origin-when-cross-origin');
+            
+            // Clear container and add iframe
+            container.innerHTML = '';
+            container.appendChild(iframe);
+            
+            // Show modal
+            modal.classList.add('active');
+            
+            // Prevent body scroll
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeVideoPlayer(event) {
+            // Only close if clicking on the background or close button
+            if (event.target.id === 'video-player-modal' || event.target.classList.contains('video-player-close')) {
+                const modal = document.getElementById('video-player-modal');
+                const container = document.getElementById('video-player-container');
+                
+                // Remove iframe to stop video
+                container.innerHTML = '';
+                
+                // Hide modal
+                modal.classList.remove('active');
+                
+                // Restore body scroll
+                document.body.style.overflow = 'auto';
+            }
+        }
+
+        // Keyboard navigation for video player
+        document.addEventListener('keydown', function(event) {
+            const modal = document.getElementById('video-player-modal');
+            if (modal && modal.classList.contains('active')) {
+                if (event.key === 'Escape') {
+                    const container = document.getElementById('video-player-container');
+                    container.innerHTML = '';
+                    modal.classList.remove('active');
+                    document.body.style.overflow = 'auto';
                 }
             }
         });
