@@ -239,6 +239,192 @@
             }
         }
 
+        /* Photo Gallery Styles */
+        .photo-gallery {
+            background: #ffffff;
+            padding: 80px 0;
+        }
+
+        .photo-gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 20px;
+            padding: 0 20px;
+            margin-top: 40px;
+        }
+
+        .photo-item {
+            position: relative;
+            overflow: hidden;
+            border-radius: 12px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+            cursor: pointer;
+            transition: all 0.3s ease;
+            aspect-ratio: 1;
+        }
+
+        .photo-item:hover {
+            transform: translateY(-8px) scale(1.02);
+            box-shadow: 0 12px 30px rgba(242, 4, 135, 0.25);
+        }
+
+        .photo-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.3s ease;
+        }
+
+        .photo-item:hover img {
+            transform: scale(1.1);
+        }
+
+        .photo-overlay {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: linear-gradient(to top, rgba(0,0,0,0.8), transparent);
+            padding: 15px;
+            transform: translateY(100%);
+            transition: transform 0.3s ease;
+        }
+
+        .photo-item:hover .photo-overlay {
+            transform: translateY(0);
+        }
+
+        .photo-overlay p {
+            color: white;
+            margin: 0;
+            font-size: 0.9rem;
+            font-weight: 500;
+        }
+
+        /* Lightbox Styles */
+        .lightbox {
+            display: none;
+            position: fixed;
+            z-index: 9999;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.95);
+            animation: fadeIn 0.3s ease;
+        }
+
+        .lightbox.active {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .lightbox-content {
+            max-width: 90%;
+            max-height: 90%;
+            object-fit: contain;
+            animation: zoomIn 0.3s ease;
+        }
+
+        .lightbox-close {
+            position: absolute;
+            top: 30px;
+            right: 50px;
+            color: white;
+            font-size: 40px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            z-index: 10000;
+        }
+
+        .lightbox-close:hover {
+            color: #F20487;
+            transform: rotate(90deg);
+        }
+
+        .lightbox-nav {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            color: white;
+            font-size: 50px;
+            font-weight: bold;
+            cursor: pointer;
+            padding: 20px;
+            user-select: none;
+            transition: all 0.3s ease;
+        }
+
+        .lightbox-nav:hover {
+            color: #F20487;
+            transform: translateY(-50%) scale(1.2);
+        }
+
+        .lightbox-prev {
+            left: 30px;
+        }
+
+        .lightbox-next {
+            right: 30px;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        @keyframes zoomIn {
+            from { transform: scale(0.8); opacity: 0; }
+            to { transform: scale(1); opacity: 1; }
+        }
+
+        @media (max-width: 1200px) {
+            .photo-gallery-grid {
+                grid-template-columns: repeat(3, 1fr);
+                gap: 18px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .photo-gallery {
+                padding: 60px 0;
+            }
+
+            .photo-gallery-grid {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 15px;
+                padding: 0 10px;
+            }
+
+            .lightbox-close {
+                top: 15px;
+                right: 20px;
+                font-size: 30px;
+            }
+
+            .lightbox-nav {
+                font-size: 35px;
+                padding: 10px;
+            }
+
+            .lightbox-prev {
+                left: 10px;
+            }
+
+            .lightbox-next {
+                right: 10px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .photo-gallery-grid {
+                grid-template-columns: repeat(1, 1fr);
+                gap: 12px;
+            }
+        }
+
         /* Best Oral Award Highlight Styles */
         .best-oral-award {
             position: relative;
@@ -627,6 +813,11 @@
                                         <a id="organizers-nav" href="#organizers-section"
                                             onclick="switch_nav(MainNav.Organizers)"
                                             aria-label="Toggle navigation">Organizers</a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a id="photos-nav" href="#photos-section"
+                                            onclick="switch_nav(MainNav.Photos)"
+                                            aria-label="Toggle navigation">Photos</a>
                                     </li>
                                     <li class="nav-item">
                                         <a id="contact-nav" href="#contact-section"
@@ -2713,6 +2904,200 @@
     </section>
 	<!-- End Companies and Organizations Area -->
 	
+    <!-- Start Photo Gallery Area -->
+    <section class="photo-gallery section" id="photos-section">
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <div class="section-title">
+                        <h2 class="wow fadeInUp" data-wow-delay=".4s">Workshop Photos</h2>
+                        <p class="wow fadeInUp" data-wow-delay=".6s">Highlights from RoboGen IROS 2025</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="photo-gallery-grid">
+                <div class="photo-item wow fadeInUp" data-wow-delay=".2s" onclick="openLightbox(0)">
+                    <img src="photos/0_robogen_1.png" alt="RoboGen Workshop">
+                    <div class="photo-overlay">
+                        <p>RoboGen Workshop</p>
+                    </div>
+                </div>
+                <div class="photo-item wow fadeInUp" data-wow-delay=".25s" onclick="openLightbox(1)">
+                    <img src="photos/1_siyuan_1.png" alt="Siyuan Keynote">
+                    <div class="photo-overlay">
+                        <p>Siyuan Keynote</p>
+                    </div>
+                </div>
+                <div class="photo-item wow fadeInUp" data-wow-delay=".3s" onclick="openLightbox(2)">
+                    <img src="photos/1_siyuan_2.png" alt="Siyuan Presentation">
+                    <div class="photo-overlay">
+                        <p>Siyuan Presentation</p>
+                    </div>
+                </div>
+                <div class="photo-item wow fadeInUp" data-wow-delay=".35s" onclick="openLightbox(3)">
+                    <img src="photos/2_yifei_0.png" alt="Yifei Presentation">
+                    <div class="photo-overlay">
+                        <p>Yifei Presentation</p>
+                    </div>
+                </div>
+                <div class="photo-item wow fadeInUp" data-wow-delay=".4s" onclick="openLightbox(4)">
+                    <img src="photos/2_yifei_2.png" alt="Yifei Talk">
+                    <div class="photo-overlay">
+                        <p>Yifei Talk</p>
+                    </div>
+                </div>
+                <div class="photo-item wow fadeInUp" data-wow-delay=".45s" onclick="openLightbox(5)">
+                    <img src="photos/3_frank_1.png" alt="Frank Presentation">
+                    <div class="photo-overlay">
+                        <p>Frank Presentation</p>
+                    </div>
+                </div>
+                <div class="photo-item wow fadeInUp" data-wow-delay=".5s" onclick="openLightbox(6)">
+                    <img src="photos/4_yue_1.png" alt="Yue Talk">
+                    <div class="photo-overlay">
+                        <p>Yue Talk</p>
+                    </div>
+                </div>
+                <div class="photo-item wow fadeInUp" data-wow-delay=".55s" onclick="openLightbox(7)">
+                    <img src="photos/5_shenlong_wang.png" alt="Shenlong Wang">
+                    <div class="photo-overlay">
+                        <p>Shenlong Wang</p>
+                    </div>
+                </div>
+                <div class="photo-item wow fadeInUp" data-wow-delay=".6s" onclick="openLightbox(8)">
+                    <img src="photos/5_shenlong.png" alt="Shenlong Presentation">
+                    <div class="photo-overlay">
+                        <p>Shenlong Presentation</p>
+                    </div>
+                </div>
+                <div class="photo-item wow fadeInUp" data-wow-delay=".65s" onclick="openLightbox(9)">
+                    <img src="photos/6_tianxing.png" alt="Tianxing Talk">
+                    <div class="photo-overlay">
+                        <p>Tianxing Talk</p>
+                    </div>
+                </div>
+                <div class="photo-item wow fadeInUp" data-wow-delay=".7s" onclick="openLightbox(10)">
+                    <img src="photos/7_baoxiong.png" alt="Baoxiong">
+                    <div class="photo-overlay">
+                        <p>Baoxiong</p>
+                    </div>
+                </div>
+                <div class="photo-item wow fadeInUp" data-wow-delay=".75s" onclick="openLightbox(11)">
+                    <img src="photos/7_baoxiong_2.png" alt="Baoxiong Presentation">
+                    <div class="photo-overlay">
+                        <p>Baoxiong Presentation</p>
+                    </div>
+                </div>
+                <div class="photo-item wow fadeInUp" data-wow-delay=".8s" onclick="openLightbox(12)">
+                    <img src="photos/8_feishi.png" alt="Feishi">
+                    <div class="photo-overlay">
+                        <p>Feishi</p>
+                    </div>
+                </div>
+                <div class="photo-item wow fadeInUp" data-wow-delay=".85s" onclick="openLightbox(13)">
+                    <img src="photos/9_nicholas.png" alt="Nicholas">
+                    <div class="photo-overlay">
+                        <p>Nicholas</p>
+                    </div>
+                </div>
+                <div class="photo-item wow fadeInUp" data-wow-delay=".9s" onclick="openLightbox(14)">
+                    <img src="photos/9_nicholas_2.png" alt="Nicholas Presentation">
+                    <div class="photo-overlay">
+                        <p>Nicholas Presentation</p>
+                    </div>
+                </div>
+                <div class="photo-item wow fadeInUp" data-wow-delay=".95s" onclick="openLightbox(15)">
+                    <img src="photos/10_chenfei.png" alt="Chenfei">
+                    <div class="photo-overlay">
+                        <p>Chenfei</p>
+                    </div>
+                </div>
+                <div class="photo-item wow fadeInUp" data-wow-delay="1s" onclick="openLightbox(16)">
+                    <img src="photos/11_zhijian.png" alt="Zhijian">
+                    <div class="photo-overlay">
+                        <p>Zhijian</p>
+                    </div>
+                </div>
+                <div class="photo-item wow fadeInUp" data-wow-delay="1.05s" onclick="openLightbox(17)">
+                    <img src="photos/11_zhijian_lily.png" alt="Zhijian and Lily">
+                    <div class="photo-overlay">
+                        <p>Zhijian and Lily</p>
+                    </div>
+                </div>
+                <div class="photo-item wow fadeInUp" data-wow-delay="1.1s" onclick="openLightbox(18)">
+                    <img src="photos/12_peter_1.png" alt="Peter">
+                    <div class="photo-overlay">
+                        <p>Peter</p>
+                    </div>
+                </div>
+                <div class="photo-item wow fadeInUp" data-wow-delay="1.15s" onclick="openLightbox(19)">
+                    <img src="photos/12_peter_3.png" alt="Peter Presentation">
+                    <div class="photo-overlay">
+                        <p>Peter Presentation</p>
+                    </div>
+                </div>
+                <div class="photo-item wow fadeInUp" data-wow-delay="1.2s" onclick="openLightbox(20)">
+                    <img src="photos/13_ruigang.png" alt="Ruigang">
+                    <div class="photo-overlay">
+                        <p>Ruigang</p>
+                    </div>
+                </div>
+                <div class="photo-item wow fadeInUp" data-wow-delay="1.25s" onclick="openLightbox(21)">
+                    <img src="photos/13_ruigang_2.png" alt="Ruigang Talk">
+                    <div class="photo-overlay">
+                        <p>Ruigang Talk</p>
+                    </div>
+                </div>
+                <div class="photo-item wow fadeInUp" data-wow-delay="1.3s" onclick="openLightbox(22)">
+                    <img src="photos/14_panel_1.png" alt="Panel Discussion">
+                    <div class="photo-overlay">
+                        <p>Panel Discussion</p>
+                    </div>
+                </div>
+                <div class="photo-item wow fadeInUp" data-wow-delay="1.35s" onclick="openLightbox(23)">
+                    <img src="photos/15_award_1.png" alt="Award Ceremony">
+                    <div class="photo-overlay">
+                        <p>Award Ceremony</p>
+                    </div>
+                </div>
+                <div class="photo-item wow fadeInUp" data-wow-delay="1.4s" onclick="openLightbox(24)">
+                    <img src="photos/15_award_2.png" alt="Award Winners">
+                    <div class="photo-overlay">
+                        <p>Award Winners</p>
+                    </div>
+                </div>
+                <div class="photo-item wow fadeInUp" data-wow-delay="1.45s" onclick="openLightbox(25)">
+                    <img src="photos/15_award_3.png" alt="Award Presentation">
+                    <div class="photo-overlay">
+                        <p>Award Presentation</p>
+                    </div>
+                </div>
+                <div class="photo-item wow fadeInUp" data-wow-delay="1.5s" onclick="openLightbox(26)">
+                    <img src="photos/15_award_4.png" alt="Best Paper Award">
+                    <div class="photo-overlay">
+                        <p>Best Paper Award</p>
+                    </div>
+                </div>
+                <div class="photo-item wow fadeInUp" data-wow-delay="1.55s" onclick="openLightbox(27)">
+                    <img src="photos/15_award_5.png" alt="Award Recipients">
+                    <div class="photo-overlay">
+                        <p>Award Recipients</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- End Photo Gallery Area -->
+
+    <!-- Lightbox Modal -->
+    <div id="lightbox" class="lightbox" onclick="closeLightbox(event)">
+        <span class="lightbox-close" onclick="closeLightbox(event)">&times;</span>
+        <span class="lightbox-nav lightbox-prev" onclick="changePhoto(-1); event.stopPropagation();">&#10094;</span>
+        <img class="lightbox-content" id="lightbox-img" src="" alt="Workshop Photo">
+        <span class="lightbox-nav lightbox-next" onclick="changePhoto(1); event.stopPropagation();">&#10095;</span>
+    </div>
+
     <div class="row" id="contact-section">
         <div class="col-12">
             <div class="section-title">
@@ -2799,6 +3184,7 @@
                 speakers: "Speakers",
                 program: "Program",
                 organizers: "Organizers",
+                photos: "Photos",
                 contact: "Contact",
                 
                 // Hero section
@@ -2813,6 +3199,8 @@
                 speakersTitle: "Invited Speakers",
                 programTitle: "Workshop Schedule (Tentative)",
                 organizersTitle: "Workshop Organizers",
+                photosTitle: "Workshop Photos",
+                photosSubtitle: "Highlights from RoboGen IROS 2025",
                 contactTitle: "Contact",
                 
                 // Workshop Details Content
@@ -2853,6 +3241,7 @@
                 speakers: "演讲者",
                 program: "议程",
                 organizers: "组织者",
+                photos: "照片",
                 contact: "联系我们",
                 
                 // Hero section
@@ -2867,6 +3256,8 @@
                 speakersTitle: "特邀演讲者",
                 programTitle: "研讨会议程（暂定）",
                 organizersTitle: "研讨会组织者",
+                photosTitle: "研讨会照片",
+                photosSubtitle: "RoboGen IROS 2025 精彩瞬间",
                 contactTitle: "联系我们",
                 
                 // Buttons and labels
@@ -2911,6 +3302,7 @@
             document.getElementById('speakers-nav').textContent = translations[lang].speakers;
             document.getElementById('schedule-nav').textContent = translations[lang].program;
             document.getElementById('organizers-nav').textContent = translations[lang].organizers;
+            document.getElementById('photos-nav').textContent = translations[lang].photos;
             document.getElementById('contact-nav').textContent = translations[lang].contact;
             
             // Update hero section
@@ -2951,6 +3343,12 @@
             
             const organizersSection = document.querySelector('#organizers-section .section-title h2');
             if (organizersSection) organizersSection.textContent = translations[lang].organizersTitle;
+            
+            const photosSection = document.querySelector('#photos-section .section-title h2');
+            if (photosSection) photosSection.textContent = translations[lang].photosTitle;
+            
+            const photosSubtitleSection = document.querySelector('#photos-section .section-title p');
+            if (photosSubtitleSection) photosSubtitleSection.textContent = translations[lang].photosSubtitle;
             
             const contactSection = document.querySelector('#contact-section .section-title h3');
             if (contactSection) contactSection.textContent = translations[lang].contactTitle;
@@ -3206,6 +3604,98 @@
             setTimeout(startTypingAnimation, 100);
         };
     </script>
+
+    <!-- Photo Gallery Lightbox Script -->
+    <script>
+        // Photo gallery data
+        const photos = [
+            { src: 'photos/0_robogen_1.png', caption: 'RoboGen Workshop' },
+            { src: 'photos/1_siyuan_1.png', caption: 'Siyuan Keynote' },
+            { src: 'photos/1_siyuan_2.png', caption: 'Siyuan Presentation' },
+            { src: 'photos/2_yifei_0.png', caption: 'Yifei Presentation' },
+            { src: 'photos/2_yifei_2.png', caption: 'Yifei Talk' },
+            { src: 'photos/3_frank_1.png', caption: 'Frank Presentation' },
+            { src: 'photos/4_yue_1.png', caption: 'Yue Talk' },
+            { src: 'photos/5_shenlong_wang.png', caption: 'Shenlong Wang' },
+            { src: 'photos/5_shenlong.png', caption: 'Shenlong Presentation' },
+            { src: 'photos/6_tianxing.png', caption: 'Tianxing Talk' },
+            { src: 'photos/7_baoxiong.png', caption: 'Baoxiong' },
+            { src: 'photos/7_baoxiong_2.png', caption: 'Baoxiong Presentation' },
+            { src: 'photos/8_feishi.png', caption: 'Feishi' },
+            { src: 'photos/9_nicholas.png', caption: 'Nicholas' },
+            { src: 'photos/9_nicholas_2.png', caption: 'Nicholas Presentation' },
+            { src: 'photos/10_chenfei.png', caption: 'Chenfei' },
+            { src: 'photos/11_zhijian.png', caption: 'Zhijian' },
+            { src: 'photos/11_zhijian_lily.png', caption: 'Zhijian and Lily' },
+            { src: 'photos/12_peter_1.png', caption: 'Peter' },
+            { src: 'photos/12_peter_3.png', caption: 'Peter Presentation' },
+            { src: 'photos/13_ruigang.png', caption: 'Ruigang' },
+            { src: 'photos/13_ruigang_2.png', caption: 'Ruigang Talk' },
+            { src: 'photos/14_panel_1.png', caption: 'Panel Discussion' },
+            { src: 'photos/15_award_1.png', caption: 'Award Ceremony' },
+            { src: 'photos/15_award_2.png', caption: 'Award Winners' },
+            { src: 'photos/15_award_3.png', caption: 'Award Presentation' },
+            { src: 'photos/15_award_4.png', caption: 'Best Paper Award' },
+            { src: 'photos/15_award_5.png', caption: 'Award Recipients' }
+        ];
+
+        let currentPhotoIndex = 0;
+
+        function openLightbox(index) {
+            currentPhotoIndex = index;
+            const lightbox = document.getElementById('lightbox');
+            const lightboxImg = document.getElementById('lightbox-img');
+            
+            lightboxImg.src = photos[currentPhotoIndex].src;
+            lightboxImg.alt = photos[currentPhotoIndex].caption;
+            lightbox.classList.add('active');
+            
+            // Prevent body scroll when lightbox is open
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeLightbox(event) {
+            // Only close if clicking on the background or close button
+            if (event.target.id === 'lightbox' || event.target.classList.contains('lightbox-close')) {
+                const lightbox = document.getElementById('lightbox');
+                lightbox.classList.remove('active');
+                
+                // Restore body scroll
+                document.body.style.overflow = 'auto';
+            }
+        }
+
+        function changePhoto(direction) {
+            currentPhotoIndex += direction;
+            
+            // Wrap around
+            if (currentPhotoIndex < 0) {
+                currentPhotoIndex = photos.length - 1;
+            } else if (currentPhotoIndex >= photos.length) {
+                currentPhotoIndex = 0;
+            }
+            
+            const lightboxImg = document.getElementById('lightbox-img');
+            lightboxImg.src = photos[currentPhotoIndex].src;
+            lightboxImg.alt = photos[currentPhotoIndex].caption;
+        }
+
+        // Keyboard navigation
+        document.addEventListener('keydown', function(event) {
+            const lightbox = document.getElementById('lightbox');
+            if (lightbox.classList.contains('active')) {
+                if (event.key === 'Escape') {
+                    lightbox.classList.remove('active');
+                    document.body.style.overflow = 'auto';
+                } else if (event.key === 'ArrowLeft') {
+                    changePhoto(-1);
+                } else if (event.key === 'ArrowRight') {
+                    changePhoto(1);
+                }
+            }
+        });
+    </script>
+
 <style>
 /* Paper Cards Hover Effects */
 .single-paper {
